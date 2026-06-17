@@ -4,6 +4,8 @@
 email: linnanli@shutcm.edu.cn # your email address
 scholar_userid: hz55UEIAAAAJ # your Google Scholar ID (also drives citation sync)
 orcid_id: 0000-0001-7394-8095 # your ORCID iD
+scopus_id: 56574609200 # your Scopus author ID
+publons_id: 3004831 # your Publons / Web of Science researcher ID
 github_username: singlecell # your GitHub username
 # researchgate_profile:              # uncomment + add your ResearchGate profile
 # x_username:                        # uncomment + add your X/Twitter handle

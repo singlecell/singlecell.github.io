@@ -6,12 +6,12 @@ subtitle: Ph.D., Associate Professor · Institute of Chinese Materia Medica, <a 
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic.svg
   image_circular: true # crops the image to make it circular
   more_info: >
-    <p>Room 908, International Centre for Standardization of Chinese Medicine</p>
+    <p>Room 908, International Center for Standardization of Chinese Medicine</p>
     <p>1200 Cailun Road, Pudong, Shanghai 201203, China</p>
-    <p>linnanli@shutcm.edu.cn</p>
+    <p>linnanli@shutcm.edu.cn · +86-21-51322417</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -27,8 +27,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am an Associate Professor at the Institute of Chinese Materia Medica, [Shanghai University of Traditional Chinese Medicine](https://www.shutcm.edu.cn/). I received my Ph.D. in analytical chemistry from Peking University (advisor: Prof. Huwei Liu) and my B.S. in chemistry from Sichuan University.
+Linnan Li is an Associate Professor at the Institute of Chinese Materia Medica, [Shanghai University of Traditional Chinese Medicine](https://www.shutcm.edu.cn/), with a Ph.D. in analytical chemistry from Peking University and a B.S. in chemistry from Sichuan University.
 
-My research develops new technologies, methods, and strategies for the precise analysis of complex natural-medicine systems. Key directions include the discovery and precise characterization of active ingredients in natural medicines; new applications of mass spectrometry and chromatography; endogenous molecular targeting analysis and metabolomics; the development of novel sample-pretreatment materials; and green-chemistry strategies — all aimed at supporting active-ingredient research, quality evaluation, and standard establishment.
+Research centers on new mass spectrometry, chromatography, and sample-pretreatment technologies for the precise analysis of complex natural-medicine systems — spanning the discovery and characterization of active ingredients, endogenous molecular targeting analysis and metabolomics, green-chemistry strategies, and the quality control and safety evaluation of natural products.
 
-You can find my full list of publications on the [publications](/publications/) page or on [Google Scholar](https://scholar.google.com/citations?user=hz55UEIAAAAJ). Feel free to reach out by email — I'm always happy to discuss collaborations.
+**Affiliated laboratories:** State Key Laboratory of Discovery and Utilization of Functional Components in Traditional Chinese Medicine · MOE Key Laboratory of Standardization of Chinese Medicines · SATCM Key Laboratory of New Resources and Quality Evaluation of Chinese Medicines · Shanghai Key Laboratory of Compound Chinese Medicines.
