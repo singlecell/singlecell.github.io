@@ -1,0 +1,58 @@
+cv:
+  name: Linnan Li
+  label: Researcher in Pharmaceutical Analysis
+  email: linnanleepku@gmail.com
+  location: Shanghai, China
+  image: ""
+  summary: >
+    Researcher in pharmaceutical analysis, mass spectrometry, chromatography,
+    and metabolomics at the Shanghai University of Traditional Chinese Medicine.
+
+  social_networks:
+    - network: GoogleScholar
+      username: hz55UEIAAAAJ
+    # - network: GitHub
+    #   username: YOUR_GITHUB_USERNAME
+    # - network: LinkedIn
+    #   username: YOUR_LINKEDIN
+
+  # NOTE: The sections below are starter placeholders — replace the bracketed
+  # text with your real education and experience, then delete this note.
+  sections:
+    Education:
+      - institution: "[Your PhD institution]"
+        location: "[City, Country]"
+        area: "[e.g. Pharmaceutical Analysis]"
+        studyType: PhD
+        start_date: "[YYYY]"
+        end_date: "[YYYY]"
+        highlights:
+          - "[Thesis topic or notable achievement]"
+
+      - institution: "[Your undergraduate institution]"
+        location: "[City, Country]"
+        area: "[e.g. Pharmacy]"
+        studyType: BSc
+        start_date: "[YYYY]"
+        end_date: "[YYYY]"
+
+    Experience:
+      - company: Shanghai University of Traditional Chinese Medicine
+        position: "[Your position]"
+        location: Shanghai, China
+        start_date: "[YYYY]"
+        end_date: present
+        highlights:
+          - Mass spectrometry and chromatography method development
+          - Quality control and metabolomics of natural products
+
+    Interests:
+      - name: Research interests
+        icon: fa-solid fa-flask
+        keywords: "Pharmaceutical analysis, Mass spectrometry, Chromatography, Sample preparation, Metabolomics, Lipidomics, Metal-organic frameworks, Direct analysis in real time"
+
+    Languages:
+      - name: Chinese
+        summary: "Native speaker"
+      - name: English
+        summary: "Professional working proficiency"

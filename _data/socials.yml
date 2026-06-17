@@ -1,0 +1,11 @@
+# Social media links and academic profiles. Displayed in the order defined here,
+# as icons at the bottom of the about page. Comment out a line to hide an icon.
+# Docs: https://github.com/george-gca/jekyll-socials
+email: linnanleepku@gmail.com # your email address
+scholar_userid: hz55UEIAAAAJ # your Google Scholar ID (also drives citation sync)
+# orcid_id: 0000-0000-0000-0000      # uncomment + add your ORCID iD
+# github_username:                   # uncomment + add your GitHub username
+# researchgate_profile:              # uncomment + add your ResearchGate profile
+# x_username:                        # uncomment + add your X/Twitter handle
+# linkedin_username:                 # uncomment + add your LinkedIn username
+rss_icon: true # comment this line to hide the RSS icon
