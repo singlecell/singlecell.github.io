@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-New review on ion mobility mass spectrometry for small-molecule analysis is now online. <i>(Edit or delete this item in `_news/`.)</i>
+Our work on an integrative spatial lipidomics framework for pyrrolizidine alkaloid-induced liver damage is published in <i>Journal of Pharmaceutical Analysis</i>.

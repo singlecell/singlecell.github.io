@@ -2,16 +2,16 @@
 layout: about
 title: about
 permalink: /
-subtitle: Pharmaceutical analysis · Mass spectrometry · Metabolomics. <a href='https://www.shutcm.edu.cn/'>Shanghai University of Traditional Chinese Medicine</a>.
+subtitle: Ph.D., Associate Professor · Institute of Chinese Materia Medica, <a href='https://www.shutcm.edu.cn/'>Shanghai University of Traditional Chinese Medicine</a>.
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
   more_info: >
-    <p>Shanghai University of Traditional Chinese Medicine</p>
-    <p>Shanghai, China</p>
-    <p>linnanleepku@gmail.com</p>
+    <p>Room 908, International Centre for Standardization of Chinese Medicine</p>
+    <p>1200 Cailun Road, Pudong, Shanghai 201203, China</p>
+    <p>linnanli@shutcm.edu.cn</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -27,8 +27,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a researcher in analytical and pharmaceutical sciences at the [Shanghai University of Traditional Chinese Medicine](https://www.shutcm.edu.cn/). My work develops mass spectrometry, chromatography, and sample-preparation methods to characterize complex natural products and biological systems — with applications ranging from the quality control of traditional Chinese medicine to lipidomics and metabolomics in human disease.
+I am an Associate Professor at the Institute of Chinese Materia Medica, [Shanghai University of Traditional Chinese Medicine](https://www.shutcm.edu.cn/). I received my Ph.D. in analytical chemistry from Peking University (advisor: Prof. Huwei Liu) and my B.S. in chemistry from Sichuan University.
 
-A recurring thread in my research is building functional materials (such as metal–organic frameworks) and ambient ionization techniques (such as direct analysis in real time) that make the analysis of bioactive small molecules faster, more selective, and more sensitive.
+My research develops new technologies, methods, and strategies for the precise analysis of complex natural-medicine systems. Key directions include the discovery and precise characterization of active ingredients in natural medicines; new applications of mass spectrometry and chromatography; endogenous molecular targeting analysis and metabolomics; the development of novel sample-pretreatment materials; and green-chemistry strategies — all aimed at supporting active-ingredient research, quality evaluation, and standard establishment.
 
 You can find my full list of publications on the [publications](/publications/) page or on [Google Scholar](https://scholar.google.com/citations?user=hz55UEIAAAAJ). Feel free to reach out by email — I'm always happy to discuss collaborations.

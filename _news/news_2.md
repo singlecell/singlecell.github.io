@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Gave a talk on mass spectrometry-based quality control of traditional Chinese medicine. <i>(Edit or delete this item in `_news/`.)</i>
+New paper on rapid on-site identification of pyrrolizidine alkaloids in herbal medicines using miniature mass spectrometry, published in <i>Analyst</i>.

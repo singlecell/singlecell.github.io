@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Personal website launched. <i>(Edit or delete this item in `_news/`.)</i>
+Personal website launched.

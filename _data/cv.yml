@@ -1,55 +1,79 @@
 cv:
   name: Linnan Li
-  label: Researcher in Pharmaceutical Analysis
-  email: linnanleepku@gmail.com
+  label: Ph.D., Associate Professor
+  email: linnanli@shutcm.edu.cn
+  phone: +86-21-51322506
   location: Shanghai, China
   image: ""
   summary: >
-    Researcher in pharmaceutical analysis, mass spectrometry, chromatography,
-    and metabolomics at the Shanghai University of Traditional Chinese Medicine.
+    Associate Professor at the Institute of Chinese Materia Medica, Shanghai
+    University of Traditional Chinese Medicine. My research develops mass
+    spectrometry, chromatography, and sample-pretreatment technologies for the
+    discovery and precise characterization of active ingredients in natural
+    medicines, endogenous molecular targeting and metabolomics, green chemistry
+    strategies, and the quality control and safety evaluation of natural products.
 
   social_networks:
     - network: GoogleScholar
       username: hz55UEIAAAAJ
-    # - network: GitHub
-    #   username: YOUR_GITHUB_USERNAME
-    # - network: LinkedIn
-    #   username: YOUR_LINKEDIN
+    - network: ORCID
+      username: 0000-0001-7394-8095
 
-  # NOTE: The sections below are starter placeholders — replace the bracketed
-  # text with your real education and experience, then delete this note.
   sections:
     Education:
-      - institution: "[Your PhD institution]"
-        location: "[City, Country]"
-        area: "[e.g. Pharmaceutical Analysis]"
-        studyType: PhD
-        start_date: "[YYYY]"
-        end_date: "[YYYY]"
+      - institution: Peking University
+        location: Beijing, China
+        area: Analytical Chemistry
+        studyType: Ph.D.
+        start_date: 2013-09
+        end_date: 2018-07
         highlights:
-          - "[Thesis topic or notable achievement]"
+          - "Advisor: Prof. Huwei Liu"
 
-      - institution: "[Your undergraduate institution]"
-        location: "[City, Country]"
-        area: "[e.g. Pharmacy]"
-        studyType: BSc
-        start_date: "[YYYY]"
-        end_date: "[YYYY]"
+      - institution: Sichuan University
+        location: Chengdu, China
+        area: Chemistry
+        studyType: B.S.
+        start_date: 2009-09
+        end_date: 2013-07
+        highlights:
+          - "Advisor: Prof. Menglong Li"
 
     Experience:
       - company: Shanghai University of Traditional Chinese Medicine
-        position: "[Your position]"
+        position: Associate Professor
         location: Shanghai, China
-        start_date: "[YYYY]"
+        start_date: 2021-01
         end_date: present
-        highlights:
-          - Mass spectrometry and chromatography method development
-          - Quality control and metabolomics of natural products
+        summary: Institute of Chinese Materia Medica.
 
-    Interests:
+      - company: Shanghai University of Traditional Chinese Medicine
+        position: Assistant Professor
+        location: Shanghai, China
+        start_date: 2020-07
+        end_date: 2020-12
+
+      - company: Shanghai University of Traditional Chinese Medicine
+        position: Postdoctoral Researcher
+        location: Shanghai, China
+        start_date: 2018-07
+        end_date: 2020-07
+
+    Research interests:
       - name: Research interests
         icon: fa-solid fa-flask
-        keywords: "Pharmaceutical analysis, Mass spectrometry, Chromatography, Sample preparation, Metabolomics, Lipidomics, Metal-organic frameworks, Direct analysis in real time"
+        keywords: "Discovery and characterization of active ingredients in natural medicines; mass spectrometry and chromatography; endogenous molecular targeting analysis and metabolomics; novel sample-pretreatment materials; green chemistry; quality control and safety evaluation"
+
+    Academic service:
+      - name: Editorial boards
+        icon: fa-solid fa-pen
+        keywords: "Editorial Board Member, Future Journal of Pharmaceutical Sciences; Young Editorial Board Member of Journal of Analytical Testing, Biomedical Analysis, Phytochemical Analysis, Chinese Herbal Medicine, Acta Materia Medica, Chinese Journal of Chromatography, Journal of Instrumental Analysis, and Chinese Journal of Analysis Laboratory; Guest Editor, Frontiers in Chemistry"
+      - name: Committees & standards
+        icon: fa-solid fa-users
+        keywords: "Expert, Working Group 1, ISO/TC 249 (Traditional Chinese Medicine), ISO; Member, Medical Mass Spectrometry Committee, China Association for Instrumental Analysis (CAIA); Young Committee Member, Pharmaceutical Analysis Professional Committee, Shanghai Pharmaceutical Association"
+      - name: Reviewing
+        icon: fa-solid fa-magnifying-glass
+        keywords: "Peer reviewer for more than 20 SCI journals, including Advanced Science and Analytical Chemistry"
 
     Languages:
       - name: Chinese
