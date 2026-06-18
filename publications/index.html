@@ -19,6 +19,18 @@
 #year-filter button.active {
   background: var(--global-theme-color); color: #fff; border-color: var(--global-theme-color);
 }
+
+/* Landscape, uniform preview thumbnails */
+@media (min-width: 576px) {
+  .publications .row > .abbr { flex: 0 0 30%; max-width: 30%; }
+}
+.publications .preview {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center top;
+}
 </style> <script src="/assets/js/bibsearch.js?v=1bc438ca9037884cc579601c09afd847" type="module"></script> <p><input type="text" id="bibsearch" spellcheck="false" autocomplete="off" class="search bibsearch-form-input" placeholder="Type to filter"></p> <div id="year-filter"></div> <div class="publications"> <h2 class="bibliography">2026</h2> <ol class="bibliography"> <li> <div class="row"> <div class="col col-sm-2 abbr"> <abbr class="badge rounded w-100">Phytomedicine</abbr> <figure> <picture> <img src="/assets/img/publication_preview/pei2026phytomed.jpg" class="preview z-depth-1 rounded" width="100%" height="auto" alt="pei2026phytomed.jpg" data-zoomable="" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> <div id="pei2026phytomed" class="col-sm-8"> <div class="title">Novel insights into anti-inflammatory activity-related metabolic markers and biosynthetic regulatory mechanisms between principal and lateral roots of Aconitum carmichaelii</div> <div class="author"> Wenhan Pei, Fan He, Ying Xie, Zhengtao Wang, <em>Linnan Li</em>, Li Yang, and Hua Zhou </div> <div class="periodical"> <em>Phytomedicine</em>, 2026 </div> <div class="periodical"> </div> <div class="links"> <a href="https://doi.org/10.1016/j.phymed.2026.158334" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">DOI</a> <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a> </div> <div class="bibtex hidden"> <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">pei2026phytomed</span><span class="p">,</span>
   <span class="na">title</span> <span class="p">=</span> <span class="s">{Novel insights into anti-inflammatory activity-related metabolic markers and biosynthetic regulatory mechanisms between principal and lateral roots of Aconitum carmichaelii}</span><span class="p">,</span>
   <span class="na">author</span> <span class="p">=</span> <span class="s">{Pei, Wenhan and He, Fan and Xie, Ying and Wang, Zhengtao and Li, Linnan and Yang, Li and Zhou, Hua}</span><span class="p">,</span>
