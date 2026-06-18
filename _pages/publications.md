@@ -22,6 +22,18 @@ nav_order: 2
 #year-filter button.active {
   background: var(--global-theme-color); color: #fff; border-color: var(--global-theme-color);
 }
+
+/* Landscape, uniform preview thumbnails */
+@media (min-width: 576px) {
+  .publications .row > .abbr { flex: 0 0 30%; max-width: 30%; }
+}
+.publications .preview {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center top;
+}
 </style>
 
 {% include bib_search.liquid %}
