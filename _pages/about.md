@@ -140,6 +140,19 @@ latest_posts:
 .contact-grid p { margin: 0; line-height: 1.75; color: var(--global-text-color); opacity: 0.85; }
 #end-section .social { margin-top: 2.2rem; text-align: left; }
 @media (max-width: 768px) { #end-section .social { text-align: center; } }
+
+/* ===== Navbar: name on the left, roomier links on the right ===== */
+#navbar .navbar-brand.injected {
+  font-weight: 500; font-size: 1.2rem; margin-right: auto;
+  color: var(--global-text-color); text-decoration: none;
+}
+#navbar .navbar-brand.injected .fw-bold { font-weight: 700; }
+#navbar .navbar-nav { gap: 1.7rem; align-items: center; }
+#navbar .navbar-nav .nav-link { padding-left: 0.25rem; padding-right: 0.25rem; }
+@media (max-width: 576px) {
+  #navbar .navbar-nav { gap: 0.5rem; }
+  #navbar .navbar-brand.injected { font-size: 1.05rem; }
+}
 </style>
 
 <div id="hero-intro">
@@ -208,6 +221,22 @@ latest_posts:
 <script>
 (function () {
   function build() {
+    // 0) Navbar: add the name on the left, and reduce the search button to a clean icon.
+    var nbc = document.querySelector('#navbar .container');
+    if (nbc && !nbc.querySelector('.navbar-brand')) {
+      var brand = document.createElement('a');
+      brand.className = 'navbar-brand injected';
+      brand.href = '/';
+      brand.innerHTML = 'Linnan <span class="fw-bold">Li</span>';
+      nbc.insertBefore(brand, nbc.firstChild);
+    }
+    var stl = document.querySelector('#search-toggle .nav-link');
+    if (stl) {
+      Array.prototype.slice.call(stl.childNodes).forEach(function (n) {
+        if (n.nodeType === 3) stl.removeChild(n); // drop the "⌘ k" hint text, keep the icon
+      });
+    }
+
     var article = document.querySelector('.post article') || document.querySelector('article');
     if (!article) return;
 
