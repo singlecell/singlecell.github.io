@@ -22,11 +22,9 @@ latest_posts:
 ---
 
 <style>
-/* Bold the family name (Li) instead of the given name (Linnan) */
-.post-header .post-title,
-#navbar .navbar-brand.title { font-weight: 700 !important; }
-.post-header .post-title .font-weight-bold,
-#navbar .navbar-brand .font-weight-bold { font-weight: 400 !important; }
+/* Bold the family name (Li) instead of the given name (Linnan) in the hero title */
+.post-header .post-title { font-weight: 700 !important; }
+.post-header .post-title .font-weight-bold { font-weight: 400 !important; }
 
 /* ===== Full-screen hero (assembled by the script below) ===== */
 .hero {
@@ -154,23 +152,6 @@ latest_posts:
 .contact-grid .nb { white-space: nowrap; }
 #end-section .social { margin-top: 2.2rem; text-align: left; }
 @media (max-width: 768px) { #end-section .social { text-align: center; } }
-
-/* ===== Navbar: name on the left, roomier links on the right ===== */
-#navbar .navbar-brand.injected {
-  font-weight: 500; font-size: 1.2rem; margin-right: auto;
-  color: var(--global-text-color); text-decoration: none;
-}
-#navbar .navbar-brand.injected .fw-bold { font-weight: 700; }
-#navbar .navbar-nav { gap: 1.7rem; align-items: center; }
-#navbar .navbar-nav .nav-link { padding-left: 0.25rem; padding-right: 0.25rem; }
-@media (max-width: 576px) {
-  #navbar .navbar-nav { gap: 0.5rem; }
-  #navbar .navbar-brand.injected { font-size: 1.05rem; }
-}
-
-/* Hide the left-side name over the hero; reveal it on scroll (hero already shows the big name) */
-#navbar .navbar-brand.injected { transition: opacity 0.3s ease, transform 0.3s ease; }
-#navbar .navbar-brand.injected.brand-hidden { opacity: 0; transform: translateY(-4px); pointer-events: none; }
 </style>
 
 <div id="hero-intro">
@@ -239,23 +220,8 @@ latest_posts:
 <script>
 (function () {
   function build() {
-    // 0) Navbar: add the name on the left, and reduce the search button to a clean icon.
-    var nbc = document.querySelector('#navbar .container');
-    if (nbc && !nbc.querySelector('.navbar-brand')) {
-      var brand = document.createElement('a');
-      brand.className = 'navbar-brand injected';
-      brand.href = '/';
-      brand.innerHTML = 'Linnan <span class="fw-bold">Li</span>';
-      nbc.insertBefore(brand, nbc.firstChild);
-    }
-    var stl = document.querySelector('#search-toggle .nav-link');
-    if (stl) {
-      Array.prototype.slice.call(stl.childNodes).forEach(function (n) {
-        if (n.nodeType === 3) stl.removeChild(n); // drop the "⌘ k" hint text, keep the icon
-      });
-    }
-
-    // Hide the left-side name over the hero (the big name is already there); reveal on scroll.
+    // The navbar (brand + icon-only search) is rendered consistently by _includes/header.liquid.
+    // Home-only: hide the brand over the hero (the big name is already there); reveal on scroll.
     var brandEl = document.querySelector('#navbar .navbar-brand');
     if (brandEl && !brandEl.dataset.autohide) {
       brandEl.dataset.autohide = '1';
