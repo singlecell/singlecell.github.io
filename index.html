@@ -4,12 +4,27 @@
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A7%AA&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://singlecell.github.io/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item active"> <a class="nav-link" href="/">about <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title"> <span class="font-weight-bold">Linnan</span> Li </h1> <p class="desc">Ph.D., Associate Professor<br>Institute of Chinese Materia Medica, <a href="https://www.shutcm.edu.cn/" rel="external nofollow noopener" target="_blank">Shanghai University of Traditional Chinese Medicine</a></p> </header> <article> <div class="profile float-right"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/prof_pic.svg" sizes="(min-width: 930px) 270.0px, (min-width: 576px) 30vw, 95vw"> <img src="/assets/img/prof_pic.svg?v=bbf25305d1f67c2b3aa11584f4ee7c5b" class="img-fluid z-depth-1 rounded-circle" width="100%" height="auto" alt="prof_pic.svg" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </source></picture> </figure> <div class="more-info"> <p>linnanli@shutcm.edu.cn</p> </div> </div> <div class="clearfix"> <style>
-/* Bold the family name (Li) instead of the given name (Linnan) */
-.post-header .post-title,
-#navbar .navbar-brand.title { font-weight: 700 !important; }
-.post-header .post-title .font-weight-bold,
-#navbar .navbar-brand .font-weight-bold { font-weight: 400 !important; }
+  </script> </head> <body class="fixed-top-nav "> <style>
+  /* Site-wide navbar tweaks (local override of al_folio_core header) */
+  /* Family name (Li) bold, given name (Linnan) normal */
+  #navbar .navbar-brand.title { font-weight: 400; font-size: 1.2rem; color: var(--global-text-color); text-decoration: none; }
+  #navbar .navbar-brand.title .fw-bold { font-weight: 700; }
+  /* Roomier links, all items vertically centered on one row */
+  #navbar .navbar-nav { gap: 1.7rem; align-items: center; }
+  #navbar .navbar-nav .nav-link { padding-left: 0.25rem; padding-right: 0.25rem; }
+  /* Drop the theme's 4px downward nudge so the theme toggle lines up with the row */
+  #navbar #light-toggle { transform: none; }
+  @media (max-width: 576px) {
+    #navbar .navbar-nav { gap: 0.6rem; }
+    #navbar .navbar-brand.title { font-size: 1.05rem; }
+  }
+  /* Home page only: hide the brand over the hero, reveal it on scroll (toggled by the home script) */
+  #navbar .navbar-brand.title { transition: opacity 0.3s ease, transform 0.3s ease; }
+  #navbar .navbar-brand.title.brand-hidden { opacity: 0; transform: translateY(-4px); pointer-events: none; }
+</style> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title" id="site-brand" href="/">Linnan <span class="fw-bold">Li</span></a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item active"> <a class="nav-link" href="/">about <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link"><i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title"> <span class="font-weight-bold">Linnan</span> Li </h1> <p class="desc">Ph.D., Associate Professor<br>Institute of Chinese Materia Medica, <a href="https://www.shutcm.edu.cn/" rel="external nofollow noopener" target="_blank">Shanghai University of Traditional Chinese Medicine</a></p> </header> <article> <div class="profile float-right"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/prof_pic.svg" sizes="(min-width: 930px) 270.0px, (min-width: 576px) 30vw, 95vw"> <img src="/assets/img/prof_pic.svg?v=bbf25305d1f67c2b3aa11584f4ee7c5b" class="img-fluid z-depth-1 rounded-circle" width="100%" height="auto" alt="prof_pic.svg" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </source></picture> </figure> <div class="more-info"> <p>linnanli@shutcm.edu.cn</p> </div> </div> <div class="clearfix"> <style>
+/* Bold the family name (Li) instead of the given name (Linnan) in the hero title */
+.post-header .post-title { font-weight: 700 !important; }
+.post-header .post-title .font-weight-bold { font-weight: 400 !important; }
 
 /* ===== Full-screen hero (assembled by the script below) ===== */
 .hero {
@@ -137,43 +152,11 @@
 .contact-grid .nb { white-space: nowrap; }
 #end-section .social { margin-top: 2.2rem; text-align: left; }
 @media (max-width: 768px) { #end-section .social { text-align: center; } }
-
-/* ===== Navbar: name on the left, roomier links on the right ===== */
-#navbar .navbar-brand.injected {
-  font-weight: 500; font-size: 1.2rem; margin-right: auto;
-  color: var(--global-text-color); text-decoration: none;
-}
-#navbar .navbar-brand.injected .fw-bold { font-weight: 700; }
-#navbar .navbar-nav { gap: 1.7rem; align-items: center; }
-#navbar .navbar-nav .nav-link { padding-left: 0.25rem; padding-right: 0.25rem; }
-@media (max-width: 576px) {
-  #navbar .navbar-nav { gap: 0.5rem; }
-  #navbar .navbar-brand.injected { font-size: 1.05rem; }
-}
-
-/* Hide the left-side name over the hero; reveal it on scroll (hero already shows the big name) */
-#navbar .navbar-brand.injected { transition: opacity 0.3s ease, transform 0.3s ease; }
-#navbar .navbar-brand.injected.brand-hidden { opacity: 0; transform: translateY(-4px); pointer-events: none; }
 </style> <div id="hero-intro"> <p>I develop new mass spectrometry, chromatography, and sample-pretreatment technologies for the precise analysis of complex natural-medicine systems.</p> <p>Ph.D. in analytical chemistry from Peking University · B.S. in chemistry from Sichuan University.</p> </div> <div id="hero-actions"> <a class="hero-btn primary" href="mailto:linnanli@shutcm.edu.cn">✉  Email</a> <a class="hero-btn secondary" href="https://scholar.google.com/citations?user=hz55UEIAAAAJ" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i>  Google Scholar</a> <a class="hero-btn secondary" href="https://orcid.org/0000-0001-7394-8095" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid"></i>  ORCID</a> </div> <div id="research-interests" class="full-section"> <h2>Research Interests</h2> <p class="ri-intro">My work spans the full chain of natural-medicine analysis — from discovering and characterizing active constituents, to decoding their molecular mechanisms, to safeguarding product quality and safety.</p> <div class="ri-cards"> <div class="ri-card"> <div class="ri-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"></path><path d="M10 3v6l-5.4 9.3A1.5 1.5 0 0 0 5.9 21h12.2a1.5 1.5 0 0 0 1.3-2.7L14 9V3"></path><path d="M7 14h10"></path></svg></div> <h3>Analytical Technology Innovation</h3> <p class="ri-sub">Mass Spectrometry · Chromatography · Sample Pretreatment</p> <p class="ri-desc">Developing new mass spectrometry, chromatography, and sample-pretreatment methods for the precise analysis of complex natural-medicine systems.</p> </div> <div class="ri-card"> <div class="ri-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg></div> <h3>Active Ingredient Discovery</h3> <p class="ri-sub">Natural Products</p> <p class="ri-desc">Discovery and structural characterization of bioactive constituents in traditional Chinese medicines.</p> </div> <div class="ri-card"> <div class="ri-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.2"></circle></svg></div> <h3>Targeting Analysis &amp; Metabolomics</h3> <p class="ri-sub">Metabolomics · Molecular Targeting</p> <p class="ri-desc">Endogenous molecular targeting analysis and metabolomics to unravel mechanisms of action.</p> </div> <div class="ri-card"> <div class="ri-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.6-3.1 7.6-7 9-3.9-1.4-7-4.4-7-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg></div> <h3>Quality Control &amp; Safety</h3> <p class="ri-sub">Green Chemistry · Quality Control</p> <p class="ri-desc">Green-chemistry strategies plus the quality control and safety evaluation of natural products.</p> </div> </div> </div> <div id="end-section" class="full-section"> <h2>Affiliations &amp; Contact</h2> <div class="contact-grid"> <div> <h4>Affiliations</h4> <p class="org">State Key Laboratory of Discovery and Utilization of Functional Components in <span class="nb">Traditional Chinese Medicine</span></p> <p class="org">MOE Key Laboratory of Standardization of <span class="nb">Chinese Medicines</span></p> <p class="org">SATCM Key Laboratory of New Resources and Quality Evaluation of <span class="nb">Chinese Medicines</span></p> <p class="org">Shanghai Key Laboratory of Compound <span class="nb">Chinese Medicines</span></p> </div> <div> <h4>Contact</h4> <p>Room 908, International Center for Standardization of <span class="nb">Chinese Medicine</span><br> 1200 <span class="nb">Cailun Road</span>, <span class="nb">Zhangjiang Hi-Tech Park</span>, <span class="nb">Pudong District</span>, <span class="nb">Shanghai 201203</span>, China<br> Tel: <span class="nb">+86-21-51322417</span><br> Email: <a class="nb" href="mailto:linnanli@shutcm.edu.cn">linnanli@shutcm.edu.cn</a></p> </div> </div> </div> <script>
 (function () {
   function build() {
-    // 0) Navbar: add the name on the left, and reduce the search button to a clean icon.
-    var nbc = document.querySelector('#navbar .container');
-    if (nbc && !nbc.querySelector('.navbar-brand')) {
-      var brand = document.createElement('a');
-      brand.className = 'navbar-brand injected';
-      brand.href = '/';
-      brand.innerHTML = 'Linnan <span class="fw-bold">Li</span>';
-      nbc.insertBefore(brand, nbc.firstChild);
-    }
-    var stl = document.querySelector('#search-toggle .nav-link');
-    if (stl) {
-      Array.prototype.slice.call(stl.childNodes).forEach(function (n) {
-        if (n.nodeType === 3) stl.removeChild(n); // drop the "⌘ k" hint text, keep the icon
-      });
-    }
-
-    // Hide the left-side name over the hero (the big name is already there); reveal on scroll.
+    // The navbar (brand + icon-only search) is rendered consistently by _includes/header.liquid.
+    // Home-only: hide the brand over the hero (the big name is already there); reveal on scroll.
     var brandEl = document.querySelector('#navbar .navbar-brand');
     if (brandEl && !brandEl.dataset.autohide) {
       brandEl.dataset.autohide = '1';
