@@ -83,11 +83,16 @@ latest_posts:
   .hero-actions { justify-content: center; }
 }
 
+/* ===== Consistent section headings (match across the homepage) ===== */
+#research-interests h2,
+.post article > h2 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; margin: 3.5rem 0 0.6rem;
+  text-transform: capitalize;
+}
+
 /* ===== Research interests — card grid (liamcli "highlights" style) ===== */
 #research-interests { margin-top: 3.5rem; }
-#research-interests h2 {
-  font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; margin: 0 0 0.6rem;
-}
+#research-interests h2 { margin-top: 0; }
 #research-interests .ri-intro {
   margin: 0 0 1.8rem; max-width: 46rem;
   color: var(--global-text-color); opacity: 0.85; line-height: 1.6;
@@ -126,8 +131,6 @@ latest_posts:
 <a class="hero-btn secondary" href="{{ '/publications/' | relative_url }}">Publications</a>
 </div>
 
-Research centers on new mass spectrometry, chromatography, and sample-pretreatment technologies for the precise analysis of complex natural-medicine systems — spanning the discovery and characterization of active ingredients, endogenous molecular targeting analysis and metabolomics, green-chemistry strategies, and the quality control and safety evaluation of natural products.
-
 #### Affiliations
 
 State Key Laboratory of Discovery and Utilization of Functional Components in Traditional Chinese Medicine<br>
@@ -143,7 +146,7 @@ Tel: +86-21-51322417 &nbsp;·&nbsp; Email: [linnanli@shutcm.edu.cn](mailto:linna
 
 <div id="research-interests">
 <h2>Research Interests</h2>
-<p class="ri-intro">Developing next-generation mass spectrometry, chromatography, and sample-pretreatment technologies for the precise analysis of complex natural-medicine systems — from discovering active ingredients to evaluating product quality and safety.</p>
+<p class="ri-intro">My work spans the full chain of natural-medicine analysis — from discovering and characterizing active constituents, to decoding their molecular mechanisms, to safeguarding product quality and safety.</p>
 
 <div class="ri-cards">
   <div class="ri-card">
