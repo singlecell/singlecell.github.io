@@ -31,8 +31,8 @@ nav_order: 2
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
+  object-position: center;
 }
 </style>
 
