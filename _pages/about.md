@@ -153,6 +153,10 @@ latest_posts:
   #navbar .navbar-nav { gap: 0.5rem; }
   #navbar .navbar-brand.injected { font-size: 1.05rem; }
 }
+
+/* Hide the left-side name over the hero; reveal it on scroll (hero already shows the big name) */
+#navbar .navbar-brand.injected { transition: opacity 0.3s ease, transform 0.3s ease; }
+#navbar .navbar-brand.injected.brand-hidden { opacity: 0; transform: translateY(-4px); pointer-events: none; }
 </style>
 
 <div id="hero-intro">
@@ -235,6 +239,19 @@ latest_posts:
       Array.prototype.slice.call(stl.childNodes).forEach(function (n) {
         if (n.nodeType === 3) stl.removeChild(n); // drop the "⌘ k" hint text, keep the icon
       });
+    }
+
+    // Hide the left-side name over the hero (the big name is already there); reveal on scroll.
+    var brandEl = document.querySelector('#navbar .navbar-brand');
+    if (brandEl && !brandEl.dataset.autohide) {
+      brandEl.dataset.autohide = '1';
+      var updateBrand = function () {
+        if (window.scrollY > window.innerHeight * 0.6) brandEl.classList.remove('brand-hidden');
+        else brandEl.classList.add('brand-hidden');
+      };
+      updateBrand();
+      window.addEventListener('scroll', updateBrand, { passive: true });
+      window.addEventListener('resize', updateBrand, { passive: true });
     }
 
     var article = document.querySelector('.post article') || document.querySelector('article');
