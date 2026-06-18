@@ -149,6 +149,8 @@ latest_posts:
 
 <div id="hero-actions">
 <a class="hero-btn primary" href="mailto:linnanli@shutcm.edu.cn">&#9993;&nbsp; Email</a>
+<a class="hero-btn secondary" href="https://scholar.google.com/citations?user=hz55UEIAAAAJ" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i>&nbsp; Google Scholar</a>
+<a class="hero-btn secondary" href="https://orcid.org/0000-0001-7394-8095" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid"></i>&nbsp; ORCID</a>
 <a class="hero-btn secondary" href="{{ '/publications/' | relative_url }}">Publications</a>
 </div>
 
