@@ -123,9 +123,38 @@
 .contact-grid p { margin: 0; line-height: 1.75; color: var(--global-text-color); opacity: 0.85; }
 #end-section .social { margin-top: 2.2rem; text-align: left; }
 @media (max-width: 768px) { #end-section .social { text-align: center; } }
+
+/* ===== Navbar: name on the left, roomier links on the right ===== */
+#navbar .navbar-brand.injected {
+  font-weight: 500; font-size: 1.2rem; margin-right: auto;
+  color: var(--global-text-color); text-decoration: none;
+}
+#navbar .navbar-brand.injected .fw-bold { font-weight: 700; }
+#navbar .navbar-nav { gap: 1.7rem; align-items: center; }
+#navbar .navbar-nav .nav-link { padding-left: 0.25rem; padding-right: 0.25rem; }
+@media (max-width: 576px) {
+  #navbar .navbar-nav { gap: 0.5rem; }
+  #navbar .navbar-brand.injected { font-size: 1.05rem; }
+}
 </style> <div id="hero-intro"> <p>I develop new mass spectrometry, chromatography, and sample-pretreatment technologies for the precise analysis of complex natural-medicine systems.</p> <p>Ph.D. in analytical chemistry from Peking University · B.S. in chemistry from Sichuan University.</p> </div> <div id="hero-actions"> <a class="hero-btn primary" href="mailto:linnanli@shutcm.edu.cn">✉  Email</a> <a class="hero-btn secondary" href="https://scholar.google.com/citations?user=hz55UEIAAAAJ" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i>  Google Scholar</a> <a class="hero-btn secondary" href="https://orcid.org/0000-0001-7394-8095" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid"></i>  ORCID</a> </div> <div id="research-interests" class="full-section"> <h2>Research Interests</h2> <p class="ri-intro">My work spans the full chain of natural-medicine analysis — from discovering and characterizing active constituents, to decoding their molecular mechanisms, to safeguarding product quality and safety.</p> <div class="ri-cards"> <div class="ri-card"> <div class="ri-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"></path><path d="M10 3v6l-5.4 9.3A1.5 1.5 0 0 0 5.9 21h12.2a1.5 1.5 0 0 0 1.3-2.7L14 9V3"></path><path d="M7 14h10"></path></svg></div> <h3>Analytical Technology Innovation</h3> <p class="ri-sub">Mass Spectrometry · Chromatography · Sample Pretreatment</p> <p class="ri-desc">Developing new mass spectrometry, chromatography, and sample-pretreatment methods for the precise analysis of complex natural-medicine systems.</p> </div> <div class="ri-card"> <div class="ri-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg></div> <h3>Active Ingredient Discovery</h3> <p class="ri-sub">Natural Products</p> <p class="ri-desc">Discovery and structural characterization of bioactive constituents in traditional Chinese medicines.</p> </div> <div class="ri-card"> <div class="ri-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.2"></circle></svg></div> <h3>Targeting Analysis &amp; Metabolomics</h3> <p class="ri-sub">Metabolomics · Molecular Targeting</p> <p class="ri-desc">Endogenous molecular targeting analysis and metabolomics to unravel mechanisms of action.</p> </div> <div class="ri-card"> <div class="ri-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.6-3.1 7.6-7 9-3.9-1.4-7-4.4-7-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg></div> <h3>Quality Control &amp; Safety</h3> <p class="ri-sub">Green Chemistry · Quality Control</p> <p class="ri-desc">Green-chemistry strategies plus the quality control and safety evaluation of natural products.</p> </div> </div> </div> <div id="end-section" class="full-section"> <h2>Affiliations &amp; Contact</h2> <div class="contact-grid"> <div> <h4>Affiliations</h4> <p>State Key Laboratory of Discovery and Utilization of Functional Components in Traditional Chinese Medicine<br> MOE Key Laboratory of Standardization of Chinese Medicines<br> SATCM Key Laboratory of New Resources and Quality Evaluation of Chinese Medicines<br> Shanghai Key Laboratory of Compound Chinese Medicines</p> </div> <div> <h4>Contact</h4> <p>Room 908, International Center for Standardization of Chinese Medicine<br> 1200 Cailun Road, Zhangjiang Hi-Tech Park, Pudong District, Shanghai 201203, China<br> Tel: +86-21-51322417<br> Email: <a href="mailto:linnanli@shutcm.edu.cn">linnanli@shutcm.edu.cn</a></p> </div> </div> </div> <script>
 (function () {
   function build() {
+    // 0) Navbar: add the name on the left, and reduce the search button to a clean icon.
+    var nbc = document.querySelector('#navbar .container');
+    if (nbc && !nbc.querySelector('.navbar-brand')) {
+      var brand = document.createElement('a');
+      brand.className = 'navbar-brand injected';
+      brand.href = '/';
+      brand.innerHTML = 'Linnan <span class="fw-bold">Li</span>';
+      nbc.insertBefore(brand, nbc.firstChild);
+    }
+    var stl = document.querySelector('#search-toggle .nav-link');
+    if (stl) {
+      Array.prototype.slice.call(stl.childNodes).forEach(function (n) {
+        if (n.nodeType === 3) stl.removeChild(n); // drop the "⌘ k" hint text, keep the icon
+      });
+    }
+
     var article = document.querySelector('.post article') || document.querySelector('article');
     if (!article) return;
 
