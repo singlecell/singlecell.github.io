@@ -60,9 +60,18 @@ cv:
         end_date: 2020-07
 
     Research interests:
-      - name: Research interests
+      - name: Analytical technology innovation
         icon: fa-solid fa-flask
-        keywords: "Discovery and characterization of active ingredients in natural medicines; mass spectrometry and chromatography; endogenous molecular targeting analysis and metabolomics; novel sample-pretreatment materials; green chemistry; quality control and safety evaluation"
+        keywords: "New mass spectrometry, chromatography, and sample-pretreatment technologies for the precise analysis of complex natural-medicine systems"
+      - name: Active ingredient discovery
+        icon: fa-solid fa-magnifying-glass
+        keywords: "Discovery and structural characterization of bioactive constituents in traditional Chinese medicines"
+      - name: Targeting analysis & metabolomics
+        icon: fa-solid fa-bullseye
+        keywords: "Endogenous molecular targeting analysis and metabolomics to unravel mechanisms of action"
+      - name: Quality control & safety
+        icon: fa-solid fa-shield-halved
+        keywords: "Green-chemistry strategies plus the quality control and safety evaluation of natural products"
 
     Academic service:
       - name: Editorial boards
@@ -74,9 +83,3 @@ cv:
       - name: Reviewing
         icon: fa-solid fa-magnifying-glass
         keywords: "Peer reviewer for more than 20 SCI journals, including Advanced Science and Analytical Chemistry"
-
-    Languages:
-      - name: Chinese
-        summary: "Native speaker"
-      - name: English
-        summary: "Professional working proficiency"
