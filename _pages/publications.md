@@ -30,7 +30,7 @@ nav_order: 2
 .publications .preview {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: center top;
 }
