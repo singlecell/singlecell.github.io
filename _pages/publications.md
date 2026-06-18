@@ -34,6 +34,13 @@ nav_order: 2
   object-fit: contain;
   object-position: center;
 }
+
+/* Reverse publication numbering */
+.publications .pub-number {
+  color: var(--global-theme-color);
+  font-weight: 700;
+  margin-right: 0.4em;
+}
 </style>
 
 {% include bib_search.liquid %}
@@ -52,6 +59,18 @@ nav_order: 2
     var container = document.querySelector('.publications');
     var bar = document.getElementById('year-filter');
     if (!container || !bar) return;
+
+    // Number every paper in reverse order: newest (top) = highest, oldest = 1.
+    var items = container.querySelectorAll('ol.bibliography > li');
+    var total = items.length;
+    items.forEach(function (li, i) {
+      if (li.querySelector('.pub-number')) return;
+      var span = document.createElement('span');
+      span.className = 'pub-number';
+      span.textContent = (total - i) + '.';
+      var target = li.querySelector('.title') || li;
+      target.insertBefore(span, target.firstChild);
+    });
 
     var groups = [];
     container.querySelectorAll('h2.bibliography').forEach(function (h) {
