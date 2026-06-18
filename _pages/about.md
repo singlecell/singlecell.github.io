@@ -28,7 +28,7 @@ latest_posts:
 .post-header .post-title .font-weight-bold,
 #navbar .navbar-brand .font-weight-bold { font-weight: 400 !important; }
 
-/* ----- Research interests (relocated after the publications via JS) ----- */
+/* ----- Research interests (shown before the selected publications) ----- */
 #research-interests { margin-top: 2rem; }
 #research-interests .ri-intro {
   margin: 0 0 1.1rem; color: var(--global-text-color);
@@ -130,36 +130,3 @@ Tel: +86-21-51322417 &nbsp;·&nbsp; Email: [linnanli@shutcm.edu.cn](mailto:linna
   </div>
 </div>
 </div>
-
-<script>
-(function () {
-  function relocate() {
-    var block = document.getElementById('research-interests');
-    if (!block) return;
-    var article = block.closest('article');
-    if (!article) return;
-    // Prefer placing it right after the selected-publications list; otherwise
-    // before the social icons; otherwise at the end of the article.
-    var pubs = article.querySelector('.publications');
-    var social = article.querySelector('.social');
-    if (pubs) {
-      // step past any trailing "more" link that follows the list
-      var anchor = pubs;
-      while (anchor.nextElementSibling &&
-             anchor.nextElementSibling !== social &&
-             anchor.nextElementSibling.classList.contains('more-info') === false &&
-             /^(DIV|P)$/.test(anchor.nextElementSibling.tagName) &&
-             anchor.nextElementSibling.querySelector('a[href*="publications"]')) {
-        anchor = anchor.nextElementSibling;
-      }
-      anchor.parentNode.insertBefore(block, anchor.nextSibling);
-    } else if (social) {
-      article.insertBefore(block, social);
-    } else {
-      article.appendChild(block);
-    }
-  }
-  if (document.readyState !== 'loading') relocate();
-  else document.addEventListener('DOMContentLoaded', relocate);
-})();
-</script>
