@@ -60,24 +60,38 @@
   .hero-actions { justify-content: center; }
 }
 
-/* ===== Research interests (shown before the selected publications) ===== */
-#research-interests { margin-top: 2rem; }
-#research-interests .ri-intro { margin: 0 0 1.1rem; color: var(--global-text-color); }
-#research-interests .ri-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 1.6rem; }
-#research-interests .ri-tag {
-  padding: 4px 12px; border-radius: 6px; font-size: 0.85rem; line-height: 1.6;
-  color: var(--global-text-color); background: transparent;
-  border: 1px solid var(--global-divider-color, rgba(128,128,128,0.3));
-  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+/* ===== Research interests — card grid (liamcli "highlights" style) ===== */
+#research-interests { margin-top: 3.5rem; }
+#research-interests h2 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; margin: 0 0 0.6rem;
 }
-#research-interests .ri-tag:hover { color: #fff; background: var(--global-theme-color); border-color: var(--global-theme-color); }
-#research-interests .ri-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 1.6rem; }
-@media (max-width: 576px) { #research-interests .ri-grid { grid-template-columns: 1fr; } }
-#research-interests .ri-item { display: flex; gap: 0.6rem; }
-#research-interests .ri-item .ri-bullet { flex: 0 0 auto; width: 6px; height: 6px; margin-top: 0.55rem; border-radius: 50%; background: var(--global-theme-color); }
-#research-interests .ri-item h4 { margin: 0 0 0.15rem; font-size: 1rem; font-weight: 600; color: var(--global-text-color); }
-#research-interests .ri-item p { margin: 0; font-size: 0.9rem; line-height: 1.5; color: var(--global-text-color); opacity: 0.8; }
-</style> <div id="hero-intro"> <p>I develop new mass spectrometry, chromatography, and sample-pretreatment technologies for the precise analysis of complex natural-medicine systems.</p> <p>Ph.D. in analytical chemistry from Peking University · B.S. in chemistry from Sichuan University.</p> </div> <div id="hero-actions"> <a class="hero-btn primary" href="mailto:linnanli@shutcm.edu.cn">✉  Email</a> <a class="hero-btn secondary" href="/publications/">Publications</a> </div> <p>Research centers on new mass spectrometry, chromatography, and sample-pretreatment technologies for the precise analysis of complex natural-medicine systems — spanning the discovery and characterization of active ingredients, endogenous molecular targeting analysis and metabolomics, green-chemistry strategies, and the quality control and safety evaluation of natural products.</p> <h4 id="affiliations">Affiliations</h4> <p>State Key Laboratory of Discovery and Utilization of Functional Components in Traditional Chinese Medicine<br> MOE Key Laboratory of Standardization of Chinese Medicines<br> SATCM Key Laboratory of New Resources and Quality Evaluation of Chinese Medicines<br> Shanghai Key Laboratory of Compound Chinese Medicines</p> <h4 id="contact">Contact</h4> <p>Room 908, International Center for Standardization of Chinese Medicine<br> 1200 Cailun Road, Zhangjiang Hi-Tech Park, Pudong District, Shanghai 201203, China<br> Tel: +86-21-51322417  ·  Email: <a href="mailto:linnanli@shutcm.edu.cn">linnanli@shutcm.edu.cn</a></p> <div id="research-interests"> <h2>research interests</h2> <p class="ri-intro">Developing next-generation mass spectrometry, chromatography, and sample-pretreatment technologies for the precise analysis of complex natural-medicine systems — from discovering active ingredients to evaluating product quality and safety.</p> <div class="ri-tags"> <span class="ri-tag">Mass Spectrometry</span> <span class="ri-tag">Chromatography</span> <span class="ri-tag">Sample Pretreatment</span> <span class="ri-tag">Natural Products</span> <span class="ri-tag">Metabolomics</span> <span class="ri-tag">Molecular Targeting</span> <span class="ri-tag">Green Chemistry</span> <span class="ri-tag">Quality Control</span> </div> <div class="ri-grid"> <div class="ri-item"> <span class="ri-bullet"></span> <div> <h4>Analytical Technology Innovation</h4> <p>New mass spectrometry, chromatography, and sample-pretreatment methods for complex natural-medicine systems.</p> </div> </div> <div class="ri-item"> <span class="ri-bullet"></span> <div> <h4>Active Ingredient Discovery</h4> <p>Discovery and structural characterization of bioactive constituents in traditional Chinese medicines.</p> </div> </div> <div class="ri-item"> <span class="ri-bullet"></span> <div> <h4>Targeting Analysis &amp; Metabolomics</h4> <p>Endogenous molecular targeting analysis and metabolomics to unravel mechanisms of action.</p> </div> </div> <div class="ri-item"> <span class="ri-bullet"></span> <div> <h4>Quality Control &amp; Safety</h4> <p>Green-chemistry strategies plus quality control and safety evaluation of natural products.</p> </div> </div> </div> </div> <script>
+#research-interests .ri-intro {
+  margin: 0 0 1.8rem; max-width: 46rem;
+  color: var(--global-text-color); opacity: 0.85; line-height: 1.6;
+}
+.ri-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+@media (max-width: 768px) { .ri-cards { grid-template-columns: 1fr; } }
+.ri-card {
+  background: var(--global-card-bg-color, var(--global-bg-color, #fff));
+  border: 1px solid var(--global-divider-color, rgba(128,128,128,0.18));
+  border-radius: 14px; padding: 1.7rem 1.8rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.ri-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  border-color: var(--global-theme-color);
+}
+.ri-icon {
+  width: 46px; height: 46px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--global-theme-color); color: #fff; margin-bottom: 1.1rem;
+}
+.ri-icon svg { width: 24px; height: 24px; }
+.ri-card h3 { font-size: 1.2rem; font-weight: 700; margin: 0 0 0.4rem; color: var(--global-text-color); }
+.ri-card .ri-sub { font-size: 0.85rem; font-weight: 500; color: var(--global-theme-color); margin: 0 0 0.7rem; }
+.ri-card .ri-desc { font-size: 0.95rem; line-height: 1.6; margin: 0; color: var(--global-text-color); opacity: 0.8; }
+</style> <div id="hero-intro"> <p>I develop new mass spectrometry, chromatography, and sample-pretreatment technologies for the precise analysis of complex natural-medicine systems.</p> <p>Ph.D. in analytical chemistry from Peking University · B.S. in chemistry from Sichuan University.</p> </div> <div id="hero-actions"> <a class="hero-btn primary" href="mailto:linnanli@shutcm.edu.cn">✉  Email</a> <a class="hero-btn secondary" href="/publications/">Publications</a> </div> <p>Research centers on new mass spectrometry, chromatography, and sample-pretreatment technologies for the precise analysis of complex natural-medicine systems — spanning the discovery and characterization of active ingredients, endogenous molecular targeting analysis and metabolomics, green-chemistry strategies, and the quality control and safety evaluation of natural products.</p> <h4 id="affiliations">Affiliations</h4> <p>State Key Laboratory of Discovery and Utilization of Functional Components in Traditional Chinese Medicine<br> MOE Key Laboratory of Standardization of Chinese Medicines<br> SATCM Key Laboratory of New Resources and Quality Evaluation of Chinese Medicines<br> Shanghai Key Laboratory of Compound Chinese Medicines</p> <h4 id="contact">Contact</h4> <p>Room 908, International Center for Standardization of Chinese Medicine<br> 1200 Cailun Road, Zhangjiang Hi-Tech Park, Pudong District, Shanghai 201203, China<br> Tel: +86-21-51322417  ·  Email: <a href="mailto:linnanli@shutcm.edu.cn">linnanli@shutcm.edu.cn</a></p> <div id="research-interests"> <h2>Research Interests</h2> <p class="ri-intro">Developing next-generation mass spectrometry, chromatography, and sample-pretreatment technologies for the precise analysis of complex natural-medicine systems — from discovering active ingredients to evaluating product quality and safety.</p> <div class="ri-cards"> <div class="ri-card"> <div class="ri-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"></path><path d="M10 3v6l-5.4 9.3A1.5 1.5 0 0 0 5.9 21h12.2a1.5 1.5 0 0 0 1.3-2.7L14 9V3"></path><path d="M7 14h10"></path></svg></div> <h3>Analytical Technology Innovation</h3> <p class="ri-sub">Mass Spectrometry · Chromatography · Sample Pretreatment</p> <p class="ri-desc">Developing new mass spectrometry, chromatography, and sample-pretreatment methods for the precise analysis of complex natural-medicine systems.</p> </div> <div class="ri-card"> <div class="ri-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg></div> <h3>Active Ingredient Discovery</h3> <p class="ri-sub">Natural Products</p> <p class="ri-desc">Discovery and structural characterization of bioactive constituents in traditional Chinese medicines.</p> </div> <div class="ri-card"> <div class="ri-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.2"></circle></svg></div> <h3>Targeting Analysis &amp; Metabolomics</h3> <p class="ri-sub">Metabolomics · Molecular Targeting</p> <p class="ri-desc">Endogenous molecular targeting analysis and metabolomics to unravel mechanisms of action.</p> </div> <div class="ri-card"> <div class="ri-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.6-3.1 7.6-7 9-3.9-1.4-7-4.4-7-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg></div> <h3>Quality Control &amp; Safety</h3> <p class="ri-sub">Green Chemistry · Quality Control</p> <p class="ri-desc">Green-chemistry strategies plus the quality control and safety evaluation of natural products.</p> </div> </div> </div> <script>
 (function () {
   function build() {
     var article = document.querySelector('.post article') || document.querySelector('article');
