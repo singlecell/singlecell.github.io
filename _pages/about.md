@@ -121,6 +121,15 @@ latest_posts:
 .ri-card .ri-sub { font-size: 0.85rem; font-weight: 500; color: var(--global-theme-color); margin: 0 0 0.7rem; }
 .ri-card .ri-desc { font-size: 0.95rem; line-height: 1.6; margin: 0; color: var(--global-text-color); opacity: 0.8; }
 
+/* ===== Selected publications — reclaim the empty right column for a wider layout ===== */
+@media (min-width: 576px) {
+  .post .publications .bibliography .row > .col-sm-8 {
+    flex: 0 0 auto;
+    width: 83.3333%;
+    max-width: 83.3333%;
+  }
+}
+
 /* ===== Each block fills one screen ===== */
 .full-section {
   min-height: 100vh;
@@ -137,7 +146,9 @@ latest_posts:
 }
 @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
 .contact-grid h4 { font-size: 1.05rem; font-weight: 600; margin: 0 0 0.6rem; color: var(--global-text-color); }
-.contact-grid p { margin: 0; line-height: 1.75; color: var(--global-text-color); opacity: 0.85; }
+.contact-grid p { margin: 0; line-height: 1.75; color: var(--global-text-color); opacity: 0.85; text-wrap: pretty; }
+/* Keep multi-word proper names from breaking across lines */
+.contact-grid .nb { white-space: nowrap; }
 #end-section .social { margin-top: 2.2rem; text-align: left; }
 @media (max-width: 768px) { #end-section .social { text-align: center; } }
 
@@ -207,17 +218,17 @@ latest_posts:
 <div class="contact-grid">
   <div>
     <h4>Affiliations</h4>
-    <p>State Key Laboratory of Discovery and Utilization of Functional Components in Traditional Chinese Medicine<br>
-    MOE Key Laboratory of Standardization of Chinese Medicines<br>
-    SATCM Key Laboratory of New Resources and Quality Evaluation of Chinese Medicines<br>
-    Shanghai Key Laboratory of Compound Chinese Medicines</p>
+    <p>State Key Laboratory of Discovery and Utilization of Functional Components in <span class="nb">Traditional Chinese Medicine</span><br>
+    MOE Key Laboratory of Standardization of <span class="nb">Chinese Medicines</span><br>
+    SATCM Key Laboratory of New Resources and Quality Evaluation of <span class="nb">Chinese Medicines</span><br>
+    Shanghai Key Laboratory of Compound <span class="nb">Chinese Medicines</span></p>
   </div>
   <div>
     <h4>Contact</h4>
-    <p>Room 908, International Center for Standardization of Chinese Medicine<br>
-    1200 Cailun Road, Zhangjiang Hi-Tech Park, Pudong District, Shanghai 201203, China<br>
-    Tel: +86-21-51322417<br>
-    Email: <a href="mailto:linnanli@shutcm.edu.cn">linnanli@shutcm.edu.cn</a></p>
+    <p>Room 908, International Center for Standardization of <span class="nb">Chinese Medicine</span><br>
+    1200 <span class="nb">Cailun Road</span>, <span class="nb">Zhangjiang Hi-Tech Park</span>, <span class="nb">Pudong District</span>, <span class="nb">Shanghai 201203</span>, China<br>
+    Tel: <span class="nb">+86-21-51322417</span><br>
+    Email: <a class="nb" href="mailto:linnanli@shutcm.edu.cn">linnanli@shutcm.edu.cn</a></p>
   </div>
 </div>
 </div>
