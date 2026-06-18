@@ -60,26 +60,19 @@ cv:
         end_date: 2020-07
 
     Research interests:
-      - name: Analytical technology innovation
-        icon: fa-solid fa-flask
-        keywords: "New mass spectrometry, chromatography, and sample-pretreatment technologies for the precise analysis of complex natural-medicine systems"
-      - name: Active ingredient discovery
-        icon: fa-solid fa-magnifying-glass
-        keywords: "Discovery and structural characterization of bioactive constituents in traditional Chinese medicines"
-      - name: Targeting analysis & metabolomics
-        icon: fa-solid fa-bullseye
-        keywords: "Endogenous molecular targeting analysis and metabolomics to unravel mechanisms of action"
-      - name: Quality control & safety
-        icon: fa-solid fa-shield-halved
-        keywords: "Green-chemistry strategies plus the quality control and safety evaluation of natural products"
+      - label: Analytical technology innovation
+        details: "New mass spectrometry, chromatography, and sample-pretreatment technologies for the precise analysis of complex natural-medicine systems"
+      - label: Active ingredient discovery
+        details: "Discovery and structural characterization of bioactive constituents in traditional Chinese medicines"
+      - label: Targeting analysis & metabolomics
+        details: "Endogenous molecular targeting analysis and metabolomics to unravel mechanisms of action"
+      - label: Quality control & safety
+        details: "Green-chemistry strategies plus the quality control and safety evaluation of natural products"
 
     Academic service:
-      - name: Editorial boards
-        icon: fa-solid fa-pen
-        keywords: "Associate Editor, Future Journal of Pharmaceutical Sciences; Young Editorial Board Member of Journal of Analytical Testing, Biomedical Analysis, Phytochemical Analysis, Chinese Herbal Medicine, and Acta Materia Medica; Guest Editor, Frontiers in Chemistry"
-      - name: Committees & standards
-        icon: fa-solid fa-users
-        keywords: "Expert, Working Group 1, ISO/TC 249 (Traditional Chinese Medicine), ISO; Member, Medical Mass Spectrometry Committee, China Association for Instrumental Analysis (CAIA); Young Committee Member, Pharmaceutical Analysis Professional Committee, Shanghai Pharmaceutical Association"
-      - name: Reviewing
-        icon: fa-solid fa-magnifying-glass
-        keywords: "Peer reviewer for more than 20 SCI journals, including Advanced Science and Analytical Chemistry"
+      - label: Editorial boards
+        details: "Associate Editor, Future Journal of Pharmaceutical Sciences; Young Editorial Board Member of Journal of Analytical Testing, Biomedical Analysis, Phytochemical Analysis, Chinese Herbal Medicine, and Acta Materia Medica; Guest Editor, Frontiers in Chemistry"
+      - label: Committees & standards
+        details: "Expert, Working Group 1, ISO/TC 249 (Traditional Chinese Medicine), ISO; Member, Medical Mass Spectrometry Committee, China Association for Instrumental Analysis (CAIA); Young Committee Member, Pharmaceutical Analysis Professional Committee, Shanghai Pharmaceutical Association"
+      - label: Reviewing
+        details: "Peer reviewer for more than 20 SCI journals, including Advanced Science and Analytical Chemistry"
