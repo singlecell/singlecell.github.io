@@ -85,6 +85,7 @@ latest_posts:
 
 /* ===== Consistent section headings (match across the homepage) ===== */
 #research-interests h2,
+#end-section h2,
 .post article > h2 {
   font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; margin: 3.5rem 0 0.6rem;
   text-transform: capitalize;
@@ -119,6 +120,26 @@ latest_posts:
 .ri-card h3 { font-size: 1.2rem; font-weight: 700; margin: 0 0 0.4rem; color: var(--global-text-color); }
 .ri-card .ri-sub { font-size: 0.85rem; font-weight: 500; color: var(--global-theme-color); margin: 0 0 0.7rem; }
 .ri-card .ri-desc { font-size: 0.95rem; line-height: 1.6; margin: 0; color: var(--global-text-color); opacity: 0.8; }
+
+/* ===== Each block fills one screen ===== */
+.full-section {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 5rem 0; box-sizing: border-box;
+}
+#research-interests.full-section { margin-top: 0; }
+
+/* ===== Affiliations & Contact (relocated to the end) ===== */
+#end-section h2 { margin-top: 0 !important; }
+.contact-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 3rem; margin-top: 0.5rem;
+}
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-grid h4 { font-size: 1.05rem; font-weight: 600; margin: 0 0 0.6rem; color: var(--global-text-color); }
+.contact-grid p { margin: 0; line-height: 1.75; color: var(--global-text-color); opacity: 0.85; }
+#end-section .social { margin-top: 2.2rem; text-align: left; }
+@media (max-width: 768px) { #end-section .social { text-align: center; } }
 </style>
 
 <div id="hero-intro">
@@ -131,20 +152,7 @@ latest_posts:
 <a class="hero-btn secondary" href="{{ '/publications/' | relative_url }}">Publications</a>
 </div>
 
-#### Affiliations
-
-State Key Laboratory of Discovery and Utilization of Functional Components in Traditional Chinese Medicine<br>
-MOE Key Laboratory of Standardization of Chinese Medicines<br>
-SATCM Key Laboratory of New Resources and Quality Evaluation of Chinese Medicines<br>
-Shanghai Key Laboratory of Compound Chinese Medicines
-
-#### Contact
-
-Room 908, International Center for Standardization of Chinese Medicine<br>
-1200 Cailun Road, Zhangjiang Hi-Tech Park, Pudong District, Shanghai 201203, China<br>
-Tel: +86-21-51322417 &nbsp;·&nbsp; Email: [linnanli@shutcm.edu.cn](mailto:linnanli@shutcm.edu.cn)
-
-<div id="research-interests">
+<div id="research-interests" class="full-section">
 <h2>Research Interests</h2>
 <p class="ri-intro">My work spans the full chain of natural-medicine analysis — from discovering and characterizing active constituents, to decoding their molecular mechanisms, to safeguarding product quality and safety.</p>
 
@@ -176,28 +184,60 @@ Tel: +86-21-51322417 &nbsp;·&nbsp; Email: [linnanli@shutcm.edu.cn](mailto:linna
 </div>
 </div>
 
+<div id="end-section" class="full-section">
+<h2>Affiliations &amp; Contact</h2>
+<div class="contact-grid">
+  <div>
+    <h4>Affiliations</h4>
+    <p>State Key Laboratory of Discovery and Utilization of Functional Components in Traditional Chinese Medicine<br>
+    MOE Key Laboratory of Standardization of Chinese Medicines<br>
+    SATCM Key Laboratory of New Resources and Quality Evaluation of Chinese Medicines<br>
+    Shanghai Key Laboratory of Compound Chinese Medicines</p>
+  </div>
+  <div>
+    <h4>Contact</h4>
+    <p>Room 908, International Center for Standardization of Chinese Medicine<br>
+    1200 Cailun Road, Zhangjiang Hi-Tech Park, Pudong District, Shanghai 201203, China<br>
+    Tel: +86-21-51322417<br>
+    Email: <a href="mailto:linnanli@shutcm.edu.cn">linnanli@shutcm.edu.cn</a></p>
+  </div>
+</div>
+</div>
+
 <script>
 (function () {
   function build() {
     var article = document.querySelector('.post article') || document.querySelector('article');
-    if (!article || document.querySelector('.hero')) return;
-    var header = document.querySelector('.post-header');
-    var profile = article.querySelector('.profile');
-    var intro = document.getElementById('hero-intro');
-    var actions = document.getElementById('hero-actions');
-    if (!header || !profile) return; // degrade gracefully to default layout
+    if (!article) return;
 
-    var hero = document.createElement('div'); hero.className = 'hero';
-    var left = document.createElement('div'); left.className = 'hero-left';
-    var right = document.createElement('div'); right.className = 'hero-right';
+    // 1) Assemble the full-screen hero from the name header, intro, actions and photo.
+    if (!document.querySelector('.hero')) {
+      var header = document.querySelector('.post-header');
+      var profile = article.querySelector('.profile');
+      var intro = document.getElementById('hero-intro');
+      var actions = document.getElementById('hero-actions');
+      if (header && profile) {
+        var hero = document.createElement('div'); hero.className = 'hero';
+        var left = document.createElement('div'); left.className = 'hero-left';
+        var right = document.createElement('div'); right.className = 'hero-right';
+        left.appendChild(header);
+        if (intro) left.appendChild(intro);
+        if (actions) left.appendChild(actions);
+        right.appendChild(profile);
+        hero.appendChild(left);
+        hero.appendChild(right);
+        article.insertBefore(hero, article.firstChild);
+      }
+    }
 
-    left.appendChild(header);
-    if (intro) left.appendChild(intro);
-    if (actions) left.appendChild(actions);
-    right.appendChild(profile);
-    hero.appendChild(left);
-    hero.appendChild(right);
-    article.insertBefore(hero, article.firstChild);
+    // 2) Move the affiliations/contact section (and the social icons) to the very end.
+    var end = document.getElementById('end-section');
+    if (end && !end.dataset.moved) {
+      article.appendChild(end);
+      var social = article.querySelector('.social');
+      if (social) end.appendChild(social);
+      end.dataset.moved = '1';
+    }
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build);
   else build();
