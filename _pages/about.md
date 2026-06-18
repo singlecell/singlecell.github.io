@@ -145,16 +145,12 @@ latest_posts:
   gap: 2rem 3rem; margin-top: 0.5rem;
 }
 @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
-/* On wide desktops, widen this section past the narrow text column and give Contact the
-   larger share so the full address line stays on one row. Narrower windows keep the normal
-   two-column layout and let the line wrap (so it never overflows its column). */
-@media (min-width: 1150px) {
-  #end-section { width: min(94vw, 1080px); margin-left: 50%; transform: translateX(-50%); }
-  .contact-grid { grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr); }
-  .contact-grid .nb-line { white-space: nowrap; }
-}
 .contact-grid h4 { font-size: 1.05rem; font-weight: 600; margin: 0 0 0.6rem; color: var(--global-text-color); }
-.contact-grid p { margin: 0; line-height: 1.75; color: var(--global-text-color); opacity: 0.85; text-wrap: pretty; }
+/* Justify both columns (flush left and right edges) */
+.contact-grid p { margin: 0; line-height: 1.5; color: var(--global-text-color); opacity: 0.85; text-align: justify; text-wrap: pretty; }
+/* Each affiliation is its own item; gap between items is a touch larger than the line-wrap gap */
+.contact-grid .org { margin-bottom: 0.5rem; }
+.contact-grid .org:last-child { margin-bottom: 0; }
 /* Keep multi-word proper names from breaking across lines */
 .contact-grid .nb { white-space: nowrap; }
 #end-section .social { margin-top: 2.2rem; text-align: left; }
@@ -226,14 +222,14 @@ latest_posts:
 <div class="contact-grid">
   <div>
     <h4>Affiliations</h4>
-    <p>State Key Laboratory of Discovery and Utilization of Functional Components in <span class="nb">Traditional Chinese Medicine</span><br>
-    MOE Key Laboratory of Standardization of <span class="nb">Chinese Medicines</span><br>
-    SATCM Key Laboratory of New Resources and Quality Evaluation of <span class="nb">Chinese Medicines</span><br>
-    Shanghai Key Laboratory of Compound <span class="nb">Chinese Medicines</span></p>
+    <p class="org">State Key Laboratory of Discovery and Utilization of Functional Components in <span class="nb">Traditional Chinese Medicine</span></p>
+    <p class="org">MOE Key Laboratory of Standardization of <span class="nb">Chinese Medicines</span></p>
+    <p class="org">SATCM Key Laboratory of New Resources and Quality Evaluation of <span class="nb">Chinese Medicines</span></p>
+    <p class="org">Shanghai Key Laboratory of Compound <span class="nb">Chinese Medicines</span></p>
   </div>
   <div>
     <h4>Contact</h4>
-    <p><span class="nb-line">Room 908, International Center for Standardization of Chinese Medicine</span><br>
+    <p>Room 908, International Center for Standardization of <span class="nb">Chinese Medicine</span><br>
     1200 <span class="nb">Cailun Road</span>, <span class="nb">Zhangjiang Hi-Tech Park</span>, <span class="nb">Pudong District</span>, <span class="nb">Shanghai 201203</span>, China<br>
     Tel: <span class="nb">+86-21-51322417</span><br>
     Email: <a class="nb" href="mailto:linnanli@shutcm.edu.cn">linnanli@shutcm.edu.cn</a></p>
