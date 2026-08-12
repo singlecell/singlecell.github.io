@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-07-10'
+  last_updated: '2026-08-12'
 papers:
   hz55UEIAAAAJ:-f6ydRqryjwC:
     citations: 19
@@ -10,11 +10,11 @@ papers:
     title: "Metal\u2013organic frameworks induce autophagy in mouse embryonic fibroblast cells"
     year: '2018'
   hz55UEIAAAAJ:3fE2CSJIrl8C:
-    citations: 37
+    citations: 38
     title: Characterization of natural herbal medicines by thin-layer chromatography combined with laser ablation-assisted direct analysis in real-time mass spectrometry
     year: '2021'
   hz55UEIAAAAJ:4DMP91E08xMC:
-    citations: 51
+    citations: 53
     title: The history, stereochemistry, ethnopharmacology and quality assessment of borneol
     year: '2023'
   hz55UEIAAAAJ:4JMBOYKVnBMC:
@@ -26,7 +26,7 @@ papers:
     title: Rapid analysis of differential chemical compositions of Poria cocos using thin-layer chromatography spray ionization-mass spectrometry
     year: '2022'
   hz55UEIAAAAJ:5nxA0vEk-isC:
-    citations: 58
+    citations: 57
     title: Rapid identification and determination of pyrrolizidine alkaloids in herbal and food samples via direct analysis in real-time mass spectrometry
     year: '2021'
   hz55UEIAAAAJ:8k81kl-MbHgC:
@@ -47,14 +47,14 @@ papers:
     year: '2025'
   hz55UEIAAAAJ:GnPB-g6toBAC:
     citations: 3
-    title: 'Miniature Mass Spectrometry in Drug and Food Analysis: Bridging Laboratory and Field Applications'
+    title: 'Miniature mass spectrometry in drug and food analysis: Bridging laboratory and field applications'
     year: '2025'
   hz55UEIAAAAJ:HDshCWvjkbEC:
-    citations: 17
+    citations: 18
     title: Mass spectrometric analysis strategies for pyrrolizidine alkaloids
     year: '2024'
   hz55UEIAAAAJ:IWHjjKOFINEC:
-    citations: 18
+    citations: 20
     title: "An innovative processing driven efficient transformation of rare ginsenosides enhances anti-platelet aggregation potency of notoginseng by integrated analyses of processing \u2026"
     year: '2024'
   hz55UEIAAAAJ:IjCSPb-OGe4C:
@@ -62,7 +62,7 @@ papers:
     title: Metabolomic analysis of mouse embryonic fibroblast cells in response to autophagy induced by acute starvation
     year: '2016'
   hz55UEIAAAAJ:JV2RwH3_ST0C:
-    citations: 3
+    citations: 5
     title: LC-MS-based 3 M profiling strategy and network pharmacology reveal ginsenoside diversity and bioactivity transformation during decoction of the Shengmai formula
     year: '2025'
   hz55UEIAAAAJ:J_g5lzvAfSwC:
@@ -70,19 +70,19 @@ papers:
     title: "Novel insights into anti-inflammatory activity-related metabolic markers and biosynthetic regulatory mechanisms between principal and lateral roots of Aconitum carmichaelii \u2026"
     year: '2026'
   hz55UEIAAAAJ:L8Ckcad2t8MC:
-    citations: 47
+    citations: 48
     title: Red ginseng extracts ameliorate high-fat diet-induced obesity and insulin resistance by activating the intestinal TGR5-mediated bile acids signaling pathway
     year: '2023'
   hz55UEIAAAAJ:LkGwnXOMwfcC:
-    citations: 37
-    title: Rapid and sensitive analysis of progesterone by solid-phase extraction with amino-functionalized metal-organic frameworks coupled to direct analysis in real-time mass spectrometry
+    citations: 38
+    title: "Rapid and sensitive analysis of progesterone by solid-phase extraction with amino-functionalized metal-organic frameworks coupled to direct analysis in real-time mass \u2026"
     year: '2020'
   hz55UEIAAAAJ:M3NEmzRMIkIC:
     citations: 1
     title: Enhanced bile acid detection and analysis in liver fibrosis with pseudo-targeted metabolomics
     year: '2025'
   hz55UEIAAAAJ:M3ejUd6NZC8C:
-    citations: 36
+    citations: 37
     title: Mass spectrometry-based profiling and imaging strategy, a fit-for-purpose tool for unveiling the transformations of ginsenosides in Panax notoginseng during processing
     year: '2022'
   hz55UEIAAAAJ:NMxIlDl6LWMC:
@@ -98,11 +98,11 @@ papers:
     title: Enhanced-sensitivity profiling of natural products from TLC plates using a facile graphite-based LA-DART-MS platform
     year: '2026'
   hz55UEIAAAAJ:QIV2ME_5wuYC:
-    citations: 57
+    citations: 58
     title: Ion mobility mass spectrometry for the separation and characterization of small molecules
     year: '2023'
   hz55UEIAAAAJ:R3hNpaxXUhUC:
-    citations: 29
+    citations: 33
     title: 'Pharmacological mechanisms of traditional Chinese medicine against acute lung injury: from active ingredients to herbal formulae'
     year: '2024'
   hz55UEIAAAAJ:RGFaLdJalmkC:
@@ -110,7 +110,7 @@ papers:
     title: Unraveling the thermal release dynamics and pyrolysis signatures of agarwood by gas-liquid microextraction and gas chromatography-mass spectrometry
     year: '2026'
   hz55UEIAAAAJ:RHpTSmoSYBkC:
-    citations: 9
+    citations: 8
     title: "A versatile economic strategy by HPLC\u2013CAD for quantification of structurally diverse markers in quality control of Shengmai Formula from raw materials to preparations"
     year: '2024'
   hz55UEIAAAAJ:RYcK_YlVTxYC:
@@ -122,7 +122,7 @@ papers:
     title: "Metabolomic study of mouse embryonic fibroblast cells in response to autophagy based on high resolution gas chromatography\u2013mass spectrometry"
     year: '2018'
   hz55UEIAAAAJ:TFP_iSt0sucC:
-    citations: 8
+    citations: 9
     title: Rapid identification and on-site analysis by miniature mass spectrometry of chemical markers for fragrant rosewood authentication
     year: '2025'
   hz55UEIAAAAJ:TQgYirikUcIC:
@@ -146,11 +146,11 @@ papers:
     title: "Rapid authentication of agarwood by using liquid extraction surface analysis mass spectrometry (LESA\u2010MS)"
     year: '2020'
   hz55UEIAAAAJ:W7OEmFMy1HYC:
-    citations: 70
-    title: "Lipidomic analysis of plasma in patients with lacunar infarction using normal-phase/reversed-phase two-dimensional liquid chromatography\u2013quadrupole time-of-flight mass spectrometry"
+    citations: 71
+    title: "Lipidomic analysis of plasma in patients with lacunar infarction using normal-phase/reversed-phase two-dimensional liquid chromatography\u2013quadrupole time-of-flight mass \u2026"
     year: '2017'
   hz55UEIAAAAJ:WF5omc3nYNoC:
-    citations: 108
+    citations: 109
     title: "Recent advances in applications of metal\u2013organic frameworks for sample preparation in pharmaceutical analysis"
     year: '2020'
   hz55UEIAAAAJ:Wp0gIr-vW9MC:
@@ -158,12 +158,12 @@ papers:
     title: Advances in mass spectrometry imaging for toxicological analysis and safety evaluation of pharmaceuticals
     year: '2023'
   hz55UEIAAAAJ:Y0pCki6q_DkC:
-    citations: 98
+    citations: 97
     title: Facilely synthesized Eu3+ post-functionalized UiO-66-type metal-organic framework for rapid and highly selective detection of Fe3+ in aqueous solution
     year: '2018'
   hz55UEIAAAAJ:YFjsv_pBGBYC:
-    citations: 4
-    title: "Targeted metabolomics for multiple energy metabolites of tricarboxylic acid cycle, glycolysis and oxidative phosphorylation pathway in MAFLD: from analytical method development \u2026"
+    citations: 6
+    title: "Targeted metabolomics for multiple energy metabolites of tricarboxylic acid cycle, glycolysis and oxidative phosphorylation pathway in MAFLD: From analytical method development \u2026"
     year: '2025'
   hz55UEIAAAAJ:YsMSGLbcyi4C:
     citations: 5
@@ -174,7 +174,7 @@ papers:
     title: New strategies for analysis and evaluation of pharmaceuticals and natural products
     year: '2023'
   hz55UEIAAAAJ:Zph67rFs4hoC:
-    citations: 36
+    citations: 37
     title: Targeted metabolomics profiles serum fatty acids by HFD induced non-alcoholic fatty liver in mice based on GC-MS
     year: '2022'
   hz55UEIAAAAJ:_Qo2XoVZTnwC:
@@ -182,19 +182,19 @@ papers:
     title: Rapid analysis of bioactive compounds from citrus samples by direct analysis in real-time mass spectrometry combined with chemometrics
     year: '2024'
   hz55UEIAAAAJ:_kc_bZDykSQC:
-    citations: 8
+    citations: 9
     title: "Rapid identification of bear bile powder from other bile sources using chip\u2010based nano\u2010electrospray ionization tandem mass spectrometry"
     year: '2022'
   hz55UEIAAAAJ:aqlVkmm33-oC:
-    citations: 29
+    citations: 27
     title: Development of Green and Efficient Extraction of Bioactive Ginsenosides from Panax ginseng with Deep Eutectic Solvents
     year: '2022'
   hz55UEIAAAAJ:bEWYMUwI8FkC:
     citations: 9
-    title: On-Site Analysis and Rapid Authentication of Valuable Agarwood Samples by Paper Capillary Spray Miniature Mass Spectrometry
+    title: On-site analysis and rapid authentication of valuable agarwood samples by paper capillary spray miniature mass spectrometry
     year: '2025'
   hz55UEIAAAAJ:blknAaTinKkC:
-    citations: 1
+    citations: 2
     title: Unraveling pyrrolizidine alkaloid-induced liver damage with an integrative spatial lipidomics framework
     year: '2026'
   hz55UEIAAAAJ:d1gkVwhDpl0C:
@@ -202,7 +202,7 @@ papers:
     title: "Study on the interaction of uranyl with sulfated beta\u2010cyclodextrin by affinity capillary electrophoresis and molecular dynamics simulation"
     year: '2016'
   hz55UEIAAAAJ:dhFuZR0502QC:
-    citations: 22
+    citations: 23
     title: 'Targeted bile acids metabolomics in cholesterol gallbladder polyps and gallstones: From analytical method development towards application to clinical samples'
     year: '2023'
   hz55UEIAAAAJ:e5wmG9Sq2KIC:
@@ -211,14 +211,14 @@ papers:
     year: '2024'
   hz55UEIAAAAJ:eQOLeE2rZwMC:
     citations: 51
-    title: Facile one-step solvothermal synthesis of a luminescent europium metal-organic framework for rapid and selective sensing of uranyl ions.
+    title: 'Facile one-step solvothermal synthesis of a luminescent europium metal-organic framework for rapid and selective sensing of uranyl ions: Li L. et al.'
     year: '2019'
   hz55UEIAAAAJ:hC7cP41nSMkC:
     citations: 2
     title: "A comprehensive profiling of renin\u2013angiotensin system in mouse and human plasma by a rapid quantitative analysis of 14 angiotensin peptides using ultrahigh\u2010performance liquid \u2026"
     year: '2023'
   hz55UEIAAAAJ:hFOr9nPyWt4C:
-    citations: 156
+    citations: 167
     title: 'Rare ginsenosides: A unique perspective of ginseng research'
     year: '2024'
   hz55UEIAAAAJ:hMod-77fHWUC:
@@ -226,11 +226,11 @@ papers:
     title: Rapid on-site identification of pyrrolizidine alkaloids in herbal medicines using miniature mass spectrometry
     year: '2025'
   hz55UEIAAAAJ:hqOjcs7Dif8C:
-    citations: 98
+    citations: 100
     title: Development and applications of deep eutectic solvent derived functional materials in chromatographic separation
     year: '2021'
   hz55UEIAAAAJ:iH-uZ7U-co4C:
-    citations: 8
+    citations: 9
     title: 'An integrated 3-M workflow for accelerated annotation of natural products: Flavonoids in Daemonorops draco as a case study'
     year: '2025'
   hz55UEIAAAAJ:isC4tDSrTZIC:
@@ -238,7 +238,7 @@ papers:
     title: "A complementary and integrated strategy for multicomponent characterization and attribution of Danning tablet based on convergence and liquid chromatography combined with mass \u2026"
     year: '2025'
   hz55UEIAAAAJ:kNdYIx-mwKoC:
-    citations: 40
+    citations: 41
     title: Advances in analytical techniques and quality control of traditional Chinese medicine injections
     year: '2021'
   hz55UEIAAAAJ:mVmsd5A6BfQC:
@@ -247,29 +247,29 @@ papers:
     year: '2022'
   hz55UEIAAAAJ:ns9cj8rnVeAC:
     citations: 0
-    title: A Green and Efficient Boronate Affinity Solid-Phase Extraction Strategy for Ginsenosides Enrichment Based on Dendritic Mesoporous Silica
+    title: A green and efficient boronate affinity solid-phase extraction strategy for ginsenosides enrichment based on dendritic mesoporous silica
     year: '2026'
   hz55UEIAAAAJ:qUcmZB5y_30C:
-    citations: 5
+    citations: 8
     title: 'Mass spectrometry imaging: an emerging technology in plant molecular physiology'
     year: '2024'
   hz55UEIAAAAJ:qjMakFHDy7sC:
-    citations: 225
+    citations: 229
     title: "A combined experimental and theoretical study on the extraction of uranium by amino-derived metal\u2013organic frameworks through post-synthetic strategy"
     year: '2016'
   hz55UEIAAAAJ:qxL8FJ1GzNcC:
-    citations: 14
+    citations: 15
     title: "A complementary chromatographic strategy for integrated components characterization of Imperatae Rhizoma based on convergence and liquid chromatography combined with mass \u2026"
     year: '2022'
   hz55UEIAAAAJ:r0BpntZqJG4C:
-    citations: 4
+    citations: 5
     title: Metabolomics as an emerging tool for the pharmacological and toxicological studies on Aconitum alkaloids
     year: '2025'
   hz55UEIAAAAJ:ufrVoPGSRksC:
     citations: 8
-    title: "Fully automated chip-based nanoelectrospray ionization-mass spectrometry as an effective tool for rapid and high-throughput screening of 5\u03B1-reductase inhibitors."
+    title: "Fully automated chip-based nanoelectrospray ionization-mass spectrometry as an effective tool for rapid and high-throughput screening of 5\u03B1-reductase inhibitors: Zheng R. et al."
     year: '2020'
   hz55UEIAAAAJ:zYLM7Y9cAGgC:
-    citations: 148
-    title: "Rapid and specific luminescence sensing of Cu (II) ions with a porphyrinic metal\u2013organic framework"
+    citations: 147
+    title: "Rapid and specific luminescence sensing of Cu(ii) ions with a porphyrinic metal\u2013organic framework"
     year: '2017'
