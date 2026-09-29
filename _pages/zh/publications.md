@@ -1,8 +1,9 @@
 ---
 ref: publications
+lang: zh
 layout: page
-permalink: /publications/
-title: publications
+permalink: /zh/publications/
+title: 论文发表
 description:
 nav: true
 nav_order: 2

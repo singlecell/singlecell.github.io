@@ -1,0 +1,78 @@
+# Chinese CV, rendered at /zh/cv/. Keep the structure in sync with _data/cv.yml.
+# Section keys stay in English so the theme picks the right renderer;
+# their displayed Chinese headings come from _data/i18n.yml (zh.cv.sections).
+cv:
+  name: Linnan Li
+  label: 博士，副教授
+  email: linnanli@shutcm.edu.cn
+  phone: +86-21-51322417
+  location: 中国上海
+  image: ""
+  summary: >
+    上海中医药大学中药研究所副教授。研究方向为发展质谱、色谱与样品前处理技术，
+    用于天然药物活性成分的发现与精准表征、内源性分子靶向分析与代谢组学、
+    绿色化学策略，以及天然产物的质量控制与安全性评价。
+
+  social_networks:
+    - network: GoogleScholar
+      username: hz55UEIAAAAJ
+    - network: ORCID
+      username: 0000-0001-7394-8095
+
+  sections:
+    Education:
+      - institution: 北京大学
+        location: 中国北京
+        area: 分析化学
+        studyType: 博士
+        start_date: 2013-09
+        end_date: 2018-07
+        highlights:
+          - "导师：刘虎威 教授"
+
+      - institution: 四川大学
+        location: 中国成都
+        area: 化学
+        studyType: 学士
+        start_date: 2009-09
+        end_date: 2013-07
+        highlights:
+          - "导师：李梦龙 教授"
+
+    Experience:
+      - company: 上海中医药大学
+        position: 副教授
+        location: 中国上海
+        start_date: 2021-01
+        end_date: 至今
+        summary: 中药研究所
+
+      - company: 上海中医药大学
+        position: 助理研究员
+        location: 中国上海
+        start_date: 2020-07
+        end_date: 2020-12
+
+      - company: 上海中医药大学
+        position: 博士后
+        location: 中国上海
+        start_date: 2018-07
+        end_date: 2020-07
+
+    Research interests:
+      - label: 分析技术创新
+        details: "发展质谱、色谱与样品前处理新技术，用于复杂天然药物体系的精准分析"
+      - label: 活性成分发现
+        details: "中药中生物活性成分的发现与结构表征"
+      - label: 靶向分析与代谢组学
+        details: "通过内源性分子靶向分析与代谢组学揭示作用机制"
+      - label: 质量控制与安全性
+        details: "绿色化学策略，以及天然产物的质量控制与安全性评价"
+
+    Academic service:
+      - label: 期刊任职
+        details: "Future Journal of Pharmaceutical Sciences 副主编；Journal of Analytical Testing、Biomedical Analysis、Phytochemical Analysis、Chinese Herbal Medicine、Acta Materia Medica 青年编委；Frontiers in Chemistry 客座编辑"
+      - label: 学术组织与标准化
+        details: "国际标准化组织中医药技术委员会（ISO/TC 249）第一工作组注册专家；中国分析测试协会医学质谱专业委员会委员；上海市药学会药物分析专业委员会青年委员"
+      - label: 审稿
+        details: "担任 Advanced Science、Analytical Chemistry 等 20 余种 SCI 期刊审稿人"

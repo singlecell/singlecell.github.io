@@ -1,4 +1,5 @@
 ---
+ref: research
 layout: page
 permalink: /research/
 title: Research
@@ -7,62 +8,7 @@ nav: true
 nav_order: 1
 ---
 
-<style>
-/* keep the family name bold in the navbar on this page too */
-#navbar .navbar-brand.title { font-weight: 700 !important; }
-#navbar .navbar-brand .font-weight-bold { font-weight: 400 !important; }
-
-.research-intro {
-  max-width: 46rem; margin: 0 0 3rem;
-  font-size: 1.1rem; line-height: 1.75;
-  color: var(--global-text-color); opacity: 0.88; text-wrap: pretty;
-}
-
-.research-area { margin: 0 0 4rem; }
-.research-area:last-child { margin-bottom: 1rem; }
-
-.ra-head { display: flex; align-items: flex-start; gap: 1.1rem; margin-bottom: 1rem; }
-.ra-icon {
-  flex: 0 0 auto; width: 52px; height: 52px; border-radius: 13px;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--global-theme-color); color: #fff;
-}
-.ra-icon svg { width: 28px; height: 28px; }
-.ra-head h2 {
-  font-size: clamp(1.6rem, 3.6vw, 2.1rem); font-weight: 700;
-  margin: 0.1rem 0 0.15rem; line-height: 1.2; text-transform: none;
-}
-.ra-head .ra-en { font-size: 0.9rem; font-weight: 500; color: var(--global-theme-color); margin: 0; letter-spacing: 0.02em; }
-
-.ra-lead {
-  max-width: 48rem; margin: 0 0 1.6rem;
-  font-size: 1rem; line-height: 1.85;
-  color: var(--global-text-color); opacity: 0.85; text-wrap: pretty;
-}
-
-.ra-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; }
-@media (max-width: 768px) { .ra-cards { grid-template-columns: 1fr; } }
-.ra-card {
-  background: var(--global-card-bg-color, var(--global-bg-color, #fff));
-  border: 1px solid var(--global-divider-color, rgba(128,128,128,0.18));
-  border-radius: 12px; padding: 1.3rem 1.45rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-.ra-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
-  border-color: var(--global-theme-color);
-}
-.ra-card h3 { font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem; color: var(--global-text-color); }
-.ra-card p { font-size: 0.93rem; line-height: 1.75; margin: 0; color: var(--global-text-color); opacity: 0.8; }
-
-.ra-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.3rem; }
-.ra-tag {
-  font-size: 0.8rem; padding: 0.3rem 0.7rem; border-radius: 999px;
-  border: 1px solid var(--global-divider-color, rgba(128,128,128,0.28));
-  color: var(--global-text-color); opacity: 0.85;
-}
-</style>
+{% include research_style.liquid %}
 
 <p class="research-intro">
 My research develops new analytical chemistry methods — centered on mass spectrometry and combined with chromatographic separation and sample preparation — to enable the precise analysis of complex natural-medicine systems. It unfolds along two complementary directions: <strong>in situ mass spectrometry</strong> brings the measurement to where the sample is, while <strong>precision profiling of natural medicines</strong> clarifies what the sample actually contains.

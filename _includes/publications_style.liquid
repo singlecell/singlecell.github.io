@@ -1,0 +1,35 @@
+<style>
+/* keep the family name bold in the navbar on this page too */
+#navbar .navbar-brand.title { font-weight: 700 !important; }
+#navbar .navbar-brand .font-weight-bold { font-weight: 400 !important; }
+
+#year-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 1.5rem; }
+#year-filter button {
+  cursor: pointer; padding: 4px 12px; border-radius: 6px; font-size: 0.85rem;
+  background: transparent; color: inherit;
+  border: 1px solid var(--global-divider-color, rgba(128,128,128,0.3));
+}
+#year-filter button:hover { border-color: var(--global-theme-color); }
+#year-filter button.active {
+  background: var(--global-theme-color); color: #fff; border-color: var(--global-theme-color);
+}
+
+/* Landscape, uniform preview thumbnails */
+@media (min-width: 576px) {
+  .publications .row > .abbr { flex: 0 0 30%; max-width: 30%; }
+}
+.publications .preview {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Reverse publication numbering */
+.publications .pub-number {
+  color: var(--global-theme-color);
+  font-weight: 700;
+  margin-right: 0.4em;
+}
+</style>

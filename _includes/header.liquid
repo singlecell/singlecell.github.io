@@ -15,14 +15,36 @@
   /* Home page only: hide the brand over the hero, reveal it on scroll (toggled by the home script) */
   #navbar .navbar-brand.title { transition: opacity 0.3s ease, transform 0.3s ease; }
   #navbar .navbar-brand.title.brand-hidden { opacity: 0; transform: translateY(-4px); pointer-events: none; }
+  /* Language switch (中文 / EN) */
+  #navbar .lang-switch {
+    display: inline-block; font-size: 0.85rem; font-weight: 500; line-height: 1;
+    padding: 0.3rem 0.55rem; border-radius: 6px; text-decoration: none;
+    color: var(--global-text-color);
+    border: 1px solid var(--global-divider-color, rgba(128,128,128,0.3));
+  }
+  #navbar .lang-switch:hover { color: var(--global-theme-color); border-color: var(--global-theme-color); }
 </style>
+
+{%- comment -%} Current language, its UI strings, and the matching page in the other language {%- endcomment -%}
+{%- assign page_lang = page.lang | default: 'en' -%}
+{%- assign t = site.data.i18n[page_lang] | default: site.data.i18n.en -%}
+{%- assign other = site.data.i18n[t.switch_to] -%}
+{%- assign switch_url = other.home -%}
+{%- if page.ref -%}
+  {%- for tp in site.pages -%}
+    {%- assign tp_lang = tp.lang | default: 'en' -%}
+    {%- if tp.ref == page.ref and tp_lang == t.switch_to -%}
+      {%- assign switch_url = tp.url -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
 
 <header>
   <!-- Nav Bar -->
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
     <div class="container">
       <!-- Brand: rendered identically on every page (family name bold) -->
-      <a class="navbar-brand title" id="site-brand" href="{{ site.baseurl }}/">
+      <a class="navbar-brand title" id="site-brand" href="{{ t.home | relative_url }}">
         {%- if site.title == 'blank' -%}
           {{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} <span class="fw-bold">{{ site.last_name }}</span>
         {%- else -%}
@@ -47,14 +69,14 @@
       <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav">
         <ul class="navbar-nav navbar-menu-list flex-nowrap">
           {% for page in site.pages %}
-            {% if page.permalink == '/' %} {% assign about_title = page.title %} {% endif %}
+            {% if page.permalink == t.home %} {% assign about_title = page.title %} {% endif %}
           {% endfor %}
 
           <!-- About -->
-          <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/' | relative_url }}">
+          <li class="nav-item {% if page.permalink == t.home %}active{% endif %}">
+            <a class="nav-link" href="{{ t.home | relative_url }}">
               {{- about_title }}
-              {% if page.permalink == '/' %}
+              {% if page.permalink == t.home %}
                 <span class="sr-only">(current)</span>
               {% endif %}
             </a>
@@ -63,7 +85,8 @@
           <!-- Other pages -->
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for p in sorted_pages %}
-            {% if p.nav and p.autogen == null %}
+            {% assign p_lang = p.lang | default: 'en' %}
+            {% if p.nav and p.autogen == null and p_lang == page_lang %}
               {% if p.dropdown %}
                 {% assign has_active_child = false %}
                 {% for child in p.children %}
@@ -129,6 +152,12 @@
               </button>
             </li>
           {% endif %}
+          <!-- Language switch -->
+          <li class="nav-item">
+            <a class="lang-switch" href="{{ switch_url | relative_url }}" hreflang="{{ other.html_lang }}" lang="{{ other.html_lang }}" title="{{ t.switch_title }}">
+              {{- t.switch_label -}}
+            </a>
+          </li>
           {% if site.enable_darkmode %}
             <!-- Toogle theme mode -->
             <li class="toggle-container">

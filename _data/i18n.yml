@@ -1,0 +1,53 @@
+# UI strings for the bilingual (English / Chinese) site.
+# A page's language comes from `lang:` in its front matter (default: en).
+# Pages that are translations of each other share the same `ref:` value.
+
+en:
+  html_lang: en
+  home: /
+  publications_url: /publications/
+  switch_to: zh
+  switch_label: 中文
+  switch_title: 切换到中文
+  selected_publications: selected publications
+  contact_note: Email is the best way to reach me.
+  filter_placeholder: Type to filter
+  all: All
+  cv_data: cv
+  cv:
+    contact: Contact Information
+    name: Name
+    title: Professional Title
+    email: Email
+    phone: Phone
+    location: Location
+    website: Website
+    summary: Professional Summary
+    sections: {}
+
+zh:
+  html_lang: zh-CN
+  home: /zh/
+  publications_url: /zh/publications/
+  switch_to: en
+  switch_label: EN
+  switch_title: Switch to English
+  selected_publications: 代表性论文
+  contact_note: 欢迎通过电子邮件与我联系。
+  filter_placeholder: 输入关键词筛选
+  all: 全部
+  cv_data: cv_zh
+  cv:
+    contact: 联系方式
+    name: 姓名
+    title: 职称
+    email: 电子邮件
+    phone: 电话
+    location: 地址
+    website: 网站
+    summary: 个人简介
+    sections:
+      Experience: 工作经历
+      Education: 教育经历
+      Research interests: 研究方向
+      Academic service: 学术兼职

@@ -1,0 +1,55 @@
+{%- assign page_lang = page.lang | default: 'en' -%}
+{%- assign t = site.data.i18n[page_lang] | default: site.data.i18n.en -%}
+<script>
+(function () {
+  function init() {
+    var container = document.querySelector('.publications');
+    var bar = document.getElementById('year-filter');
+    if (!container || !bar) return;
+
+    // Number every paper in reverse order: newest (top) = highest, oldest = 1.
+    var items = container.querySelectorAll('ol.bibliography > li');
+    var total = items.length;
+    items.forEach(function (li, i) {
+      if (li.querySelector('.pub-number')) return;
+      var span = document.createElement('span');
+      span.className = 'pub-number';
+      span.textContent = (total - i) + '.';
+      var target = li.querySelector('.title') || li;
+      target.insertBefore(span, target.firstChild);
+    });
+
+    var groups = [];
+    container.querySelectorAll('h2.bibliography').forEach(function (h) {
+      var ol = h.nextElementSibling;
+      while (ol && ol.tagName !== 'OL') ol = ol.nextElementSibling;
+      groups.push({ year: h.textContent.trim(), h: h, ol: ol });
+    });
+
+    function show(year) {
+      groups.forEach(function (g) {
+        var on = (year === 'All' || g.year === year);
+        g.h.style.display = on ? '' : 'none';
+        if (g.ol) g.ol.style.display = on ? '' : 'none';
+      });
+      bar.querySelectorAll('button').forEach(function (b) {
+        b.classList.toggle('active', b.dataset.year === year);
+      });
+    }
+
+    function addBtn(label, val) {
+      var b = document.createElement('button');
+      b.textContent = label;
+      b.dataset.year = val;
+      b.addEventListener('click', function () { show(val); });
+      bar.appendChild(b);
+    }
+
+    addBtn({{ t.all | jsonify }}, 'All');
+    groups.forEach(function (g) { addBtn(g.year, g.year); });
+    show('All');
+  }
+  if (document.readyState !== 'loading') init();
+  else document.addEventListener('DOMContentLoaded', init);
+})();
+</script>

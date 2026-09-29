@@ -1,0 +1,13 @@
+{%- comment -%}
+  hreflang links pointing at every translation of this page (pages sharing the same `ref`).
+{%- endcomment -%}
+{%- if page.ref -%}
+  {%- assign translations = site.pages | where: 'ref', page.ref -%}
+  {%- for tp in translations -%}
+    {%- assign tp_lang = tp.lang | default: 'en' -%}
+    <link rel="alternate" hreflang="{{ site.data.i18n[tp_lang].html_lang }}" href="{{ tp.url | absolute_url }}">
+    {%- if tp_lang == 'en' %}
+    <link rel="alternate" hreflang="x-default" href="{{ tp.url | absolute_url }}">
+    {%- endif %}
+  {%- endfor -%}
+{%- endif -%}

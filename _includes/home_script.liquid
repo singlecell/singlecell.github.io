@@ -1,0 +1,53 @@
+<script>
+(function () {
+  function build() {
+    // The navbar (brand + icon-only search) is rendered consistently by _includes/header.liquid.
+    // Home-only: hide the brand over the hero (the big name is already there); reveal on scroll.
+    var brandEl = document.querySelector('#navbar .navbar-brand');
+    if (brandEl && !brandEl.dataset.autohide) {
+      brandEl.dataset.autohide = '1';
+      var updateBrand = function () {
+        if (window.scrollY > window.innerHeight * 0.6) brandEl.classList.remove('brand-hidden');
+        else brandEl.classList.add('brand-hidden');
+      };
+      updateBrand();
+      window.addEventListener('scroll', updateBrand, { passive: true });
+      window.addEventListener('resize', updateBrand, { passive: true });
+    }
+
+    var article = document.querySelector('.post article') || document.querySelector('article');
+    if (!article) return;
+
+    // 1) Assemble the full-screen hero from the name header, intro, actions and photo.
+    if (!document.querySelector('.hero')) {
+      var header = document.querySelector('.post-header');
+      var profile = article.querySelector('.profile');
+      var intro = document.getElementById('hero-intro');
+      var actions = document.getElementById('hero-actions');
+      if (header && profile) {
+        var hero = document.createElement('div'); hero.className = 'hero';
+        var left = document.createElement('div'); left.className = 'hero-left';
+        var right = document.createElement('div'); right.className = 'hero-right';
+        left.appendChild(header);
+        if (intro) left.appendChild(intro);
+        if (actions) left.appendChild(actions);
+        right.appendChild(profile);
+        hero.appendChild(left);
+        hero.appendChild(right);
+        article.insertBefore(hero, article.firstChild);
+      }
+    }
+
+    // 2) Move the affiliations/contact section (and the social icons) to the very end.
+    var end = document.getElementById('end-section');
+    if (end && !end.dataset.moved) {
+      article.appendChild(end);
+      var social = article.querySelector('.social');
+      if (social) end.appendChild(social);
+      end.dataset.moved = '1';
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build);
+  else build();
+})();
+</script>
