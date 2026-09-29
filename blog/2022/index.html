@@ -11,9 +11,14 @@
   #navbar .navbar-brand.title .fw-bold { font-weight: 700; }
   /* Roomier links, all items vertically centered on one row */
   #navbar .navbar-nav { gap: 1.7rem; align-items: center; }
-  #navbar .navbar-nav .nav-link { padding-left: 0.25rem; padding-right: 0.25rem; }
+  #navbar .navbar-nav .nav-link { padding-left: 0.25rem; padding-right: 0.25rem; white-space: nowrap; }
   /* Drop the theme's 4px downward nudge so the theme toggle lines up with the row */
   #navbar #light-toggle { transform: none; }
+  /* Tighter spacing on narrow desktop/tablet widths so all items stay on one line */
+  @media (min-width: 577px) and (max-width: 991px) {
+    #navbar .navbar-nav { gap: 0.55rem; }
+    #navbar .navbar-nav .nav-link { font-size: 0.9rem; }
+  }
   @media (max-width: 576px) {
     #navbar .navbar-nav { gap: 0.6rem; }
     #navbar .navbar-brand.title { font-size: 1.05rem; }
@@ -23,7 +28,7 @@
   #navbar .navbar-brand.title.brand-hidden { opacity: 0; transform: translateY(-4px); pointer-events: none; }
   /* Language switch (中文 / EN) */
   #navbar .lang-switch {
-    display: inline-block; font-size: 0.85rem; font-weight: 500; line-height: 1;
+    display: inline-block; font-size: 0.85rem; font-weight: 500; line-height: 1; white-space: nowrap;
     padding: 0.3rem 0.55rem; border-radius: 6px; text-decoration: none;
     color: var(--global-text-color);
     border: 1px solid var(--global-divider-color, rgba(128,128,128,0.3));
