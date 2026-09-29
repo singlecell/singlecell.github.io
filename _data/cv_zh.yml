@@ -2,14 +2,14 @@
 # Section keys stay in English so the theme picks the right renderer;
 # their displayed Chinese headings come from _data/i18n.yml (zh.cv.sections).
 cv:
-  name: Linnan Li
-  label: 博士，副教授
+  name: 李林楠
+  label: 博士，副研究员
   email: linnanli@shutcm.edu.cn
   phone: +86-21-51322417
   location: 中国上海
   image: ""
   summary: >
-    上海中医药大学中药研究所副教授。研究方向为发展质谱、色谱与样品前处理技术，
+    上海中医药大学中药研究所副研究员，硕士研究生导师。研究方向为发展质谱、色谱与样品前处理技术，
     用于天然药物活性成分的发现与精准表征、内源性分子靶向分析与代谢组学、
     绿色化学策略，以及天然产物的质量控制与安全性评价。
 
@@ -41,7 +41,7 @@ cv:
 
     Experience:
       - company: 上海中医药大学
-        position: 副教授
+        position: 副研究员
         location: 中国上海
         start_date: 2021-01
         end_date: 至今
@@ -71,8 +71,8 @@ cv:
 
     Academic service:
       - label: 期刊任职
-        details: "Future Journal of Pharmaceutical Sciences 副主编；Journal of Analytical Testing、Biomedical Analysis、Phytochemical Analysis、Chinese Herbal Medicine、Acta Materia Medica 青年编委；Frontiers in Chemistry 客座编辑"
+        details: "Future Journal of Pharmaceutical Sciences 副主编；Journal of Analytical Testing、Biomedical Analysis、Phytochemical Analysis、Chinese Herbal Medicine、Acta Materia Medica、《色谱》、《分析测试学报》、《分析试验室》青年编委；Frontiers in Chemistry 客座编委"
       - label: 学术组织与标准化
-        details: "国际标准化组织中医药技术委员会（ISO/TC 249）第一工作组注册专家；中国分析测试协会医学质谱专业委员会委员；上海市药学会药物分析专业委员会青年委员"
+        details: "国际标准化组织（ISO/TC 249/WG 1）专家；中国分析测试协会医学质谱分会委员；上海市药学会药物分析专业委员会青年委员"
       - label: 审稿
-        details: "担任 Advanced Science、Analytical Chemistry 等 20 余种 SCI 期刊审稿人"
+        details: "Advanced Science、Analytical Chemistry 等 20 余个期刊审稿专家"

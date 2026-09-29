@@ -3,9 +3,9 @@ ref: about
 lang: zh
 layout: about
 title: 关于
-# display_name: 在这里填写中文姓名，首页大标题会显示它（不填则显示英文名）
+display_name: 李林楠
 permalink: /zh/
-subtitle: 博士，副教授<br><a href='https://www.shutcm.edu.cn/'>上海中医药大学</a>中药研究所
+subtitle: 博士，副研究员<br><a href='https://www.shutcm.edu.cn/'>上海中医药大学</a>中药研究所
 
 profile:
   align: right
@@ -76,13 +76,13 @@ latest_posts:
     <h4>所属平台</h4>
     <p class="org">中药功效成分发掘与利用全国重点实验室</p>
     <p class="org">中药标准化教育部重点实验室</p>
-    <p class="org">国家中医药管理局中药新资源与品质评价重点研究室</p>
+    <p class="org">中药新资源与品质评价国家中医药管理局重点研究室</p>
     <p class="org">上海市复方中药重点实验室</p>
   </div>
   <div>
     <h4>联系方式</h4>
-    <p>上海市浦东新区张江高科技园区蔡伦路1200号<br>
-    中药标准化国际中心 908 室（邮编 201203）<br>
+    <p>上海市浦东新区张江科学城蔡伦路1200号<br>
+    上海中医药大学中医药标准化大楼 908 室（邮编 201203）<br>
     电话：<span class="nb">+86-21-51322417</span><br>
     邮箱： <a class="nb" href="mailto:linnanli@shutcm.edu.cn">linnanli@shutcm.edu.cn</a></p>
   </div>
