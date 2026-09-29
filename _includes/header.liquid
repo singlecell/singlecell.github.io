@@ -45,7 +45,9 @@
     <div class="container">
       <!-- Brand: rendered identically on every page (family name bold) -->
       <a class="navbar-brand title" id="site-brand" href="{{ t.home | relative_url }}">
-        {%- if site.title == 'blank' -%}
+        {%- if t.site_name -%}
+          <span class="fw-bold">{{ t.site_name }}</span>
+        {%- elsif site.title == 'blank' -%}
           {{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} <span class="fw-bold">{{ site.last_name }}</span>
         {%- else -%}
           {{- site.title -}}

@@ -30,6 +30,7 @@ zh:
   home: /zh/
   publications_url: /zh/publications/
   switch_to: en
+  site_name: 李林楠 # shown in the navbar brand and browser title on Chinese pages
   switch_label: EN
   switch_title: Switch to English
   selected_publications: 代表性论文
