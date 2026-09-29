@@ -29,7 +29,7 @@
     border: 1px solid var(--global-divider-color, rgba(128,128,128,0.3));
   }
   #navbar .lang-switch:hover { color: var(--global-theme-color); border-color: var(--global-theme-color); }
-</style> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title" id="site-brand" href="/">Linnan <span class="fw-bold">Li</span></a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">Research </a> </li> <li class="nav-item active"> <a class="nav-link" href="/publications/">publications <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link"><i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="nav-item"> <a class="lang-switch" href="/zh/publications/" hreflang="zh-CN" lang="zh-CN" title="切换到中文">中文</a> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">publications</h1> <p class="post-description"></p> </header> <article> <style>
+</style> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title" id="site-brand" href="/">Linnan <span class="fw-bold">Li</span></a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">Research </a> </li> <li class="nav-item "> <a class="nav-link" href="/ai/">AI Research </a> </li> <li class="nav-item active"> <a class="nav-link" href="/publications/">publications <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link"><i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="nav-item"> <a class="lang-switch" href="/zh/publications/" hreflang="zh-CN" lang="zh-CN" title="切换到中文">中文</a> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">publications</h1> <p class="post-description"></p> </header> <article> <style>
 /* keep the family name bold in the navbar on this page too */
 #navbar .navbar-brand.title { font-weight: 700 !important; }
 #navbar .navbar-brand .font-weight-bold { font-weight: 400 !important; }
@@ -720,6 +720,20 @@ ninja.data = [{
           section: "Navigation",
           handler: () => {
             window.location.href = "/research/";
+          },
+        },{id: "nav-ai-研究",
+          title: "AI 研究",
+          description: "将人工智能应用于分析化学与天然药物研究。",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/zh/ai/";
+          },
+        },{id: "nav-ai-research",
+          title: "AI Research",
+          description: "Applying artificial intelligence to analytical chemistry and natural-medicine research.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/ai/";
           },
         },{id: "nav-论文发表",
           title: "论文发表",
