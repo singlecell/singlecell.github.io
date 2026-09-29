@@ -6,7 +6,7 @@ permalink: /zh/publications/
 title: 论文发表
 description:
 nav: true
-nav_order: 2
+nav_order: 3
 ---
 
 {% include publications_style.liquid %}

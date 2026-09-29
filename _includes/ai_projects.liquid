@@ -1,0 +1,92 @@
+{%- comment -%}
+  Renders the AI project cards from _data/ai_projects.yml in the page's language.
+{%- endcomment -%}
+{%- assign page_lang = page.lang | default: 'en' -%}
+<style>
+/* keep the family name bold in the navbar on this page too */
+#navbar .navbar-brand.title { font-weight: 700 !important; }
+#navbar .navbar-brand .font-weight-bold { font-weight: 400 !important; }
+
+.ai-intro {
+  max-width: 46rem; margin: 0 0 2.5rem;
+  font-size: 1.1rem; line-height: 1.75;
+  color: var(--global-text-color); opacity: 0.88; text-wrap: pretty;
+}
+.ai-list { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 1rem; }
+.ai-card {
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  background: var(--global-card-bg-color, var(--global-bg-color, #fff));
+  border: 1px solid var(--global-divider-color, rgba(128,128,128,0.18));
+  border-radius: 14px; overflow: hidden;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.ai-card:hover { box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08); border-color: var(--global-theme-color); }
+@media (max-width: 768px) { .ai-card { grid-template-columns: 1fr; } }
+.ai-media { background: #eef0ed; min-height: 100%; }
+.ai-media img { display: block; width: 100%; height: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.ai-body { padding: 1.6rem 1.8rem; min-width: 0; }
+.ai-name { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.6rem; margin: 0 0 0.3rem; }
+.ai-name h2 { font-size: 1.5rem; font-weight: 700; margin: 0; text-transform: none; }
+.ai-date { font-size: 0.8rem; opacity: 0.6; }
+.ai-tagline { font-size: 0.95rem; font-weight: 500; color: var(--global-theme-color); margin: 0 0 0.9rem; }
+.ai-desc { font-size: 0.95rem; line-height: 1.75; margin: 0 0 1.1rem; opacity: 0.85; text-wrap: pretty; }
+.ai-metrics { display: flex; flex-wrap: wrap; gap: 1.6rem; margin: 0 0 0.3rem; }
+.ai-metric .v { font-size: 1.35rem; font-weight: 700; color: var(--global-text-color); line-height: 1.2; }
+.ai-metric .l { font-size: 0.78rem; opacity: 0.65; }
+.ai-metrics-note { font-size: 0.78rem; opacity: 0.6; margin: 0 0 1.1rem; }
+.ai-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0 0 1.3rem; }
+.ai-tag {
+  font-size: 0.78rem; padding: 0.25rem 0.65rem; border-radius: 999px;
+  border: 1px solid var(--global-divider-color, rgba(128,128,128,0.28)); opacity: 0.85;
+}
+.ai-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.ai-btn {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  padding: 0.5rem 1.05rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500;
+  text-decoration: none !important; transition: all 0.2s ease;
+  color: var(--global-text-color);
+  border: 1px solid var(--global-divider-color, rgba(128,128,128,0.3));
+}
+.ai-btn:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
+.ai-btn.primary { background: var(--global-theme-color); border-color: var(--global-theme-color); color: #fff; }
+.ai-btn.primary:hover { filter: brightness(0.92); color: #fff; }
+</style>
+
+<div class="ai-list">
+  {%- for p in site.data.ai_projects %}
+  <div class="ai-card">
+    {%- if p.image %}
+    <div class="ai-media">
+      <img src="{{ p.image | prepend: 'assets/img/' | relative_url }}" alt="{{ p.name }}" loading="lazy">
+    </div>
+    {%- endif %}
+    <div class="ai-body">
+      <div class="ai-name">
+        <h2>{{ p.name }}</h2>
+        {%- if p.released %}<span class="ai-date">{{ p.released }}</span>{% endif %}
+      </div>
+      <p class="ai-tagline">{{ p.tagline[page_lang] }}</p>
+      <p class="ai-desc">{{ p.description[page_lang] }}</p>
+      {%- if p.metrics %}
+      <div class="ai-metrics">
+        {%- for m in p.metrics %}
+        <div class="ai-metric"><div class="v">{{ m.value }}</div><div class="l">{{ m.label[page_lang] }}</div></div>
+        {%- endfor %}
+      </div>
+      <p class="ai-metrics-note">{{ p.metrics_note[page_lang] }}</p>
+      {%- endif %}
+      <div class="ai-tags">
+        {%- for tag in p.tags[page_lang] %}<span class="ai-tag">{{ tag }}</span>{% endfor %}
+      </div>
+      <div class="ai-links">
+        {%- for l in p.links %}
+        <a class="ai-btn{% if forloop.first %} primary{% endif %}" href="{{ l.url }}" target="_blank" rel="noopener noreferrer">
+          {%- if l.kind == 'github' %}<i class="fa-brands fa-github"></i>{% elsif l.kind == 'download' %}<i class="fa-solid fa-download"></i>{% elsif l.kind == 'paper' %}<i class="fa-solid fa-file-lines"></i>{% else %}<i class="fa-solid fa-link"></i>{% endif %}
+          {{ l.label[page_lang] }}
+        </a>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+  {%- endfor %}
+</div>

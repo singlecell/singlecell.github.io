@@ -1,0 +1,41 @@
+# AI research projects shown on /ai/ and /zh/ai/ (newest first).
+# Each text field has an English (en) and Chinese (zh) version.
+# To add a project, copy one entry and fill it in.
+
+- name: TLC-RAPID
+  image: ai/tlc-rapid.jpg # under assets/img/
+  released: 2026-09
+  tagline:
+    en: Automated TLC spot detection and quantification from plate images
+    zh: 基于图像的薄层色谱斑点自动识别与定量分析
+  description:
+    en: >
+      A deep-learning tool that locates thin-layer chromatography (TLC) spots in digital
+      plate images with a YOLOv5 instance-segmentation model, then back-calculates sample
+      amounts from same-plate standard calibration. It handles visible-light, 254 nm, and
+      366 nm fluorescence plates, lets users add missed spots by hand, and exports
+      traceable Excel reports. Ships as a one-click Windows application.
+    zh: >
+      一款深度学习工具：利用 YOLOv5 实例分割模型自动定位 TLC 板数字图像中的斑点，
+      再根据同板标准品校正曲线反算样品含量。支持可见光、254 nm 与 366 nm 荧光成像，
+      可手动补标漏检斑点，并导出可追溯的 Excel 结果报告。提供一键运行的 Windows 应用程序。
+  metrics:
+    - value: "99.2%"
+      label: { en: Precision, zh: 精确率 }
+    - value: "95.4%"
+      label: { en: Recall, zh: 召回率 }
+    - value: "97.3%"
+      label: { en: F1-score, zh: F1 值 }
+  metrics_note:
+    en: Independent test set of 82 images / 745 bands
+    zh: 独立测试集：82 张图像、745 个条带
+  tags:
+    en: [Deep learning, Computer vision, Instance segmentation, TLC, Quantitative analysis]
+    zh: [深度学习, 计算机视觉, 实例分割, 薄层色谱, 定量分析]
+  links:
+    - kind: github
+      url: https://github.com/zongxuli709-code/TLC-RAPID
+      label: { en: GitHub, zh: GitHub }
+    - kind: download
+      url: https://github.com/zongxuli709-code/TLC-RAPID/releases/tag/v1.0
+      label: { en: Download v1.0, zh: 下载 v1.0 }
