@@ -2,6 +2,41 @@
 # Each text field has an English (en) and Chinese (zh) version.
 # To add a project, copy one entry and fill it in.
 
+- name: AgarwoodMiniMS
+  image: ai/agarwood-minims.png
+  image_fit: contain
+  image_credit:
+    url: https://doi.org/10.1007/s41664-024-00331-0
+    label: { en: "Figure 1 — Xie et al. (2025)", zh: "图 1 — Xie 等（2025）" }
+  released: 2026-10
+  tagline:
+    en: Mass-spectrum classification for rapid on-site agarwood authentication
+    zh: 面向沉香现场快速鉴别的质谱分类工具
+  description:
+    en: >
+      Companion software to a paper capillary spray miniature mass spectrometry workflow
+      for rapid, on-site agarwood authentication. It trains models on prepared spectral
+      tables and predicts authentic agarwood, Kynam, and counterfeit classes using random
+      forest, SVM, KNN, naive Bayes, or gradient boosting. Includes a Windows application,
+      source code, and DEMO data for training and prediction.
+    zh: >
+      配套纸毛细管喷雾微型质谱研究，用于沉香现场快速鉴别中的质谱数据分析。
+      可基于整理后的质谱数据训练模型，预测沉香、奇楠与伪品类别，支持随机森林、
+      SVM、KNN、朴素贝叶斯和梯度提升。提供 Windows 程序、源代码及训练和预测 DEMO 数据。
+  tags:
+    en: [Machine learning, Mass spectrometry, Agarwood, On-site authentication]
+    zh: [机器学习, 质谱分析, 沉香, 现场快速鉴别]
+  links:
+    - kind: github
+      url: https://github.com/singlecell/AgarwoodMiniMS
+      label: { en: GitHub, zh: GitHub }
+    - kind: download
+      url: https://github.com/singlecell/AgarwoodMiniMS/releases/latest
+      label: { en: Download, zh: 下载 }
+    - kind: paper
+      url: https://doi.org/10.1007/s41664-024-00331-0
+      label: { en: Paper, zh: 论文 }
+
 - name: TLC-RAPID
   image: ai/tlc-rapid.jpg # under assets/img/
   released: 2026-09

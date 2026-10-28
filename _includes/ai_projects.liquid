@@ -24,6 +24,10 @@
 @media (max-width: 768px) { .ai-card { grid-template-columns: 1fr; } }
 .ai-media { background: #eef0ed; display: flex; align-items: center; }
 .ai-media img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.ai-media--contain { flex-direction: column; justify-content: center; background: #fff; }
+.ai-media--contain img { aspect-ratio: auto; object-fit: contain; }
+.ai-image-credit { margin: 0; padding: 0.65rem 1rem; font-size: 0.75rem; text-align: center; }
+.ai-image-credit a { color: #525252; }
 .ai-body { padding: 1.6rem 1.8rem; min-width: 0; }
 .ai-name { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.6rem; margin: 0 0 0.3rem; }
 .ai-name h2 { font-size: 1.5rem; font-weight: 700; margin: 0; text-transform: none; }
@@ -56,8 +60,11 @@
   {%- for p in site.data.ai_projects %}
   <div class="ai-card">
     {%- if p.image %}
-    <div class="ai-media">
+    <div class="ai-media{% if p.image_fit == 'contain' %} ai-media--contain{% endif %}">
       <img src="{{ p.image | prepend: 'assets/img/' | relative_url }}" alt="{{ p.name }}" loading="eager">
+      {%- if p.image_credit %}
+      <p class="ai-image-credit"><a href="{{ p.image_credit.url }}" target="_blank" rel="noopener noreferrer">{{ p.image_credit.label[page_lang] }}</a></p>
+      {%- endif %}
     </div>
     {%- endif %}
     <div class="ai-body">
