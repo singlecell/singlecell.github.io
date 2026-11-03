@@ -1,0 +1,37 @@
+# Teaching content shown on /teaching/ and /zh/teaching/.
+# Each text field has an English (en) and Chinese (zh) version.
+# Empty lists show a "coming soon" note on the page.
+
+# ---------------------------------------------------------------------------
+# Courses (optional). Copy the commented example and fill it in.
+# ---------------------------------------------------------------------------
+courses: []
+#  - name: { en: Analytical Chemistry, zh: 分析化学 }
+#    audience: { en: Undergraduate, zh: 本科生 }
+#    term: { en: Fall, zh: 秋季学期 }
+#    description:
+#      en: One or two sentences about the course.
+#      zh: 一两句话的课程简介。
+#    links:                       # optional
+#      - url: https://example.com/syllabus.pdf
+#        label: { en: Syllabus, zh: 教学大纲 }
+
+# ---------------------------------------------------------------------------
+# Learning materials: animations, figures, videos, documents.
+# Put files in assets/img/teaching/ and reference them as teaching/<file>.
+#   media:    .gif / .png / .jpg / .webp / .svg shown as an image,
+#             .mp4 / .webm played as a silent looping video.
+#   category: groups the cards; the page shows one filter button per
+#             category (use the same en/zh wording for every item in it).
+#   link:     optional extra link (e.g. slides PDF, external page).
+# ---------------------------------------------------------------------------
+materials: []
+#  - title: { en: How a chromatographic column separates analytes, zh: 色谱柱分离原理 }
+#    category: { en: Chromatography, zh: 色谱分析 }
+#    media: teaching/chromatography-separation.gif
+#    description:
+#      en: Analytes with different partition coefficients move through the column at different speeds.
+#      zh: 分配系数不同的组分在色谱柱中迁移速度不同，从而实现分离。
+#    link:
+#      url: https://example.com/slides.pdf
+#      label: { en: Slides, zh: 课件 }

@@ -1,0 +1,177 @@
+{%- comment -%}
+  Renders courses and learning materials from _data/teaching.yml in the page's language.
+{%- endcomment -%}
+{%- assign page_lang = page.lang | default: 'en' -%}
+{%- assign courses = site.data.teaching.courses -%}
+{%- assign materials = site.data.teaching.materials -%}
+{%- if page_lang == 'zh' -%}
+  {%- assign s_courses = '课程' -%}
+  {%- assign s_materials = '学习资料' -%}
+  {%- assign s_all = '全部' -%}
+  {%- assign s_courses_empty = '课程信息即将更新。' -%}
+  {%- assign s_materials_empty = '分析化学动图等学习资料正在整理中，敬请期待。' -%}
+  {%- assign s_enlarge = '查看原图' -%}
+{%- else -%}
+  {%- assign s_courses = 'Courses' -%}
+  {%- assign s_materials = 'Learning materials' -%}
+  {%- assign s_all = 'All' -%}
+  {%- assign s_courses_empty = 'Course information is coming soon.' -%}
+  {%- assign s_materials_empty = 'Animations and other analytical-chemistry materials are being prepared. Check back soon.' -%}
+  {%- assign s_enlarge = 'Open full size' -%}
+{%- endif -%}
+<style>
+/* keep the family name bold in the navbar on this page too */
+#navbar .navbar-brand.title { font-weight: 700 !important; }
+#navbar .navbar-brand .font-weight-bold { font-weight: 400 !important; }
+
+.teach-intro {
+  max-width: 46rem; margin: 0 0 2.5rem;
+  font-size: 1.1rem; line-height: 1.75;
+  color: var(--global-text-color); opacity: 0.88; text-wrap: pretty;
+}
+.teach-section { margin: 0 0 3rem; }
+.teach-section > h2 {
+  font-size: 1.35rem; font-weight: 700; margin: 0 0 1.2rem; text-transform: none;
+  padding-bottom: 0.5rem; border-bottom: 1px solid var(--global-divider-color, rgba(128,128,128,0.18));
+}
+.teach-empty {
+  margin: 0; padding: 1.4rem 1.6rem; border-radius: 14px; font-size: 0.95rem; opacity: 0.75;
+  border: 1px dashed var(--global-divider-color, rgba(128,128,128,0.35));
+}
+.teach-empty i { margin-right: 0.5rem; color: var(--global-theme-color); }
+
+.teach-card {
+  background: var(--global-card-bg-color, var(--global-bg-color, #fff));
+  border: 1px solid var(--global-divider-color, rgba(128,128,128,0.18));
+  border-radius: 14px; overflow: hidden;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.teach-card:hover { box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08); border-color: var(--global-theme-color); }
+
+/* courses */
+.teach-courses { display: flex; flex-direction: column; gap: 1.2rem; }
+.teach-course { padding: 1.4rem 1.7rem; }
+.teach-course-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.6rem; margin: 0 0 0.5rem; }
+.teach-course-head h3 { font-size: 1.2rem; font-weight: 700; margin: 0; }
+.teach-meta { font-size: 0.8rem; opacity: 0.6; }
+.teach-desc { font-size: 0.95rem; line-height: 1.75; margin: 0 0 0.9rem; opacity: 0.85; text-wrap: pretty; }
+.teach-desc:last-child { margin-bottom: 0; }
+.teach-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.teach-btn {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  padding: 0.4rem 0.95rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+  text-decoration: none !important; transition: all 0.2s ease;
+  color: var(--global-text-color);
+  border: 1px solid var(--global-divider-color, rgba(128,128,128,0.3));
+}
+.teach-btn:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
+
+/* materials */
+.teach-filters { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0 0 1.4rem; }
+.teach-filter {
+  font: inherit; font-size: 0.82rem; padding: 0.3rem 0.85rem; border-radius: 999px; cursor: pointer;
+  background: transparent; color: var(--global-text-color);
+  border: 1px solid var(--global-divider-color, rgba(128,128,128,0.3));
+  transition: all 0.2s ease;
+}
+.teach-filter:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
+.teach-filter.active { background: var(--global-theme-color); border-color: var(--global-theme-color); color: #fff; }
+.teach-grid {
+  display: grid; gap: 1.4rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+}
+.teach-material { display: flex; flex-direction: column; }
+.teach-material[hidden] { display: none; }
+.teach-media { display: block; background: #fff; border-bottom: 1px solid var(--global-divider-color, rgba(128,128,128,0.18)); }
+.teach-media img, .teach-media video { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; }
+.teach-material-body { padding: 1rem 1.2rem 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+.teach-cat { font-size: 0.75rem; font-weight: 500; color: var(--global-theme-color); }
+.teach-material-body h3 { font-size: 1.05rem; font-weight: 700; margin: 0; line-height: 1.4; }
+.teach-material-body .teach-desc { font-size: 0.88rem; margin: 0; }
+.teach-material-body .teach-links { margin-top: auto; padding-top: 0.3rem; }
+</style>
+
+<section class="teach-section">
+  <h2>{{ s_courses }}</h2>
+  {%- if courses and courses.size > 0 %}
+  <div class="teach-courses">
+    {%- for c in courses %}
+    <div class="teach-card teach-course">
+      <div class="teach-course-head">
+        <h3>{{ c.name[page_lang] }}</h3>
+        {%- if c.audience or c.term %}
+        <span class="teach-meta">{{ c.audience[page_lang] }}{% if c.audience and c.term %} · {% endif %}{{ c.term[page_lang] }}</span>
+        {%- endif %}
+      </div>
+      {%- if c.description %}<p class="teach-desc">{{ c.description[page_lang] }}</p>{% endif %}
+      {%- if c.links %}
+      <div class="teach-links">
+        {%- for l in c.links %}
+        <a class="teach-btn" href="{{ l.url | relative_url }}" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-link"></i>{{ l.label[page_lang] }}</a>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+    </div>
+    {%- endfor %}
+  </div>
+  {%- else %}
+  <p class="teach-empty"><i class="fa-solid fa-chalkboard-user"></i>{{ s_courses_empty }}</p>
+  {%- endif %}
+</section>
+
+<section class="teach-section">
+  <h2>{{ s_materials }}</h2>
+  {%- if materials and materials.size > 0 %}
+  {%- assign cats = '' | split: '' -%}
+  {%- for m in materials -%}
+    {%- if m.category -%}{%- assign cats = cats | push: m.category[page_lang] -%}{%- endif -%}
+  {%- endfor -%}
+  {%- assign cats = cats | uniq %}
+  {%- if cats.size > 1 %}
+  <div class="teach-filters" role="group">
+    <button type="button" class="teach-filter active" data-cat="">{{ s_all }}</button>
+    {%- for cat in cats %}
+    <button type="button" class="teach-filter" data-cat="{{ cat | escape }}">{{ cat }}</button>
+    {%- endfor %}
+  </div>
+  {%- endif %}
+  <div class="teach-grid">
+    {%- for m in materials %}
+    {%- assign media_url = m.media | prepend: 'assets/img/' | relative_url -%}
+    {%- assign ext = m.media | split: '.' | last | downcase %}
+    <div class="teach-card teach-material" data-cat="{% if m.category %}{{ m.category[page_lang] | escape }}{% endif %}">
+      {%- if m.media %}
+      {%- if ext == 'mp4' or ext == 'webm' %}
+      <div class="teach-media"><video src="{{ media_url }}" autoplay loop muted playsinline controls preload="metadata"></video></div>
+      {%- else %}
+      <a class="teach-media" href="{{ media_url }}" target="_blank" rel="noopener" title="{{ s_enlarge }}"><img src="{{ media_url }}" alt="{{ m.title[page_lang] | escape }}" loading="lazy"></a>
+      {%- endif %}
+      {%- endif %}
+      <div class="teach-material-body">
+        {%- if m.category %}<span class="teach-cat">{{ m.category[page_lang] }}</span>{% endif %}
+        <h3>{{ m.title[page_lang] }}</h3>
+        {%- if m.description %}<p class="teach-desc">{{ m.description[page_lang] }}</p>{% endif %}
+        {%- if m.link %}
+        <div class="teach-links">
+          <a class="teach-btn" href="{{ m.link.url | relative_url }}" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-link"></i>{{ m.link.label[page_lang] }}</a>
+        </div>
+        {%- endif %}
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+  <script>
+    document.querySelectorAll('.teach-filter').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var cat = btn.getAttribute('data-cat');
+        document.querySelectorAll('.teach-filter').forEach(function (b) { b.classList.toggle('active', b === btn); });
+        document.querySelectorAll('.teach-material').forEach(function (card) {
+          card.hidden = cat !== '' && card.getAttribute('data-cat') !== cat;
+        });
+      });
+    });
+  </script>
+  {%- else %}
+  <p class="teach-empty"><i class="fa-solid fa-film"></i>{{ s_materials_empty }}</p>
+  {%- endif %}
+</section>
