@@ -2,7 +2,7 @@
 ref: ai
 layout: page
 permalink: /ai/
-title: AI Research
+title: AI Projects
 description: Applying artificial intelligence to analytical chemistry and natural-medicine research.
 nav: true
 nav_order: 2

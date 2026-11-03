@@ -3,7 +3,7 @@ ref: ai
 lang: zh
 layout: page
 permalink: /zh/ai/
-title: AI 研究
+title: AI 项目
 description: 将人工智能应用于分析化学与天然药物研究。
 nav: true
 nav_order: 2
