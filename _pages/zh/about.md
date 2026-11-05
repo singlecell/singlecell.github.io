@@ -9,7 +9,7 @@ subtitle: 博士，副研究员<br><a href='https://www.shutcm.edu.cn/'>上海�
 
 profile:
   align: right
-  image: researcher.svg
+  image: portrait.svg
   image_circular: true # crops the image to make it circular
   more_info: >
     <p>linnanli@shutcm.edu.cn</p>

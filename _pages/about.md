@@ -7,7 +7,7 @@ subtitle: Ph.D., Associate Professor<br>Institute of Chinese Materia Medica, <a 
 
 profile:
   align: right
-  image: researcher.svg
+  image: portrait.svg
   image_circular: true # crops the image to make it circular
   more_info: >
     <p>linnanli@shutcm.edu.cn</p>
