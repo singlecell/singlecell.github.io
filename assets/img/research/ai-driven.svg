@@ -1,0 +1,76 @@
+<svg viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mass spectra and TLC plate images feed a neural network that classifies samples">
+  <rect width="640" height="420" rx="24" fill="#EEF3FB"/>
+  <circle cx="330" cy="210" r="150" fill="#DDE7F6"/>
+
+  <!-- input 1: mass spectrum -->
+  <rect x="36" y="58" width="168" height="124" rx="14" fill="#FFFFFF"/>
+  <rect x="36" y="58" width="168" height="26" rx="14" fill="#1D3470"/>
+  <rect x="36" y="72" width="168" height="12" fill="#1D3470"/>
+  <circle cx="54" cy="71" r="4" fill="#F2B441"/><circle cx="68" cy="71" r="4" fill="#7CA6D8"/>
+  <g stroke="#2E52A3" stroke-width="6" stroke-linecap="round">
+    <line x1="60" y1="164" x2="60" y2="146"/><line x1="80" y1="164" x2="80" y2="118"/>
+    <line x1="100" y1="164" x2="100" y2="154"/><line x1="140" y1="164" x2="140" y2="130"/>
+    <line x1="160" y1="164" x2="160" y2="150"/><line x1="180" y1="164" x2="180" y2="138"/>
+  </g>
+  <line x1="120" y1="164" x2="120" y2="100" stroke="#F2B441" stroke-width="6" stroke-linecap="round"/>
+  <line x1="50" y1="168" x2="190" y2="168" stroke="#A9C7E6" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- input 2: TLC plate with detection boxes -->
+  <rect x="36" y="222" width="168" height="140" rx="14" fill="#FFFFFF"/>
+  <rect x="56" y="238" width="128" height="108" rx="4" fill="#F4F1E6"/>
+  <line x1="56" y1="330" x2="184" y2="330" stroke="#C9C2AA" stroke-width="2" stroke-dasharray="4 4"/>
+  <g fill="#E8743B"><ellipse cx="78" cy="300" rx="9" ry="5"/><ellipse cx="104" cy="300" rx="9" ry="5"/><ellipse cx="130" cy="300" rx="9" ry="5"/></g>
+  <g fill="#A23D9E"><ellipse cx="104" cy="266" rx="9" ry="5"/><ellipse cx="156" cy="266" rx="9" ry="5"/><ellipse cx="156" cy="300" rx="9" ry="5" opacity="0.5"/></g>
+  <g fill="none" stroke="#2E52A3" stroke-width="2.5">
+    <rect x="66" y="291" width="24" height="18" rx="3"/><rect x="92" y="291" width="24" height="18" rx="3"/>
+    <rect x="118" y="291" width="24" height="18" rx="3"/><rect x="92" y="257" width="24" height="18" rx="3"/>
+    <rect x="144" y="257" width="24" height="18" rx="3"/>
+  </g>
+
+  <!-- data flowing into the network -->
+  <g stroke="#7CA6D8" stroke-width="4" stroke-linecap="round" fill="none" stroke-dasharray="2 12">
+    <path d="M206 120 C 240 120, 240 160, 268 168"/>
+    <path d="M206 292 C 240 292, 240 252, 268 246"/>
+  </g>
+
+  <!-- neural network -->
+  <g stroke="#9DB7DE" stroke-width="2">
+    <line x1="284" y1="150" x2="350" y2="118"/><line x1="284" y1="150" x2="350" y2="182"/><line x1="284" y1="150" x2="350" y2="246"/><line x1="284" y1="150" x2="350" y2="310"/>
+    <line x1="284" y1="210" x2="350" y2="118"/><line x1="284" y1="210" x2="350" y2="182"/><line x1="284" y1="210" x2="350" y2="246"/><line x1="284" y1="210" x2="350" y2="310"/>
+    <line x1="284" y1="270" x2="350" y2="118"/><line x1="284" y1="270" x2="350" y2="182"/><line x1="284" y1="270" x2="350" y2="246"/><line x1="284" y1="270" x2="350" y2="310"/>
+    <line x1="350" y1="118" x2="416" y2="170"/><line x1="350" y1="182" x2="416" y2="170"/><line x1="350" y1="246" x2="416" y2="170"/><line x1="350" y1="310" x2="416" y2="170"/>
+    <line x1="350" y1="118" x2="416" y2="250"/><line x1="350" y1="182" x2="416" y2="250"/><line x1="350" y1="246" x2="416" y2="250"/><line x1="350" y1="310" x2="416" y2="250"/>
+  </g>
+  <g stroke="#F2B441" stroke-width="3.5" stroke-linecap="round">
+    <line x1="284" y1="210" x2="350" y2="182"/><line x1="350" y1="182" x2="416" y2="170"/>
+  </g>
+  <g fill="#2E52A3"><circle cx="284" cy="150" r="13"/><circle cx="284" cy="210" r="13"/><circle cx="284" cy="270" r="13"/></g>
+  <g fill="#1D3470"><circle cx="350" cy="118" r="13"/><circle cx="350" cy="246" r="13"/><circle cx="350" cy="310" r="13"/></g>
+  <circle cx="350" cy="182" r="13" fill="#F2B441"/>
+  <circle cx="416" cy="170" r="15" fill="#F2B441"/>
+  <circle cx="416" cy="250" r="15" fill="#1D3470"/>
+
+  <!-- output: class probabilities -->
+  <rect x="452" y="96" width="156" height="228" rx="14" fill="#FFFFFF"/>
+  <g>
+    <circle cx="478" cy="138" r="11" fill="#2E7D32"/>
+    <path d="M472 138 l4 4 l8 -9" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="498" y="131" width="92" height="14" rx="7" fill="#E3EAF5"/>
+    <rect x="498" y="131" width="84" height="14" rx="7" fill="#2E52A3"/>
+  </g>
+  <g>
+    <circle cx="478" cy="208" r="11" fill="#9DB7DE"/>
+    <rect x="498" y="201" width="92" height="14" rx="7" fill="#E3EAF5"/>
+    <rect x="498" y="201" width="18" height="14" rx="7" fill="#7CA6D8"/>
+  </g>
+  <g>
+    <circle cx="478" cy="278" r="11" fill="#C9D6EA"/>
+    <rect x="498" y="271" width="92" height="14" rx="7" fill="#E3EAF5"/>
+    <rect x="498" y="271" width="8" height="14" rx="7" fill="#A9C7E6"/>
+  </g>
+  <path d="M432 210 L 446 210" stroke="#7CA6D8" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- sparkle -->
+  <path d="M574 50 l5 13 l13 5 l-13 5 l-5 13 l-5 -13 l-13 -5 l13 -5 Z" fill="#F2B441"/>
+  <path d="M606 366 l3 8 l8 3 l-8 3 l-3 8 l-3 -8 l-8 -3 l8 -3 Z" fill="#7CA6D8"/>
+</svg>
