@@ -3,7 +3,8 @@
 {%- endcomment -%}
 {%- assign page_lang = page.lang | default: 'en' -%}
 {%- assign courses = site.data.teaching.courses -%}
-{%- assign materials = site.data.teaching.materials -%}
+{%- comment -%} an item with `lang:` appears only on the page in that language {%- endcomment -%}
+{%- assign materials = site.data.teaching.materials | where_exp: 'm', 'm.lang == nil or m.lang == page_lang' -%}
 {%- if page_lang == 'zh' -%}
   {%- assign s_courses = '课程' -%}
   {%- assign s_materials = '学习资料' -%}
@@ -20,11 +21,11 @@
   {%- assign s_materials = 'Learning materials' -%}
   {%- assign s_all = 'All' -%}
   {%- assign s_courses_empty = 'Course information is coming soon.' -%}
-  {%- assign s_materials_empty = 'Animations and other analytical-chemistry materials are being prepared. Check back soon.' -%}
+  {%- capture s_materials_empty -%}English versions of the analytical-chemistry animations are being prepared. The Chinese versions are on the <a href="{{ '/zh/teaching/' | relative_url }}" hreflang="zh-CN">Chinese page</a>.{%- endcapture -%}
   {%- assign s_enlarge = 'Click to enlarge' -%}
   {%- assign s_download = 'Download GIF' -%}
   {%- assign s_close = 'Close' -%}
-  {%- assign s_note = 'The animations are labelled in Chinese. Click any animation to enlarge it.' -%}
+  {%- assign s_note = '' -%}
   {%- assign s_count = 'animations' -%}
 {%- endif -%}
 <style>
@@ -91,7 +92,7 @@
 .teach-group > h3 .teach-meta { font-weight: 400; }
 .teach-grid {
   display: grid; gap: 1.2rem;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr));
 }
 .teach-material { display: flex; flex-direction: column; }
 .teach-media {
@@ -107,7 +108,7 @@
 
 /* enlarged view */
 .teach-lightbox {
-  width: min(96vw, 1280px); max-width: none; max-height: 96vh; padding: 0; border: 0;
+  width: min(96vw, 946px); max-width: none; max-height: 96vh; padding: 0; border: 0;
   border-radius: 12px; background: #fff; overflow: hidden;
 }
 .teach-lightbox::backdrop { background: rgba(0, 0, 0, 0.75); }
