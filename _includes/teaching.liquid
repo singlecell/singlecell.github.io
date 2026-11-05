@@ -10,14 +10,22 @@
   {%- assign s_all = '全部' -%}
   {%- assign s_courses_empty = '课程信息即将更新。' -%}
   {%- assign s_materials_empty = '分析化学动图等学习资料正在整理中，敬请期待。' -%}
-  {%- assign s_enlarge = '查看原图' -%}
+  {%- assign s_enlarge = '点击放大' -%}
+  {%- assign s_download = '下载 GIF' -%}
+  {%- assign s_close = '关闭' -%}
+  {%- assign s_note = '' -%}
+  {%- assign s_count = '个动图' -%}
 {%- else -%}
   {%- assign s_courses = 'Courses' -%}
   {%- assign s_materials = 'Learning materials' -%}
   {%- assign s_all = 'All' -%}
   {%- assign s_courses_empty = 'Course information is coming soon.' -%}
   {%- assign s_materials_empty = 'Animations and other analytical-chemistry materials are being prepared. Check back soon.' -%}
-  {%- assign s_enlarge = 'Open full size' -%}
+  {%- assign s_enlarge = 'Click to enlarge' -%}
+  {%- assign s_download = 'Download GIF' -%}
+  {%- assign s_close = 'Close' -%}
+  {%- assign s_note = 'The animations are labelled in Chinese. Click any animation to enlarge it.' -%}
+  {%- assign s_count = 'animations' -%}
 {%- endif -%}
 <style>
 /* keep the family name bold in the navbar on this page too */
@@ -67,7 +75,8 @@
 .teach-btn:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
 
 /* materials */
-.teach-filters { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0 0 1.4rem; }
+.teach-note { font-size: 0.88rem; opacity: 0.7; margin: -0.4rem 0 1.2rem; }
+.teach-filters { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0 0 1.8rem; }
 .teach-filter {
   font: inherit; font-size: 0.82rem; padding: 0.3rem 0.85rem; border-radius: 999px; cursor: pointer;
   background: transparent; color: var(--global-text-color);
@@ -76,19 +85,37 @@
 }
 .teach-filter:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
 .teach-filter.active { background: var(--global-theme-color); border-color: var(--global-theme-color); color: #fff; }
+.teach-group { margin: 0 0 2.4rem; }
+.teach-group[hidden] { display: none; }
+.teach-group > h3 { font-size: 1.1rem; font-weight: 700; margin: 0 0 1rem; display: flex; align-items: baseline; gap: 0.6rem; }
+.teach-group > h3 .teach-meta { font-weight: 400; }
 .teach-grid {
-  display: grid; gap: 1.4rem;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  display: grid; gap: 1.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
 }
 .teach-material { display: flex; flex-direction: column; }
-.teach-material[hidden] { display: none; }
-.teach-media { display: block; background: #fff; border-bottom: 1px solid var(--global-divider-color, rgba(128,128,128,0.18)); }
-.teach-media img, .teach-media video { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; }
-.teach-material-body { padding: 1rem 1.2rem 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
-.teach-cat { font-size: 0.75rem; font-weight: 500; color: var(--global-theme-color); }
-.teach-material-body h3 { font-size: 1.05rem; font-weight: 700; margin: 0; line-height: 1.4; }
+.teach-media {
+  display: block; width: 100%; padding: 0; border: 0; cursor: zoom-in; background: #fff;
+  border-bottom: 1px solid var(--global-divider-color, rgba(128,128,128,0.18));
+}
+.teach-media img, .teach-media video { display: block; width: 100%; height: auto; aspect-ratio: 946 / 504; object-fit: contain; background: #fff; }
+.teach-material-body { padding: 0.8rem 1rem 1rem; display: flex; flex-direction: column; gap: 0.45rem; flex: 1; }
+.teach-material-body h4 { font-size: 0.95rem; font-weight: 600; margin: 0; line-height: 1.45; }
 .teach-material-body .teach-desc { font-size: 0.88rem; margin: 0; }
-.teach-material-body .teach-links { margin-top: auto; padding-top: 0.3rem; }
+.teach-material-body .teach-links { margin-top: auto; padding-top: 0.2rem; }
+.teach-material-body .teach-btn { padding: 0.25rem 0.7rem; font-size: 0.78rem; }
+
+/* enlarged view */
+.teach-lightbox {
+  width: min(96vw, 1280px); max-width: none; max-height: 96vh; padding: 0; border: 0;
+  border-radius: 12px; background: #fff; overflow: hidden;
+}
+.teach-lightbox::backdrop { background: rgba(0, 0, 0, 0.75); }
+.teach-lightbox video, .teach-lightbox img { display: block; width: 100%; height: auto; max-height: calc(96vh - 3rem); object-fit: contain; }
+.teach-lightbox-bar { display: flex; align-items: center; gap: 1rem; padding: 0.6rem 1rem; font-size: 0.9rem; color: #222; }
+.teach-lightbox-bar span { flex: 1; min-width: 0; font-weight: 600; }
+.teach-lightbox-bar a, .teach-lightbox-bar button { font: inherit; font-size: 0.85rem; color: #222; background: none; border: 0; cursor: pointer; padding: 0.2rem 0.4rem; }
+.teach-lightbox-bar a:hover, .teach-lightbox-bar button:hover { color: var(--global-theme-color); }
 </style>
 
 <section class="teach-section">
@@ -122,11 +149,15 @@
 <section class="teach-section">
   <h2>{{ s_materials }}</h2>
   {%- if materials and materials.size > 0 %}
+  {%- if s_note != '' %}<p class="teach-note">{{ s_note }}</p>{% endif %}
   {%- assign cats = '' | split: '' -%}
   {%- for m in materials -%}
     {%- if m.category -%}{%- assign cats = cats | push: m.category[page_lang] -%}{%- endif -%}
   {%- endfor -%}
-  {%- assign cats = cats | uniq %}
+  {%- assign cats = cats | uniq -%}
+  {%- assign uncategorized = materials | where_exp: 'm', 'm.category == nil' -%}
+  {%- assign groups = cats -%}
+  {%- if uncategorized.size > 0 -%}{%- assign groups = groups | push: '' -%}{%- endif %}
   {%- if cats.size > 1 %}
   <div class="teach-filters" role="group">
     <button type="button" class="teach-filter active" data-cat="">{{ s_all }}</button>
@@ -135,41 +166,121 @@
     {%- endfor %}
   </div>
   {%- endif %}
-  <div class="teach-grid">
-    {%- for m in materials %}
-    {%- assign media_url = m.media | prepend: 'assets/img/' | relative_url -%}
-    {%- assign ext = m.media | split: '.' | last | downcase %}
-    <div class="teach-card teach-material" data-cat="{% if m.category %}{{ m.category[page_lang] | escape }}{% endif %}">
-      {%- if m.media %}
-      {%- if ext == 'mp4' or ext == 'webm' %}
-      <div class="teach-media"><video src="{{ media_url }}" autoplay loop muted playsinline controls preload="metadata"></video></div>
-      {%- else %}
-      <a class="teach-media" href="{{ media_url }}" target="_blank" rel="noopener" title="{{ s_enlarge }}"><img src="{{ media_url }}" alt="{{ m.title[page_lang] | escape }}" loading="lazy"></a>
-      {%- endif %}
-      {%- endif %}
-      <div class="teach-material-body">
-        {%- if m.category %}<span class="teach-cat">{{ m.category[page_lang] }}</span>{% endif %}
-        <h3>{{ m.title[page_lang] }}</h3>
-        {%- if m.description %}<p class="teach-desc">{{ m.description[page_lang] }}</p>{% endif %}
-        {%- if m.link %}
-        <div class="teach-links">
-          <a class="teach-btn" href="{{ m.link.url | relative_url }}" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-link"></i>{{ m.link.label[page_lang] }}</a>
-        </div>
+  {%- for cat in groups %}
+  {%- if cat == '' -%}
+    {%- assign items = uncategorized -%}
+  {%- else -%}
+    {%- assign items = '' | split: '' -%}
+    {%- for m in materials -%}{%- if m.category and m.category[page_lang] == cat -%}{%- assign items = items | push: m -%}{%- endif -%}{%- endfor -%}
+  {%- endif %}
+  <div class="teach-group" data-cat="{{ cat | escape }}">
+    {%- if cat != '' and cats.size > 1 %}
+    <h3>{{ cat }}<span class="teach-meta">{{ items.size }} {{ s_count }}</span></h3>
+    {%- endif %}
+    <div class="teach-grid">
+      {%- for m in items %}
+      {%- assign media_url = m.media | prepend: 'assets/' | relative_url -%}
+      {%- assign ext = m.media | split: '.' | last | downcase %}
+      <div class="teach-card teach-material">
+        {%- if m.media %}
+        <button type="button" class="teach-media" title="{{ s_enlarge }}" data-src="{{ media_url }}" data-kind="{% if ext == 'mp4' or ext == 'webm' %}video{% else %}image{% endif %}"{% if m.download %} data-download="{{ m.download | prepend: 'assets/' | relative_url }}"{% endif %}>
+          {%- if ext == 'mp4' or ext == 'webm' %}
+          <video data-src="{{ media_url }}"{% if m.poster %} data-poster="{{ m.poster | prepend: 'assets/' | relative_url }}"{% endif %} loop muted playsinline preload="none" aria-label="{{ m.title[page_lang] | escape }}"></video>
+          {%- else %}
+          <img src="{{ media_url }}" alt="{{ m.title[page_lang] | escape }}" loading="lazy">
+          {%- endif %}
+        </button>
         {%- endif %}
+        <div class="teach-material-body">
+          <h4>{{ m.title[page_lang] }}</h4>
+          {%- if m.description %}<p class="teach-desc">{{ m.description[page_lang] }}</p>{% endif %}
+          {%- if m.link or m.download %}
+          <div class="teach-links">
+            {%- if m.download %}
+            <a class="teach-btn" href="{{ m.download | prepend: 'assets/' | relative_url }}" download><i class="fa-solid fa-download"></i>{{ s_download }}</a>
+            {%- endif %}
+            {%- if m.link %}
+            <a class="teach-btn" href="{{ m.link.url | relative_url }}" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-link"></i>{{ m.link.label[page_lang] }}</a>
+            {%- endif %}
+          </div>
+          {%- endif %}
+        </div>
       </div>
+      {%- endfor %}
     </div>
-    {%- endfor %}
   </div>
+  {%- endfor %}
+
+  <dialog class="teach-lightbox" aria-label="{{ s_enlarge }}">
+    <div class="teach-lightbox-media"></div>
+    <div class="teach-lightbox-bar">
+      <span></span>
+      <a class="teach-lightbox-dl" href="#" download hidden><i class="fa-solid fa-download"></i> {{ s_download }}</a>
+      <button type="button" class="teach-lightbox-close"><i class="fa-solid fa-xmark"></i> {{ s_close }}</button>
+    </div>
+  </dialog>
+
   <script>
-    document.querySelectorAll('.teach-filter').forEach(function (btn) {
+  (function () {
+    // load a video (and its poster) when it nears the screen; play it only while visible
+    var videos = document.querySelectorAll('.teach-material video');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          var v = e.target;
+          if (e.isIntersecting) {
+            if (!v.src) { if (v.dataset.poster) v.poster = v.dataset.poster; v.src = v.dataset.src; }
+            var p = v.play(); if (p && p.catch) p.catch(function () {});
+          } else if (!v.paused) { v.pause(); }
+        });
+      }, { rootMargin: '300px 0px' });
+      videos.forEach(function (v) { io.observe(v); });
+    } else {
+      videos.forEach(function (v) { if (v.dataset.poster) v.poster = v.dataset.poster; v.src = v.dataset.src; v.autoplay = true; });
+    }
+
+    // category filter
+    var buttons = document.querySelectorAll('.teach-filter');
+    buttons.forEach(function (btn) {
       btn.addEventListener('click', function () {
         var cat = btn.getAttribute('data-cat');
-        document.querySelectorAll('.teach-filter').forEach(function (b) { b.classList.toggle('active', b === btn); });
-        document.querySelectorAll('.teach-material').forEach(function (card) {
-          card.hidden = cat !== '' && card.getAttribute('data-cat') !== cat;
+        buttons.forEach(function (b) { b.classList.toggle('active', b === btn); });
+        document.querySelectorAll('.teach-group').forEach(function (g) {
+          g.hidden = cat !== '' && g.getAttribute('data-cat') !== cat;
         });
       });
     });
+
+    // enlarged view
+    var box = document.querySelector('.teach-lightbox');
+    if (!box || !box.showModal) return;
+    var holder = box.querySelector('.teach-lightbox-media');
+    var caption = box.querySelector('.teach-lightbox-bar span');
+    var dl = box.querySelector('.teach-lightbox-dl');
+    document.querySelectorAll('.teach-media').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var title = btn.closest('.teach-material').querySelector('h4').textContent;
+        holder.innerHTML = '';
+        var el;
+        if (btn.dataset.kind === 'video') {
+          el = document.createElement('video');
+          el.muted = true; el.loop = true; el.autoplay = true; el.playsInline = true; el.controls = true;
+        } else {
+          el = document.createElement('img'); el.alt = title;
+        }
+        el.src = btn.dataset.src;
+        holder.appendChild(el);
+        caption.textContent = title;
+        dl.hidden = !btn.dataset.download;
+        if (btn.dataset.download) dl.href = btn.dataset.download;
+        box.showModal();
+      });
+    });
+    function close() { box.close(); }
+    box.querySelector('.teach-lightbox-close').addEventListener('click', close);
+    box.addEventListener('click', function (e) { if (e.target === box) close(); });
+    box.addEventListener('close', function () { holder.innerHTML = ''; });
+  })();
   </script>
   {%- else %}
   <p class="teach-empty"><i class="fa-solid fa-film"></i>{{ s_materials_empty }}</p>

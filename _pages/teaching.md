@@ -9,7 +9,7 @@ nav_order: 4
 ---
 
 <p class="teach-intro">
-Courses I teach and learning materials I make for students, including animations that show how analytical methods and instruments work.
+Courses I teach and learning materials I make for students, including animations that show how spectroscopic and chromatographic methods and instruments work.
 </p>
 
 {% include teaching.liquid %}
