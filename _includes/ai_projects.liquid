@@ -61,7 +61,7 @@
   <div class="ai-card">
     {%- if p.image %}
     <div class="ai-media{% if p.image_fit == 'contain' %} ai-media--contain{% endif %}">
-      <img src="{{ p.image | prepend: 'assets/img/' | relative_url }}" alt="{{ p.name }}" loading="eager">
+      <img src="{{ p.image | prepend: 'assets/img/' | relative_url }}" alt="{{ p.name }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}" decoding="async">
       {%- if p.image_credit %}
       <p class="ai-image-credit"><a href="{{ p.image_credit.url }}" target="_blank" rel="noopener noreferrer">{{ p.image_credit.label[page_lang] }}</a></p>
       {%- endif %}

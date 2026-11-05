@@ -4,6 +4,7 @@ lang: zh
 layout: about
 title: 关于
 display_name: 李林楠
+description: 李林楠，上海中医药大学中药研究所副研究员，致力于质谱、色谱与样品前处理新技术，实现复杂天然药物体系的精准分析。
 permalink: /zh/
 subtitle: 博士，副研究员<br><a href='https://www.shutcm.edu.cn/'>上海中医药大学</a>中药研究所
 

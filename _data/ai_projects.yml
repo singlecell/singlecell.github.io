@@ -3,7 +3,7 @@
 # To add a project, copy one entry and fill it in.
 
 - name: AgarwoodMiniMS
-  image: ai/agarwood-minims.png
+  image: ai/agarwood-minims.webp
   image_fit: contain
   image_credit:
     url: https://doi.org/10.1007/s41664-024-00331-0

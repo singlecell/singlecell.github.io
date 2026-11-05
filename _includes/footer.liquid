@@ -1,0 +1,21 @@
+{%- comment -%}
+  Local override of the theme footer: static (scrolls with the page) and bilingual.
+{%- endcomment -%}
+{%- assign page_lang = page.lang | default: 'en' -%}
+<footer class="sticky-bottom site-footer" role="contentinfo">
+  <div class="container">
+    {%- if page_lang == 'zh' %}
+      &copy; {{ site.time | date: '%Y' }} {{ site.data.i18n.zh.site_name }} · 上海中医药大学中药研究所<br>
+      <span class="site-footer-meta">由 <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a> 与 <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener">al-folio</a> 主题构建，托管于 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a></span>
+    {%- else %}
+      &copy; {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.last_name }} · Shanghai University of Traditional Chinese Medicine<br>
+      <span class="site-footer-meta">Built with <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a> and the <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener">al-folio</a> theme · Hosted on <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a></span>
+    {%- endif %}
+  </div>
+</footer>
+<style>
+  footer.site-footer { margin-top: 4rem; padding: 1.75rem 0; font-size: 0.85rem; line-height: 1.7; color: var(--global-text-color-light); }
+  footer.site-footer a { color: inherit; text-decoration: underline; text-decoration-color: var(--global-divider-color); text-underline-offset: 2px; }
+  footer.site-footer a:hover { color: var(--global-theme-color); }
+  footer.site-footer .site-footer-meta { font-size: 0.78rem; opacity: 0.85; }
+</style>

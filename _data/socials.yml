@@ -10,4 +10,4 @@ github_username: singlecell # your GitHub username
 # researchgate_profile:              # uncomment + add your ResearchGate profile
 # x_username:                        # uncomment + add your X/Twitter handle
 # linkedin_username:                 # uncomment + add your LinkedIn username
-rss_icon: true # comment this line to hide the RSS icon
+# rss_icon: true # hidden: the site has no blog, so the feed is empty

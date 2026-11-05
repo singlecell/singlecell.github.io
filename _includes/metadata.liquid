@@ -63,7 +63,7 @@
   {% if page.og_image or site.og_image %}
     <meta property="og:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}{{ site.og_image }}{% endif %}">
   {% endif %}
-  <meta property="og:locale" content="{{ site.lang }}">
+  <meta property="og:locale" content="{% if page_lang == 'zh' %}zh_CN{% else %}en_US{% endif %}">
 
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary">
@@ -233,16 +233,18 @@
         "author":
         {
             "@type": "Person",
-            "name": "{{ author_name }}"
+            "name": {{ author_name | strip | jsonify }}
         },
         "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
         "@type": "{% if is_blog_post %}BlogPosting{% else %}WebSite{% endif %}",
-        "description": "{% if page.description %}{{ page.description }}{% else if site.description %}{{ site.description }}{% endif %}",
-        "headline": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
+        {%- if page.description %}{% assign ld_desc = page.description %}{% else %}{% assign ld_desc = site.description %}{% endif %}
+        {%- if page.title %}{% assign ld_head = page.title %}{% else %}{% assign ld_head = site.title %}{% endif %}
+        "description": {{ ld_desc | strip | jsonify }},
+        "headline": {{ ld_head | strip | jsonify }},
         {% if sameaslinks != blank %}
         "sameAs": {{ sameaslinks | jsonify }},
         {% endif %}
-        "name": "{{ author_name }}",
+        "name": {{ author_name | strip | jsonify }},
         "@context": "https://schema.org"
     }
   </script>

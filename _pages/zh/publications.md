@@ -4,7 +4,7 @@ lang: zh
 layout: page
 permalink: /zh/publications/
 title: 论文发表
-description:
+description: 期刊论文，按发表时间倒序排列。
 nav: true
 nav_order: 3
 ---

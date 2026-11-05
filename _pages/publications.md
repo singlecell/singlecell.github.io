@@ -3,7 +3,7 @@ ref: publications
 layout: page
 permalink: /publications/
 title: Publications
-description:
+description: Peer-reviewed journal articles, newest first.
 nav: true
 nav_order: 3
 ---

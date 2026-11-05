@@ -15,6 +15,15 @@
       window.addEventListener('resize', updateBrand, { passive: true });
     }
 
+    // Readable labels for the profile icons (the theme derives them from config keys, e.g. "Orcid id").
+    var iconLabels = { 'mailto:': 'Email', 'scholar.google': 'Google Scholar', 'orcid.org': 'ORCID',
+      'scopus.com': 'Scopus', 'publons.com': 'Web of Science', 'github.com': 'GitHub' };
+    document.querySelectorAll('.social .contact-icons a').forEach(function (a) {
+      for (var k in iconLabels) {
+        if (a.href.indexOf(k) !== -1) { a.title = iconLabels[k]; a.setAttribute('aria-label', iconLabels[k]); break; }
+      }
+    });
+
     var article = document.querySelector('.post article') || document.querySelector('article');
     if (!article) return;
 
