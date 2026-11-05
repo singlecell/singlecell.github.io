@@ -1,0 +1,65 @@
+<svg viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An ambient ion source desorbs a spot on a TLC plate; ions fly into a miniature mass spectrometer; inset shows a mass spectrometry image of a tissue">
+  <rect width="640" height="420" rx="24" fill="#EEF3FB"/>
+  <circle cx="320" cy="210" r="150" fill="#DDE7F6"/>
+
+  <!-- bench -->
+  <rect x="24" y="352" width="592" height="14" rx="7" fill="#C9D6EA"/>
+
+  <!-- TLC plate lying on the bench (perspective) -->
+  <path d="M48 344 L 96 262 L 262 262 L 238 344 Z" fill="#F4F1E6" stroke="#C9C2AA" stroke-width="2"/>
+  <g fill="#E8743B"><ellipse cx="100" cy="326" rx="12" ry="5"/><ellipse cx="140" cy="326" rx="12" ry="5"/><ellipse cx="180" cy="326" rx="12" ry="5"/></g>
+  <g fill="#A23D9E"><ellipse cx="124" cy="292" rx="11" ry="4.5"/><ellipse cx="200" cy="292" rx="11" ry="4.5"/></g>
+  <g fill="#2E7D32"><ellipse cx="160" cy="278" rx="10" ry="4"/></g>
+
+  <!-- ambient ion source (DART / laser) aimed at a spot -->
+  <g transform="rotate(52 120 170)">
+    <rect x="70" y="150" width="104" height="40" rx="10" fill="#1D3470"/>
+    <rect x="170" y="158" width="24" height="24" rx="4" fill="#2E52A3"/>
+    <rect x="84" y="162" width="40" height="6" rx="3" fill="#7CA6D8"/>
+  </g>
+  <!-- plasma / laser beam onto the spot -->
+  <path d="M156 228 L 172 222 L 206 286 L 196 288 Z" fill="#F7DD7A" opacity="0.9"/>
+  <ellipse cx="200" cy="292" rx="20" ry="8" fill="#F2B441" opacity="0.55"/>
+
+  <!-- ion plume flying to the instrument inlet -->
+  <g fill="#F2B441">
+    <circle cx="222" cy="270" r="5"/><circle cx="248" cy="252" r="5.5"/><circle cx="276" cy="240" r="4.5"/>
+    <circle cx="304" cy="232" r="5"/><circle cx="332" cy="226" r="4"/><circle cx="358" cy="222" r="4.5"/>
+  </g>
+  <g fill="#2E52A3"><circle cx="238" cy="262" r="3"/><circle cx="292" cy="238" r="3"/><circle cx="344" cy="224" r="3"/></g>
+  <path d="M214 276 C 260 240, 320 222, 378 220" stroke="#F2B441" stroke-width="2" fill="none" stroke-dasharray="3 7" stroke-linecap="round"/>
+
+  <!-- miniature mass spectrometer -->
+  <rect x="380" y="150" width="210" height="196" rx="20" fill="#FFFFFF"/>
+  <rect x="566" y="150" width="24" height="196" rx="12" fill="#D8E3F2"/>
+  <rect x="370" y="210" width="20" height="22" rx="5" fill="#2E52A3"/>
+  <rect x="402" y="172" width="150" height="96" rx="10" fill="#1D3470"/>
+  <g stroke="#A9C7E6" stroke-width="5" stroke-linecap="round">
+    <line x1="422" y1="250" x2="422" y2="236"/><line x1="440" y1="250" x2="440" y2="214"/>
+    <line x1="458" y1="250" x2="458" y2="240"/><line x1="494" y1="250" x2="494" y2="222"/>
+    <line x1="512" y1="250" x2="512" y2="242"/><line x1="530" y1="250" x2="530" y2="230"/>
+  </g>
+  <line x1="476" y1="250" x2="476" y2="190" stroke="#F2B441" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="420" cy="296" r="9" fill="#6FDC8C"/><circle cx="446" cy="296" r="9" fill="#F2B441"/>
+  <rect x="470" y="290" width="80" height="12" rx="6" fill="#D8E3F2"/>
+  <rect x="402" y="318" width="60" height="8" rx="4" fill="#D8E3F2"/>
+  <!-- carry handle: portable -->
+  <path d="M440 150 C 440 120, 520 120, 520 150" stroke="#2E52A3" stroke-width="10" fill="none" stroke-linecap="round"/>
+
+  <g transform="translate(206 -6)">
+  <!-- inset: mass spectrometry image of a tissue section -->
+  <rect x="36" y="40" width="150" height="110" rx="14" fill="#FFFFFF"/>
+  <clipPath id="tissue"><path d="M62 128 C 50 96, 66 62, 104 58 C 142 54, 166 78, 160 106 C 154 134, 120 140, 92 136 C 78 134, 68 134, 62 128 Z"/></clipPath>
+  <g clip-path="url(#tissue)">
+    <rect x="40" y="50" width="140" height="100" fill="#1D3470"/>
+    <g opacity="0.95">
+      <rect x="70" y="64" width="12" height="12" fill="#2E52A3"/><rect x="82" y="64" width="12" height="12" fill="#5584C6"/><rect x="94" y="64" width="12" height="12" fill="#7CA6D8"/><rect x="106" y="64" width="12" height="12" fill="#5584C6"/>
+      <rect x="70" y="76" width="12" height="12" fill="#5584C6"/><rect x="82" y="76" width="12" height="12" fill="#F7DD7A"/><rect x="94" y="76" width="12" height="12" fill="#F2B441"/><rect x="106" y="76" width="12" height="12" fill="#7CA6D8"/><rect x="118" y="76" width="12" height="12" fill="#2E52A3"/>
+      <rect x="58" y="88" width="12" height="12" fill="#2E52A3"/><rect x="70" y="88" width="12" height="12" fill="#7CA6D8"/><rect x="82" y="88" width="12" height="12" fill="#F2B441"/><rect x="94" y="88" width="12" height="12" fill="#E8743B"/><rect x="106" y="88" width="12" height="12" fill="#F2B441"/><rect x="118" y="88" width="12" height="12" fill="#5584C6"/><rect x="130" y="88" width="12" height="12" fill="#2E52A3"/>
+      <rect x="70" y="100" width="12" height="12" fill="#5584C6"/><rect x="82" y="100" width="12" height="12" fill="#7CA6D8"/><rect x="94" y="100" width="12" height="12" fill="#F7DD7A"/><rect x="106" y="100" width="12" height="12" fill="#7CA6D8"/><rect x="118" y="100" width="12" height="12" fill="#5584C6"/><rect x="130" y="100" width="12" height="12" fill="#2E52A3"/>
+      <rect x="82" y="112" width="12" height="12" fill="#2E52A3"/><rect x="94" y="112" width="12" height="12" fill="#5584C6"/><rect x="106" y="112" width="12" height="12" fill="#2E52A3"/>
+    </g>
+  </g>
+  <path d="M62 128 C 50 96, 66 62, 104 58 C 142 54, 166 78, 160 106 C 154 134, 120 140, 92 136 C 78 134, 68 134, 62 128 Z" fill="none" stroke="#1D3470" stroke-width="2.5"/>
+  </g>
+</svg>

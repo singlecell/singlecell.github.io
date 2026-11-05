@@ -60,14 +60,12 @@ cv:
         end_date: 2020-07
 
     Research Interests:
-      - label: Analytical technology innovation
-        details: "New mass spectrometry, chromatography, and sample-pretreatment technologies for the precise analysis of complex natural-medicine systems"
-      - label: Active ingredient discovery
-        details: "Discovery and structural characterization of bioactive constituents in traditional Chinese medicines"
-      - label: Targeting analysis & metabolomics
-        details: "Endogenous molecular targeting analysis and metabolomics to unravel mechanisms of action"
-      - label: Quality control & safety
-        details: "Green-chemistry strategies plus the quality control and safety evaluation of natural products"
+      - label: AI-driven analysis
+        details: "Machine learning fused with in situ and miniature mass-spectrometry data for intelligent interpretation and discrimination; deep learning for image-based quantitation"
+      - label: In situ mass spectrometry
+        details: "TLC–ambient MS, chromatography–bioautography–MS screening, mass spectrometry imaging, and miniature MS for on-site testing without sample preparation"
+      - label: TCM analysis
+        details: "Characterization, quality evaluation and safety screening of medicinal materials and preparations; ISO 19842:2025 international standard"
 
     Academic Service:
       - label: Editorial boards

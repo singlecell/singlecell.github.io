@@ -40,32 +40,29 @@ latest_posts:
 
 <div id="research-interests" class="full-section">
 <h2>研究方向</h2>
-<p class="ri-intro">研究贯穿天然药物分析的完整链条——从活性成分的发现与表征，到分子作用机制的解析，再到产品质量与安全的保障。</p>
+<p class="ri-intro">围绕“原位质谱—微型质谱—人工智能”融合，开展中药复杂体系质谱分析新技术及装备应用研究，分为三个方向。</p>
 
 <div class="ri-cards">
   <div class="ri-card">
-    <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6l-5.4 9.3A1.5 1.5 0 0 0 5.9 21h12.2a1.5 1.5 0 0 0 1.3-2.7L14 9V3"/><path d="M7 14h10"/></svg></div>
-    <h3>分析技术创新</h3>
-    <p class="ri-sub">质谱 · 色谱 · 样品前处理</p>
-    <p class="ri-desc">发展质谱、色谱与样品前处理新方法，用于复杂天然药物体系的精准分析。</p>
+    <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></div>
+    <h3>AI 驱动</h3>
+    <p class="ri-sub">机器学习 · 深度学习</p>
+    <p class="ri-desc">将机器学习与原位/微型质谱数据融合，实现中药质谱数据的智能解析与判别；以深度学习实现图像智能定量。</p>
+    <a class="ri-more" href="{{ '/zh/research/' | relative_url }}#ai">了解更多 →</a>
   </div>
   <div class="ri-card">
-    <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
-    <h3>活性成分发现</h3>
-    <p class="ri-sub">天然产物</p>
-    <p class="ri-desc">中药中生物活性成分的发现与结构表征。</p>
+    <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 5 4-14 2 9h6"/></svg></div>
+    <h3>原位质谱</h3>
+    <p class="ri-sub">薄层色谱-质谱 · 质谱成像 · 微型质谱</p>
+    <p class="ri-desc">薄层色谱-原位质谱、生物自显影一体化筛选与质谱成像，实现成分免前处理、原位直接识别；微型质谱把分析带到现场。</p>
+    <a class="ri-more" href="{{ '/zh/research/' | relative_url }}#insitu">了解更多 →</a>
   </div>
   <div class="ri-card">
-    <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg></div>
-    <h3>靶向分析与代谢组学</h3>
-    <p class="ri-sub">代谢组学 · 分子靶向</p>
-    <p class="ri-desc">通过内源性分子靶向分析与代谢组学，揭示作用机制。</p>
-  </div>
-  <div class="ri-card">
-    <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.6-3.1 7.6-7 9-3.9-1.4-7-4.4-7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
-    <h3>质量控制与安全性</h3>
-    <p class="ri-sub">绿色化学 · 质量控制</p>
-    <p class="ri-desc">绿色化学策略，以及天然产物的质量控制与安全性评价。</p>
+    <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+    <h3>中药分析</h3>
+    <p class="ri-sub">品质 · 安全 · 标准</p>
+    <p class="ri-desc">人参、三七、沉香、陈皮、千里光等药材及制剂的品质评价与安全性筛查；主持制定 ISO 19842:2025 国际标准。</p>
+    <a class="ri-more" href="{{ '/zh/research/' | relative_url }}#tcm">了解更多 →</a>
   </div>
 </div>
 </div>

@@ -37,32 +37,29 @@ latest_posts:
 
 <div id="research-interests" class="full-section">
 <h2>Research Interests</h2>
-<p class="ri-intro">My work spans the full chain of natural-medicine analysis — from discovering and characterizing active constituents, to decoding their molecular mechanisms, to safeguarding product quality and safety.</p>
+<p class="ri-intro">I integrate in situ mass spectrometry, miniature mass spectrometry and artificial intelligence to analyse complex traditional Chinese medicine systems — along three directions.</p>
 
 <div class="ri-cards">
   <div class="ri-card">
-    <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6l-5.4 9.3A1.5 1.5 0 0 0 5.9 21h12.2a1.5 1.5 0 0 0 1.3-2.7L14 9V3"/><path d="M7 14h10"/></svg></div>
-    <h3>Analytical Technology Innovation</h3>
-    <p class="ri-sub">Mass Spectrometry · Chromatography · Sample Pretreatment</p>
-    <p class="ri-desc">Developing new mass spectrometry, chromatography, and sample-pretreatment methods for the precise analysis of complex natural-medicine systems.</p>
+    <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></div>
+    <h3>AI-Driven Analysis</h3>
+    <p class="ri-sub">Machine Learning · Deep Learning</p>
+    <p class="ri-desc">Machine learning on in situ and miniature MS data for intelligent interpretation and discrimination; deep learning for image-based quantitation.</p>
+    <a class="ri-more" href="{{ '/research/' | relative_url }}#ai">Learn more →</a>
   </div>
   <div class="ri-card">
-    <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
-    <h3>Active Ingredient Discovery</h3>
-    <p class="ri-sub">Natural Products</p>
-    <p class="ri-desc">Discovery and structural characterization of bioactive constituents in traditional Chinese medicines.</p>
+    <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 5 4-14 2 9h6"/></svg></div>
+    <h3>In Situ Mass Spectrometry</h3>
+    <p class="ri-sub">TLC–MS · MS Imaging · Miniature MS</p>
+    <p class="ri-desc">TLC–ambient MS, bioautography–MS screening and MS imaging identify constituents without sample preparation; miniature MS takes the analysis on site.</p>
+    <a class="ri-more" href="{{ '/research/' | relative_url }}#insitu">Learn more →</a>
   </div>
   <div class="ri-card">
-    <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg></div>
-    <h3>Targeting Analysis &amp; Metabolomics</h3>
-    <p class="ri-sub">Metabolomics · Molecular Targeting</p>
-    <p class="ri-desc">Endogenous molecular targeting analysis and metabolomics to unravel mechanisms of action.</p>
-  </div>
-  <div class="ri-card">
-    <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.6-3.1 7.6-7 9-3.9-1.4-7-4.4-7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
-    <h3>Quality Control &amp; Safety</h3>
-    <p class="ri-sub">Green Chemistry · Quality Control</p>
-    <p class="ri-desc">Green-chemistry strategies plus the quality control and safety evaluation of natural products.</p>
+    <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+    <h3>TCM Analysis</h3>
+    <p class="ri-sub">Quality · Safety · Standards</p>
+    <p class="ri-desc">Quality evaluation and safety screening of ginseng, notoginseng, agarwood, citrus peel, Senecio and their preparations; ISO 19842:2025.</p>
+    <a class="ri-more" href="{{ '/research/' | relative_url }}#tcm">Learn more →</a>
   </div>
 </div>
 </div>

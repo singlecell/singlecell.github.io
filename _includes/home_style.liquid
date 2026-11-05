@@ -73,8 +73,11 @@
   margin: 0 0 1.8rem; max-width: 46rem;
   color: var(--global-text-color); opacity: 0.85; line-height: 1.6;
 }
-.ri-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
-@media (max-width: 768px) { .ri-cards { grid-template-columns: 1fr; } }
+.ri-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+@media (max-width: 991px) { .ri-cards { grid-template-columns: 1fr; } }
+.ri-card { display: flex; flex-direction: column; }
+.ri-card .ri-desc { flex: 1; }
+.ri-card .ri-more { margin-top: 0.9rem; font-size: 0.9rem; font-weight: 500; }
 .ri-card {
   background: var(--global-card-bg-color, var(--global-bg-color, #fff));
   border: 1px solid var(--global-divider-color, rgba(128,128,128,0.18));

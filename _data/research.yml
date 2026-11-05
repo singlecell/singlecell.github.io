@@ -1,0 +1,160 @@
+# Research directions shown on /research/ and /zh/research/ (and summarised on the home pages).
+# Each text field has an English (en) and Chinese (zh) version.
+
+intro:
+  en: >
+    I develop new mass-spectrometry technologies and instrumentation for analysing complex
+    traditional Chinese medicine (TCM) systems. By integrating in situ mass spectrometry,
+    miniature mass spectrometry and artificial intelligence, my group has built a systematic
+    in situ MS platform for TCM. The work runs along three mutually reinforcing directions:
+    <strong>AI-driven analysis</strong> turns spectra and images into decisions,
+    <strong>in situ mass spectrometry</strong> changes how and where we measure, and
+    <strong>TCM analysis</strong> applies both to the quality and safety of medicinal materials
+    and preparations.
+  zh: >
+    长期从事中药复杂体系质谱分析新技术及装备应用研究，围绕“原位质谱—微型质谱—人工智能”融合，
+    系统构建了中药原位质谱分析技术体系。研究分为三个相互支撑的方向：以<strong>AI 驱动</strong>实现数据的智能解析与判别，
+    以<strong>原位质谱</strong>革新测量的方式与场景，以<strong>中药分析</strong>落实到药材与制剂的品质评价与安全性筛查。
+
+papers_label: { en: Representative papers, zh: 代表性论文 }
+more_label: { en: See all publications, zh: 查看全部论文 }
+
+areas:
+  - id: ai
+    image: research/ai-driven.svg
+    icon: '<rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/>'
+    title: { en: AI-Driven Analysis, zh: AI 驱动 }
+    subtitle: { en: Turning spectra and images into decisions, zh: AI-Driven Analysis }
+    lead:
+      en: >
+        Fusing machine learning with in situ and miniature mass-spectrometry data to build
+        intelligent interpretation and discrimination methods for TCM, and applying deep learning
+        to routine analytical images such as TLC plates, so that raw data turn quickly and
+        reproducibly into identifications and quantitative results. The tools are open source.
+      zh: >
+        将机器学习等人工智能方法与原位/微型质谱数据融合，建立中药质谱数据的智能解析与判别方法；
+        同时把深度学习用于薄层色谱等常规分析图像，让原始数据快速、可重复地转化为定性判别与定量结果。相关工具均已开源。
+    cards:
+      - title: { en: Intelligent spectral interpretation, zh: 质谱数据智能解析 }
+        text:
+          en: Machine-learning models built on in situ and miniature MS data recognise characteristic ions and discriminate between samples.
+          zh: 基于原位/微型质谱数据构建机器学习模型，识别特征离子并实现样品判别。
+      - title: { en: On-site authentication, zh: 现场真伪鉴别 }
+        text:
+          en: Miniature MS plus machine learning authenticates agarwood (genuine, Kynam, counterfeit) and citrus herbs on site.
+          zh: 微型质谱结合机器学习，现场鉴别沉香（正品、奇楠、伪品）及陈皮等柑橘类药材。
+      - title: { en: Image-based quantitation, zh: 图像智能定量 }
+        text:
+          en: TLC-RAPID locates TLC spots with YOLOv5 instance segmentation and back-calculates amounts from same-plate standards.
+          zh: TLC-RAPID 以 YOLOv5 实例分割自动识别薄层色谱斑点，并依据同板标准品反算含量。
+      - title: { en: Open-source tools, zh: 开源工具 }
+        text:
+          en: AgarwoodMiniMS and TLC-RAPID ship as Windows applications with source code and demo data.
+          zh: AgarwoodMiniMS 与 TLC-RAPID 均提供 Windows 程序、源代码与示例数据。
+        link: { url: /ai/, url_zh: /zh/ai/, label: { en: AI Projects →, zh: AI 项目 → } }
+    tags:
+      en: [Machine learning, Deep learning, Instance segmentation, Miniature MS data, Pattern recognition]
+      zh: [机器学习, 深度学习, 实例分割, 微型质谱数据, 模式识别]
+    papers:
+      - cite: "Xie Y, Huang S, Zhang Q, Zhang S, Han Z, Yu J, Wang X, Chen K*, Wang Z, <b>Li L*</b>, Yang L*. On-site analysis and rapid authentication of valuable agarwood samples by paper capillary spray miniature mass spectrometry."
+        venue: J Anal Test, 2025, 9, 61–70
+        doi: 10.1007/s41664-024-00331-0
+      - cite: "Wang X, Xie Y, Yu J, Chen Y, Tian Y, Wang Z, Wang Z, <b>Li L*</b>, Yang L*. On-site analysis and rapid identification of citrus herbs by miniature mass spectrometry and machine learning."
+        venue: Rapid Commun Mass Spectrom, 2024, 38, e9780
+        doi: 10.1002/rcm.9780
+
+  - id: insitu
+    image: research/in-situ-ms.svg
+    icon: '<path d="M3 12h4l2 5 4-14 2 9h6"/>'
+    title: { en: In Situ Mass Spectrometry, zh: 原位质谱 }
+    subtitle: { en: Bringing the measurement to the sample, zh: In Situ Mass Spectrometry }
+    lead:
+      en: >
+        Developing a family of in situ techniques — TLC coupled with ambient MS, integrated
+        chromatography–bioautography–MS screening, and MS imaging for spatial analysis — that identify
+        TCM constituents directly, without sample preparation; and new ionization and on-site
+        qualitative and quantitative methods tailored to portable miniature mass spectrometers,
+        taking analysis from the lab into the field.
+      zh: >
+        发展薄层色谱-原位质谱联用、色谱-生物自显影-原位质谱一体化筛选、质谱成像空间分析等系列原位分析技术，
+        实现中药成分免前处理、原位直接识别；建立适配便携式微型质谱的新型离子化与现场定性定量方法，把分析从实验室带到现场。
+    cards:
+      - title: { en: TLC–ambient MS, zh: 薄层色谱-原位质谱 }
+        text:
+          en: Graphite-assisted LA-DART-MS, DART and LESA ionize constituents straight from TLC plates, adding sensitivity while keeping the separation.
+          zh: 石墨辅助 LA-DART-MS、DART、LESA 等直接从薄层板上离子化，在保留色谱分离信息的同时提高灵敏度。
+      - title: { en: Integrated bioactivity screening, zh: 一体化活性筛选 }
+        text:
+          en: TLC–bioautography–ambient MS yields chemical and biological profiles from a single plate.
+          zh: 色谱-生物自显影-原位质谱联用，在同一块板上同时获得化学组成与生物活性信息。
+      - title: { en: Mass spectrometry imaging, zh: 质谱成像 }
+        text:
+          en: Spatially resolved maps of constituents and metabolites in tissue sections link chemistry to biology.
+          zh: 呈现组织切片中成分与代谢物的空间分布，把化学信息与生物学过程联系起来。
+      - title: { en: Miniature MS on site, zh: 微型质谱现场快检 }
+        text:
+          en: New ionization such as paper capillary spray, matched to portable miniature MS, enables on-site testing of efficacy and toxic constituents.
+          zh: 纸毛细管喷雾等新型离子化与便携式微型质谱配合，实现中药功效/毒性成分的现场快检。
+    tags:
+      en: [DART-MS, LA-DART-MS, Paper capillary spray, TLC–MS, TLC–bioautography, LESA-MS, MS imaging, Miniature MS]
+      zh: [DART-MS, LA-DART-MS, 纸毛细管喷雾, 薄层色谱-质谱, 生物自显影, LESA-MS, 质谱成像, 微型质谱]
+    papers:
+      - cite: "Xie Y, You L, Wang X, Zhang Y, Wang Z, <b>Li L*</b>, Yang L*. Miniature mass spectrometry in drug and food analysis: bridging laboratory and field applications."
+        venue: Trends Anal Chem, 2026, 195, 118594
+        doi: 10.1016/j.trac.2025.118594
+      - cite: "Lv J, Wang X, Gu L, Wang Z, Yang L*, <b>Li L*</b>. A single-plate strategy for simultaneous chemical and biological profiling of natural products via TLC-bioautography-ambient mass spectrometry."
+        venue: J Chromatogr A, 2026, 1785, 467216
+      - cite: "Wang X, Lv J, Chen Y, You L, <b>Li L*</b>, Wang Z, Yang L*. Enhanced-sensitivity profiling of natural products from TLC plates using a facile graphite-based LA-DART-MS platform."
+        venue: Chem Commun, 2026, 62, 1841–1844
+        doi: 10.1039/d5cc04369g
+      - cite: "Chen Y, Xie Y, <b>Li L*</b>, Wang Z, Yang L*. Advances in mass spectrometry imaging for toxicological analysis and safety evaluation of pharmaceuticals."
+        venue: Mass Spectrom Rev, 2023, 42, 2207–2233
+        doi: 10.1002/mas.21807
+
+  - id: tcm
+    image: research/tcm-analysis.svg
+    icon: '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>'
+    title: { en: TCM Analysis, zh: 中药分析 }
+    subtitle: { en: Quality and safety of medicinal materials and preparations, zh: Analysis of Traditional Chinese Medicines }
+    lead:
+      en: >
+        Combining in situ and miniature MS with high-resolution and ion-mobility LC–MS to characterise
+        constituents and to evaluate the quality and safety of medicinal materials and preparations —
+        applied to ginseng, notoginseng, agarwood, aged citrus peel, Senecio and others. As project
+        leader, I led the development of the international standard ISO 19842:2025 for Chinese yam (Shanyao).
+      zh: >
+        将原位质谱、微型质谱与高分辨/离子淌度液质联用相结合，开展中药药材及制剂的成分表征、品质评价与安全性筛查，
+        相关技术已应用于人参、三七、沉香、陈皮、千里光等药材及制剂。作为项目负责人主持制定 ISO 19842:2025《中医药—山药》国际标准。
+    cards:
+      - title: { en: Comprehensive characterization, zh: 成分全面表征 }
+        text:
+          en: High-resolution and ion-mobility LC–MS (LC–MS / IM-MS) speed up the identification and annotation of complex multi-component systems.
+          zh: 高分辨与离子淌度液质联用（LC–MS / IM-MS）加速复杂多组分体系的鉴定与注释。
+      - title: { en: Quality evaluation, zh: 品质评价 }
+        text:
+          en: Quality evaluation and authentication of ginseng, notoginseng, agarwood, aged citrus peel and their preparations, including how constituents transform during processing.
+          zh: 人参、三七、沉香、陈皮等药材及制剂的品质评价与真伪鉴别，并追踪成分在炮制与煎煮中的转化。
+      - title: { en: Safety screening, zh: 安全性筛查 }
+        text:
+          en: Rapid identification and quantitation of pyrrolizidine alkaloids in Senecio and other herbs, and spatial lipidomics of the liver damage they cause.
+          zh: 千里光等药材中吡咯里西啶生物碱的快速识别与定量，并借助空间脂质组学揭示其肝损伤机制。
+      - title: { en: International standards, zh: 国际标准 }
+        text:
+          en: Project leader of the international standard ISO 19842:2025 on Chinese yam (Shanyao); expert of ISO/TC 249.
+          zh: 主持制定 ISO 19842:2025《中医药—山药》国际标准；ISO/TC 249 专家。
+    tags:
+      en: [LC–MS, Ion-mobility MS, Ginseng, Agarwood, Pyrrolizidine alkaloids, Spatial lipidomics, ISO standard]
+      zh: [液质联用, 离子淌度质谱, 人参, 沉香, 吡咯里西啶生物碱, 空间脂质组学, ISO 国际标准]
+    papers:
+      - cite: "Yang X, Wang X, Chen Y, Wang Z, Zhang D, Wang N, Wang Z, Xiong A*, <b>Li L*</b>, Yang L*. Rapid on-site identification of pyrrolizidine alkaloids in herbal medicines using miniature mass spectrometry."
+        venue: Analyst, 2025, 150, 1929–1938
+        doi: 10.1039/D5AN00065C
+      - cite: "Chen Y, Xu J, Lam TKY, Xie Y, Wang J, Xiong A, Wang Z, Cai Z, <b>Li L*</b>, Yang L*. Unraveling pyrrolizidine alkaloid-induced liver damage with an integrative spatial lipidomics framework."
+        venue: J Pharm Anal, 2026, 16, 101340
+        doi: 10.1016/j.jpha.2025.101340
+      - cite: "Chen Y, <b>Li L*</b>, Xiong F, Xie Y, Xiong A, Wang Z, Yang L*. Rapid identification and determination of pyrrolizidine alkaloids in herbal and food samples via direct analysis in real-time mass spectrometry."
+        venue: Food Chem, 2021, 334, 127472
+        doi: 10.1016/j.foodchem.2020.127472
+      - cite: "Liu L, Wang Z, Zhang Q, Mei Y, <b>Li L*</b>, Liu H, Wang Z, Yang L*. Ion mobility mass spectrometry for the separation and characterization of small molecules."
+        venue: Anal Chem, 2023, 95, 134–151
+        doi: 10.1021/acs.analchem.2c02866

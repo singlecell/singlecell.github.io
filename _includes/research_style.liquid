@@ -26,7 +26,7 @@
 .ra-head .ra-en { font-size: 0.9rem; font-weight: 500; color: var(--global-theme-color); margin: 0; letter-spacing: 0.02em; }
 
 .ra-lead {
-  max-width: 48rem; margin: 0 0 1.6rem;
+  max-width: 48rem; margin: 0;
   font-size: 1rem; line-height: 1.85;
   color: var(--global-text-color); opacity: 0.85; text-wrap: pretty;
 }
@@ -53,4 +53,32 @@
   border: 1px solid var(--global-divider-color, rgba(128,128,128,0.28));
   color: var(--global-text-color); opacity: 0.85;
 }
+
+/* jump links to the three directions */
+.ra-jump { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: -1.5rem 0 3rem; }
+.ra-jump a {
+  display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.42rem 0.95rem; border-radius: 999px;
+  font-size: 0.9rem; font-weight: 500; text-decoration: none !important; color: var(--global-text-color);
+  border: 1px solid var(--global-divider-color, rgba(128,128,128,0.3)); transition: all 0.2s ease;
+}
+.ra-jump a:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
+.ra-jump svg { width: 16px; height: 16px; }
+.research-area { scroll-margin-top: 5rem; }
+
+/* lead text beside the illustration */
+.ra-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr); gap: 2rem; align-items: center; margin: 0 0 1.8rem; }
+@media (max-width: 768px) { .ra-top { grid-template-columns: 1fr; gap: 1.2rem; } .ra-figure { order: -1; } }
+.ra-figure { margin: 0; }
+.ra-figure img { display: block; width: 100%; height: auto; border-radius: 16px; }
+
+.ra-card .ra-card-link { display: inline-block; margin-top: 0.55rem; font-size: 0.88rem; font-weight: 500; }
+
+/* representative papers */
+.ra-papers { margin-top: 1.6rem; }
+.ra-papers h3 { font-size: 0.95rem; font-weight: 700; margin: 0 0 0.6rem; text-transform: uppercase; letter-spacing: 0.04em; opacity: 0.7; }
+.ra-papers ol { margin: 0; padding-left: 1.2rem; }
+.ra-papers li { font-size: 0.9rem; line-height: 1.65; margin: 0 0 0.55rem; color: var(--global-text-color); opacity: 0.9; }
+.ra-papers li .venue { font-style: italic; }
+.ra-papers li a { white-space: nowrap; }
+.ra-more { margin-top: 1rem; font-size: 1rem; }
 </style>

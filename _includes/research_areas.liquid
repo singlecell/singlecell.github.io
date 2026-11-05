@@ -1,0 +1,60 @@
+{%- comment -%}
+  Renders the research directions from _data/research.yml in the page's language.
+{%- endcomment -%}
+{%- assign page_lang = page.lang | default: 'en' -%}
+{%- assign R = site.data.research -%}
+<p class="research-intro">{{ R.intro[page_lang] }}</p>
+
+<nav class="ra-jump" aria-label="{{ page.title }}">
+  {%- for a in R.areas %}
+  <a href="#{{ a.id }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{{ a.icon }}</svg>{{ a.title[page_lang] }}</a>
+  {%- endfor %}
+</nav>
+
+{%- for a in R.areas %}
+<section class="research-area" id="{{ a.id }}">
+  <div class="ra-head">
+    <div class="ra-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{{ a.icon }}</svg></div>
+    <div>
+      <h2>{{ a.title[page_lang] }}</h2>
+      <p class="ra-en">{{ a.subtitle[page_lang] }}</p>
+    </div>
+  </div>
+
+  <div class="ra-top">
+    <p class="ra-lead">{{ a.lead[page_lang] }}</p>
+    <figure class="ra-figure">
+      <img src="{{ a.image | prepend: 'assets/img/' | relative_url }}" alt="{{ a.title[page_lang] }}" width="640" height="420" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}" decoding="async">
+    </figure>
+  </div>
+
+  <div class="ra-cards">
+    {%- for c in a.cards %}
+    <div class="ra-card">
+      <h3>{{ c.title[page_lang] }}</h3>
+      <p>{{ c.text[page_lang] }}</p>
+      {%- if c.link %}
+      <a class="ra-card-link" href="{% if page_lang == 'zh' %}{{ c.link.url_zh | relative_url }}{% else %}{{ c.link.url | relative_url }}{% endif %}">{{ c.link.label[page_lang] }}</a>
+      {%- endif %}
+    </div>
+    {%- endfor %}
+  </div>
+
+  <div class="ra-tags">
+    {%- for tag in a.tags[page_lang] %}<span class="ra-tag">{{ tag }}</span>{% endfor %}
+  </div>
+
+  {%- if a.papers %}
+  <div class="ra-papers">
+    <h3>{{ R.papers_label[page_lang] }}</h3>
+    <ol>
+      {%- for p in a.papers %}
+      <li>{{ p.cite }} <span class="venue">{{ p.venue }}</span>.{% if p.doi %} <a href="https://doi.org/{{ p.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}</li>
+      {%- endfor %}
+    </ol>
+  </div>
+  {%- endif %}
+</section>
+{%- endfor %}
+
+<p class="research-intro ra-more"><a href="{% if page_lang == 'zh' %}{{ '/zh/publications/' | relative_url }}{% else %}{{ '/publications/' | relative_url }}{% endif %}">{{ R.more_label[page_lang] }} →</a></p>
