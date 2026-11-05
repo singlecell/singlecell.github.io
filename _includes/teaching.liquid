@@ -184,7 +184,7 @@
       {%- assign ext = m.media | split: '.' | last | downcase %}
       <div class="teach-card teach-material">
         {%- if m.media %}
-        <button type="button" class="teach-media" title="{{ s_enlarge }}" data-src="{{ media_url }}" data-kind="{% if ext == 'mp4' or ext == 'webm' %}video{% else %}image{% endif %}"{% if m.download %} data-download="{{ m.download | prepend: 'assets/' | relative_url }}"{% endif %}>
+        <button type="button" class="teach-media" title="{{ s_enlarge }}" data-src="{{ media_url }}" data-kind="{% if ext == 'mp4' or ext == 'webm' %}video{% else %}image{% endif %}"{% if m.video %} data-video="{{ m.video | prepend: 'assets/' | relative_url }}"{% endif %}{% if m.download %} data-download="{{ m.download | prepend: 'assets/' | relative_url }}"{% endif %}>
           {%- if ext == 'mp4' or ext == 'webm' %}
           <video data-src="{{ media_url }}"{% if m.poster %} data-poster="{{ m.poster | prepend: 'assets/' | relative_url }}"{% endif %} loop muted playsinline preload="none" aria-label="{{ m.title[page_lang] | escape }}"></video>
           {%- else %}
@@ -258,6 +258,7 @@
     var holder = box.querySelector('.teach-lightbox-media');
     var caption = box.querySelector('.teach-lightbox-bar span');
     var dl = box.querySelector('.teach-lightbox-dl');
+    var pendingHd = null;
     document.querySelectorAll('.teach-media').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var title = btn.closest('.teach-material').querySelector('h4').textContent;
@@ -271,6 +272,17 @@
         }
         el.src = btn.dataset.src;
         holder.appendChild(el);
+        // an animated image shows at once; swap in the sharper HD video once it can play
+        if (btn.dataset.kind !== 'video' && btn.dataset.video) {
+          var hd = pendingHd = document.createElement('video');
+          hd.muted = true; hd.loop = true; hd.playsInline = true; hd.controls = true; hd.preload = 'auto';
+          hd.addEventListener('canplaythrough', function () {
+            if (!el.isConnected) return;
+            holder.replaceChild(hd, el);
+            var p = hd.play(); if (p && p.catch) p.catch(function () {});
+          }, { once: true });
+          hd.src = btn.dataset.video;
+        }
         caption.textContent = title;
         dl.hidden = !btn.dataset.download;
         if (btn.dataset.download) dl.href = btn.dataset.download;
@@ -280,7 +292,10 @@
     function close() { box.close(); }
     box.querySelector('.teach-lightbox-close').addEventListener('click', close);
     box.addEventListener('click', function (e) { if (e.target === box) close(); });
-    box.addEventListener('close', function () { holder.innerHTML = ''; });
+    box.addEventListener('close', function () {
+      holder.innerHTML = '';
+      if (pendingHd) { pendingHd.removeAttribute('src'); pendingHd.load(); pendingHd = null; }
+    });
   })();
   </script>
   {%- else %}

@@ -21,8 +21,15 @@ cd _animations
 # quick check: a 2x2 sheet of frames per animation, saved in <tmp>/anim-prev/
 python3 run.py preview ch8_hplc 03- --lang en
 
-# render to assets/teaching/<lang>/<chapter>/<name>.mp4 + .jpg
+# render to assets/teaching/<lang>/<chapter>/<name>.mp4 (+ a poster .jpg, not used)
 python3 run.py render ch8_hplc 03- --out ../assets/teaching
+
+# the page cards show a 946 px animated WebP made from each MP4
+for f in ../assets/teaching/*/hplc/03-*.mp4; do
+  ffmpeg -y -i "$f" -vf "fps=12.5,scale=946:-1:flags=lanczos" \
+    -c:v libwebp_anim -quality 80 -compression_level 6 -loop 0 "${f%.mp4}.webp"
+done
+rm -f ../assets/teaching/*/*/*.jpg
 ```
 
 Arguments: a comma-separated list of chapter modules, then optional name

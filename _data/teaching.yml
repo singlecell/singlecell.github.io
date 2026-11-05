@@ -31,6 +31,8 @@ courses:
 #   media:    path under assets/. .mp4 / .webm play as silent looping videos
 #             (only while on screen); .gif / .png / .jpg / .svg show as images.
 #   poster:   optional still image shown before a video loads.
+#   video:    optional HD video for an animated image (.webp/.gif): the
+#             enlarged view shows the image at once, then switches to it.
 #   download: optional file offered as a download (e.g. the MP4 itself).
 #   category: one filter button and one heading per category; use the same
 #             en/zh wording for every item in it.
@@ -39,8 +41,11 @@ courses:
 #             Without it the item appears on both pages.
 #   description, link: optional, as in courses.
 #
-# The animations are 1892 x 1010 MP4s rendered from the Python sources in
-# _animations/ (see its README). To add one from a GIF instead, run:
+# The animations are rendered from the Python sources in _animations/ (see
+# its README) as 1892 x 1010 MP4s, then converted to 946 px animated WebP:
+#   ffmpeg -i x.mp4 -vf "fps=12.5,scale=946:-1:flags=lanczos" \
+#     -c:v libwebp_anim -quality 80 -compression_level 6 -loop 0 x.webp
+# To add one from a GIF instead, run:
 #   ffmpeg -i in.gif -movflags +faststart -pix_fmt yuv420p \
 #     -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -c:v libx264 -crf 24 -an out.mp4
 #   ffmpeg -ss 7 -i in.gif -frames:v 1 -q:v 4 out.jpg
@@ -50,602 +55,602 @@ materials:
   - title: { en: "Energy-level transitions and three types of spectra", zh: "能级跃迁与三类光谱" }
     category: { en: "Introduction to Spectroscopy", zh: "光谱分析法概论" }
     lang: zh
-    media: teaching/zh/spectroscopy-intro/01-energy-levels.mp4
-    poster: teaching/zh/spectroscopy-intro/01-energy-levels.jpg
+    media: teaching/zh/spectroscopy-intro/01-energy-levels.webp
+    video: teaching/zh/spectroscopy-intro/01-energy-levels.mp4
     download: teaching/zh/spectroscopy-intro/01-energy-levels.mp4
 
   - title: { en: "The electromagnetic spectrum: wavelength, frequency and energy", zh: "电磁波谱与波长频率能量" }
     category: { en: "Introduction to Spectroscopy", zh: "光谱分析法概论" }
     lang: zh
-    media: teaching/zh/spectroscopy-intro/02-em-spectrum.mp4
-    poster: teaching/zh/spectroscopy-intro/02-em-spectrum.jpg
+    media: teaching/zh/spectroscopy-intro/02-em-spectrum.webp
+    video: teaching/zh/spectroscopy-intro/02-em-spectrum.mp4
     download: teaching/zh/spectroscopy-intro/02-em-spectrum.mp4
 
   - title: { en: "Wavelength dispersion by a diffraction grating", zh: "光栅衍射分光" }
     category: { en: "Introduction to Spectroscopy", zh: "光谱分析法概论" }
     lang: zh
-    media: teaching/zh/spectroscopy-intro/03-grating.mp4
-    poster: teaching/zh/spectroscopy-intro/03-grating.jpg
+    media: teaching/zh/spectroscopy-intro/03-grating.webp
+    video: teaching/zh/spectroscopy-intro/03-grating.mp4
     download: teaching/zh/spectroscopy-intro/03-grating.mp4
 
   - title: { en: "The Lambert–Beer law", zh: "朗伯比尔定律" }
     category: { en: "Introduction to Spectroscopy", zh: "光谱分析法概论" }
     lang: zh
-    media: teaching/zh/spectroscopy-intro/04-lambert-beer.mp4
-    poster: teaching/zh/spectroscopy-intro/04-lambert-beer.jpg
+    media: teaching/zh/spectroscopy-intro/04-lambert-beer.webp
+    video: teaching/zh/spectroscopy-intro/04-lambert-beer.mp4
     download: teaching/zh/spectroscopy-intro/04-lambert-beer.mp4
 
   - title: { en: "Electronic transition types and where they absorb", zh: "电子跃迁类型与吸收位置" }
     category: { en: "UV–Vis Spectrophotometry", zh: "紫外-可见分光光度法" }
     lang: zh
-    media: teaching/zh/uv-vis/01-electronic-transitions.mp4
-    poster: teaching/zh/uv-vis/01-electronic-transitions.jpg
+    media: teaching/zh/uv-vis/01-electronic-transitions.webp
+    video: teaching/zh/uv-vis/01-electronic-transitions.mp4
     download: teaching/zh/uv-vis/01-electronic-transitions.mp4
 
   - title: { en: "How an absorption spectrum forms", zh: "吸收光谱的形成" }
     category: { en: "UV–Vis Spectrophotometry", zh: "紫外-可见分光光度法" }
     lang: zh
-    media: teaching/zh/uv-vis/02-absorption-spectrum.mp4
-    poster: teaching/zh/uv-vis/02-absorption-spectrum.jpg
+    media: teaching/zh/uv-vis/02-absorption-spectrum.webp
+    video: teaching/zh/uv-vis/02-absorption-spectrum.mp4
     download: teaching/zh/uv-vis/02-absorption-spectrum.mp4
 
   - title: { en: "Solvent effects", zh: "溶剂效应" }
     category: { en: "UV–Vis Spectrophotometry", zh: "紫外-可见分光光度法" }
     lang: zh
-    media: teaching/zh/uv-vis/03-solvent-effect.mp4
-    poster: teaching/zh/uv-vis/03-solvent-effect.jpg
+    media: teaching/zh/uv-vis/03-solvent-effect.webp
+    video: teaching/zh/uv-vis/03-solvent-effect.mp4
     download: teaching/zh/uv-vis/03-solvent-effect.mp4
 
   - title: { en: "Conjugation and red shift", zh: "共轭体系与红移" }
     category: { en: "UV–Vis Spectrophotometry", zh: "紫外-可见分光光度法" }
     lang: zh
-    media: teaching/zh/uv-vis/04-conjugation-red-shift.mp4
-    poster: teaching/zh/uv-vis/04-conjugation-red-shift.jpg
+    media: teaching/zh/uv-vis/04-conjugation-red-shift.webp
+    video: teaching/zh/uv-vis/04-conjugation-red-shift.mp4
     download: teaching/zh/uv-vis/04-conjugation-red-shift.mp4
 
   - title: { en: "Effect of stray light", zh: "杂散光的影响" }
     category: { en: "UV–Vis Spectrophotometry", zh: "紫外-可见分光光度法" }
     lang: zh
-    media: teaching/zh/uv-vis/05-stray-light.mp4
-    poster: teaching/zh/uv-vis/05-stray-light.jpg
+    media: teaching/zh/uv-vis/05-stray-light.webp
+    video: teaching/zh/uv-vis/05-stray-light.mp4
     download: teaching/zh/uv-vis/05-stray-light.mp4
 
   - title: { en: "Single-beam vs double-beam instruments", zh: "单光束与双光束" }
     category: { en: "UV–Vis Spectrophotometry", zh: "紫外-可见分光光度法" }
     lang: zh
-    media: teaching/zh/uv-vis/06-single-double-beam.mp4
-    poster: teaching/zh/uv-vis/06-single-double-beam.jpg
+    media: teaching/zh/uv-vis/06-single-double-beam.webp
+    video: teaching/zh/uv-vis/06-single-double-beam.mp4
     download: teaching/zh/uv-vis/06-single-double-beam.mp4
 
   - title: { en: "Absorbance measurement error and the optimal range", zh: "吸光度测量误差与适宜范围" }
     category: { en: "UV–Vis Spectrophotometry", zh: "紫外-可见分光光度法" }
     lang: zh
-    media: teaching/zh/uv-vis/07-absorbance-error.mp4
-    poster: teaching/zh/uv-vis/07-absorbance-error.jpg
+    media: teaching/zh/uv-vis/07-absorbance-error.webp
+    video: teaching/zh/uv-vis/07-absorbance-error.mp4
     download: teaching/zh/uv-vis/07-absorbance-error.mp4
 
   - title: { en: "Six vibrational modes of a methylene group", zh: "亚甲基的六种振动形式" }
     category: { en: "Infrared Spectroscopy", zh: "红外吸收光谱法" }
     lang: zh
-    media: teaching/zh/infrared/01-ch2-vibrations.mp4
-    poster: teaching/zh/infrared/01-ch2-vibrations.jpg
+    media: teaching/zh/infrared/01-ch2-vibrations.webp
+    video: teaching/zh/infrared/01-ch2-vibrations.mp4
     download: teaching/zh/infrared/01-ch2-vibrations.mp4
 
   - title: { en: "Bond force constant and atomic mass", zh: "化学键力常数与原子质量" }
     category: { en: "Infrared Spectroscopy", zh: "红外吸收光谱法" }
     lang: zh
-    media: teaching/zh/infrared/02-force-constant.mp4
-    poster: teaching/zh/infrared/02-force-constant.jpg
+    media: teaching/zh/infrared/02-force-constant.webp
+    video: teaching/zh/infrared/02-force-constant.mp4
     download: teaching/zh/infrared/02-force-constant.mp4
 
   - title: { en: "IR activity and dipole-moment change", zh: "红外活性与偶极矩变化" }
     category: { en: "Infrared Spectroscopy", zh: "红外吸收光谱法" }
     lang: zh
-    media: teaching/zh/infrared/03-ir-activity.mp4
-    poster: teaching/zh/infrared/03-ir-activity.jpg
+    media: teaching/zh/infrared/03-ir-activity.webp
+    video: teaching/zh/infrared/03-ir-activity.mp4
     download: teaching/zh/infrared/03-ir-activity.mp4
 
   - title: { en: "Michelson interferometer and Fourier transform", zh: "迈克尔逊干涉仪与傅里叶变换" }
     category: { en: "Infrared Spectroscopy", zh: "红外吸收光谱法" }
     lang: zh
-    media: teaching/zh/infrared/04-ftir.mp4
-    poster: teaching/zh/infrared/04-ftir.jpg
+    media: teaching/zh/infrared/04-ftir.webp
+    video: teaching/zh/infrared/04-ftir.mp4
     download: teaching/zh/infrared/04-ftir.mp4
 
   - title: { en: "Hydrogen bonding, concentration and O–H absorption", zh: "氢键与浓度对羟基吸收的影响" }
     category: { en: "Infrared Spectroscopy", zh: "红外吸收光谱法" }
     lang: zh
-    media: teaching/zh/infrared/05-hydrogen-bonding.mp4
-    poster: teaching/zh/infrared/05-hydrogen-bonding.jpg
+    media: teaching/zh/infrared/05-hydrogen-bonding.webp
+    video: teaching/zh/infrared/05-hydrogen-bonding.mp4
     download: teaching/zh/infrared/05-hydrogen-bonding.mp4
 
   - title: { en: "IR spectral regions and characteristic absorptions", zh: "红外光谱的分区与特征吸收" }
     category: { en: "Infrared Spectroscopy", zh: "红外吸收光谱法" }
     lang: zh
-    media: teaching/zh/infrared/06-ir-regions.mp4
-    poster: teaching/zh/infrared/06-ir-regions.jpg
+    media: teaching/zh/infrared/06-ir-regions.webp
+    video: teaching/zh/infrared/06-ir-regions.mp4
     download: teaching/zh/infrared/06-ir-regions.mp4
 
   - title: { en: "The chromatographic separation process", zh: "色谱分离过程" }
     category: { en: "Chromatographic Theory", zh: "色谱分析法基本理论" }
     lang: zh
-    media: teaching/zh/chromatography-theory/01-separation-process.mp4
-    poster: teaching/zh/chromatography-theory/01-separation-process.jpg
+    media: teaching/zh/chromatography-theory/01-separation-process.webp
+    video: teaching/zh/chromatography-theory/01-separation-process.mp4
     download: teaching/zh/chromatography-theory/01-separation-process.mp4
 
   - title: { en: "Resolution", zh: "分离度" }
     category: { en: "Chromatographic Theory", zh: "色谱分析法基本理论" }
     lang: zh
-    media: teaching/zh/chromatography-theory/02-resolution.mp4
-    poster: teaching/zh/chromatography-theory/02-resolution.jpg
+    media: teaching/zh/chromatography-theory/02-resolution.webp
+    video: teaching/zh/chromatography-theory/02-resolution.mp4
     download: teaching/zh/chromatography-theory/02-resolution.mp4
 
   - title: { en: "Plate theory", zh: "塔板理论" }
     category: { en: "Chromatographic Theory", zh: "色谱分析法基本理论" }
     lang: zh
-    media: teaching/zh/chromatography-theory/03-plate-theory.mp4
-    poster: teaching/zh/chromatography-theory/03-plate-theory.jpg
+    media: teaching/zh/chromatography-theory/03-plate-theory.webp
+    video: teaching/zh/chromatography-theory/03-plate-theory.mp4
     download: teaching/zh/chromatography-theory/03-plate-theory.mp4
 
   - title: { en: "Three causes of peak broadening", zh: "峰展宽的三个原因" }
     category: { en: "Chromatographic Theory", zh: "色谱分析法基本理论" }
     lang: zh
-    media: teaching/zh/chromatography-theory/04-band-broadening.mp4
-    poster: teaching/zh/chromatography-theory/04-band-broadening.jpg
+    media: teaching/zh/chromatography-theory/04-band-broadening.webp
+    video: teaching/zh/chromatography-theory/04-band-broadening.mp4
     download: teaching/zh/chromatography-theory/04-band-broadening.mp4
 
   - title: { en: "The Van Deemter curve", zh: "Van Deemter曲线" }
     category: { en: "Chromatographic Theory", zh: "色谱分析法基本理论" }
     lang: zh
-    media: teaching/zh/chromatography-theory/05-van-deemter.mp4
-    poster: teaching/zh/chromatography-theory/05-van-deemter.jpg
+    media: teaching/zh/chromatography-theory/05-van-deemter.webp
+    video: teaching/zh/chromatography-theory/05-van-deemter.mp4
     download: teaching/zh/chromatography-theory/05-van-deemter.mp4
 
   - title: { en: "Competitive adsorption in adsorption chromatography", zh: "吸附色谱中的竞争吸附" }
     category: { en: "Classical Liquid Chromatography", zh: "经典液相色谱法" }
     lang: zh
-    media: teaching/zh/classical-lc/01-competitive-adsorption.mp4
-    poster: teaching/zh/classical-lc/01-competitive-adsorption.jpg
+    media: teaching/zh/classical-lc/01-competitive-adsorption.webp
+    video: teaching/zh/classical-lc/01-competitive-adsorption.mp4
     download: teaching/zh/classical-lc/01-competitive-adsorption.mp4
 
   - title: { en: "Elution order in normal- vs reversed-phase chromatography", zh: "正相与反相色谱的洗脱顺序" }
     category: { en: "Classical Liquid Chromatography", zh: "经典液相色谱法" }
     lang: zh
-    media: teaching/zh/classical-lc/02-elution-order.mp4
-    poster: teaching/zh/classical-lc/02-elution-order.jpg
+    media: teaching/zh/classical-lc/02-elution-order.webp
+    video: teaching/zh/classical-lc/02-elution-order.mp4
     download: teaching/zh/classical-lc/02-elution-order.mp4
 
   - title: { en: "Running a column chromatography separation", zh: "柱色谱的操作过程" }
     category: { en: "Classical Liquid Chromatography", zh: "经典液相色谱法" }
     lang: zh
-    media: teaching/zh/classical-lc/03-column-chromatography.mp4
-    poster: teaching/zh/classical-lc/03-column-chromatography.jpg
+    media: teaching/zh/classical-lc/03-column-chromatography.webp
+    video: teaching/zh/classical-lc/03-column-chromatography.mp4
     download: teaching/zh/classical-lc/03-column-chromatography.mp4
 
   - title: { en: "TLC development and the Rf value", zh: "薄层色谱的展开与Rf值" }
     category: { en: "Thin-Layer Chromatography", zh: "薄层色谱法" }
     lang: zh
-    media: teaching/zh/tlc/01-development-rf.mp4
-    poster: teaching/zh/tlc/01-development-rf.jpg
+    media: teaching/zh/tlc/01-development-rf.webp
+    video: teaching/zh/tlc/01-development-rf.mp4
     download: teaching/zh/tlc/01-development-rf.mp4
 
   - title: { en: "Effect of developing-solvent polarity on Rf", zh: "展开剂极性对Rf值的影响" }
     category: { en: "Thin-Layer Chromatography", zh: "薄层色谱法" }
     lang: zh
-    media: teaching/zh/tlc/02-solvent-polarity.mp4
-    poster: teaching/zh/tlc/02-solvent-polarity.jpg
+    media: teaching/zh/tlc/02-solvent-polarity.webp
+    video: teaching/zh/tlc/02-solvent-polarity.mp4
     download: teaching/zh/tlc/02-solvent-polarity.mp4
 
   - title: { en: "Quantitation by TLC densitometry", zh: "薄层扫描定量" }
     category: { en: "Thin-Layer Chromatography", zh: "薄层色谱法" }
     lang: zh
-    media: teaching/zh/tlc/03-densitometry.mp4
-    poster: teaching/zh/tlc/03-densitometry.jpg
+    media: teaching/zh/tlc/03-densitometry.webp
+    video: teaching/zh/tlc/03-densitometry.mp4
     download: teaching/zh/tlc/03-densitometry.mp4
 
   - title: { en: "How a gas chromatograph works", zh: "气相色谱仪的工作流程" }
     category: { en: "Gas Chromatography", zh: "气相色谱法" }
     lang: zh
-    media: teaching/zh/gc/01-gc-workflow.mp4
-    poster: teaching/zh/gc/01-gc-workflow.jpg
+    media: teaching/zh/gc/01-gc-workflow.webp
+    video: teaching/zh/gc/01-gc-workflow.mp4
     download: teaching/zh/gc/01-gc-workflow.mp4
 
   - title: { en: "Split and splitless injection", zh: "分流与不分流进样" }
     category: { en: "Gas Chromatography", zh: "气相色谱法" }
     lang: zh
-    media: teaching/zh/gc/02-split-splitless.mp4
-    poster: teaching/zh/gc/02-split-splitless.jpg
+    media: teaching/zh/gc/02-split-splitless.webp
+    video: teaching/zh/gc/02-split-splitless.mp4
     download: teaching/zh/gc/02-split-splitless.mp4
 
   - title: { en: "Isothermal vs temperature-programmed runs", zh: "等温与程序升温" }
     category: { en: "Gas Chromatography", zh: "气相色谱法" }
     lang: zh
-    media: teaching/zh/gc/03-temperature-programming.mp4
-    poster: teaching/zh/gc/03-temperature-programming.jpg
+    media: teaching/zh/gc/03-temperature-programming.webp
+    video: teaching/zh/gc/03-temperature-programming.mp4
     download: teaching/zh/gc/03-temperature-programming.mp4
 
   - title: { en: "The flame ionization detector (FID)", zh: "氢火焰离子化检测器" }
     category: { en: "Gas Chromatography", zh: "气相色谱法" }
     lang: zh
-    media: teaching/zh/gc/04-fid.mp4
-    poster: teaching/zh/gc/04-fid.jpg
+    media: teaching/zh/gc/04-fid.webp
+    video: teaching/zh/gc/04-fid.mp4
     download: teaching/zh/gc/04-fid.mp4
 
   - title: { en: "Reciprocating piston pump", zh: "柱塞往复泵" }
     category: { en: "HPLC", zh: "高效液相色谱法" }
     lang: zh
-    media: teaching/zh/hplc/01-piston-pump.mp4
-    poster: teaching/zh/hplc/01-piston-pump.jpg
+    media: teaching/zh/hplc/01-piston-pump.webp
+    video: teaching/zh/hplc/01-piston-pump.mp4
     download: teaching/zh/hplc/01-piston-pump.mp4
 
   - title: { en: "Isocratic vs gradient elution", zh: "等度洗脱与梯度洗脱" }
     category: { en: "HPLC", zh: "高效液相色谱法" }
     lang: zh
-    media: teaching/zh/hplc/02-isocratic-gradient.mp4
-    poster: teaching/zh/hplc/02-isocratic-gradient.jpg
+    media: teaching/zh/hplc/02-isocratic-gradient.webp
+    video: teaching/zh/hplc/02-isocratic-gradient.mp4
     download: teaching/zh/hplc/02-isocratic-gradient.mp4
 
   - title: { en: "Six-port injection valve", zh: "六通进样阀" }
     category: { en: "HPLC", zh: "高效液相色谱法" }
     lang: zh
-    media: teaching/zh/hplc/03-six-port-valve.mp4
-    poster: teaching/zh/hplc/03-six-port-valve.jpg
+    media: teaching/zh/hplc/03-six-port-valve.webp
+    video: teaching/zh/hplc/03-six-port-valve.mp4
     download: teaching/zh/hplc/03-six-port-valve.mp4
 
   - title: { en: "Retention mechanism in reversed-phase chromatography", zh: "反相色谱的保留机理" }
     category: { en: "HPLC", zh: "高效液相色谱法" }
     lang: zh
-    media: teaching/zh/hplc/04-rp-retention.mp4
-    poster: teaching/zh/hplc/04-rp-retention.jpg
+    media: teaching/zh/hplc/04-rp-retention.webp
+    video: teaching/zh/hplc/04-rp-retention.mp4
     download: teaching/zh/hplc/04-rp-retention.mp4
 
   - title: { en: "Ion-suppression reversed-phase chromatography", zh: "反相离子抑制色谱" }
     category: { en: "HPLC", zh: "高效液相色谱法" }
     lang: zh
-    media: teaching/zh/hplc/05-ion-suppression.mp4
-    poster: teaching/zh/hplc/05-ion-suppression.jpg
+    media: teaching/zh/hplc/05-ion-suppression.webp
+    video: teaching/zh/hplc/05-ion-suppression.mp4
     download: teaching/zh/hplc/05-ion-suppression.mp4
 
   - title: { en: "Size-exclusion chromatography", zh: "分子排阻色谱" }
     category: { en: "HPLC", zh: "高效液相色谱法" }
     lang: zh
-    media: teaching/zh/hplc/06-size-exclusion.mp4
-    poster: teaching/zh/hplc/06-size-exclusion.jpg
+    media: teaching/zh/hplc/06-size-exclusion.webp
+    video: teaching/zh/hplc/06-size-exclusion.mp4
     download: teaching/zh/hplc/06-size-exclusion.mp4
 
   - title: { en: "Steps of solid-phase extraction", zh: "固相萃取的操作步骤" }
     category: { en: "HPLC", zh: "高效液相色谱法" }
     lang: zh
-    media: teaching/zh/hplc/07-spe.mp4
-    poster: teaching/zh/hplc/07-spe.jpg
+    media: teaching/zh/hplc/07-spe.webp
+    video: teaching/zh/hplc/07-spe.mp4
     download: teaching/zh/hplc/07-spe.mp4
 
   - title: { en: "The quadrupole mass analyzer", zh: "四极杆质量分析器" }
     category: { en: "Hyphenated Techniques (LC/GC–MS)", zh: "色谱联用技术" }
     lang: zh
-    media: teaching/zh/hyphenated/01-quadrupole.mp4
-    poster: teaching/zh/hyphenated/01-quadrupole.jpg
+    media: teaching/zh/hyphenated/01-quadrupole.webp
+    video: teaching/zh/hyphenated/01-quadrupole.mp4
     download: teaching/zh/hyphenated/01-quadrupole.mp4
 
   - title: { en: "The electrospray ionization process", zh: "电喷雾电离过程" }
     category: { en: "Hyphenated Techniques (LC/GC–MS)", zh: "色谱联用技术" }
     lang: zh
-    media: teaching/zh/hyphenated/02-esi.mp4
-    poster: teaching/zh/hyphenated/02-esi.jpg
+    media: teaching/zh/hyphenated/02-esi.webp
+    video: teaching/zh/hyphenated/02-esi.mp4
     download: teaching/zh/hyphenated/02-esi.mp4
 
   - title: { en: "Total and extracted ion chromatograms", zh: "总离子流图与提取离子流图" }
     category: { en: "Hyphenated Techniques (LC/GC–MS)", zh: "色谱联用技术" }
     lang: zh
-    media: teaching/zh/hyphenated/03-tic-eic.mp4
-    poster: teaching/zh/hyphenated/03-tic-eic.jpg
+    media: teaching/zh/hyphenated/03-tic-eic.webp
+    video: teaching/zh/hyphenated/03-tic-eic.mp4
     download: teaching/zh/hyphenated/03-tic-eic.mp4
 
   - title: { en: "Multiple reaction monitoring (MRM)", zh: "多反应监测MRM" }
     category: { en: "Hyphenated Techniques (LC/GC–MS)", zh: "色谱联用技术" }
     lang: zh
-    media: teaching/zh/hyphenated/04-mrm.mp4
-    poster: teaching/zh/hyphenated/04-mrm.jpg
+    media: teaching/zh/hyphenated/04-mrm.webp
+    video: teaching/zh/hyphenated/04-mrm.mp4
     download: teaching/zh/hyphenated/04-mrm.mp4
 
   # ---- English versions (shown only on the English page) ----
   - title: { en: "Energy-level transitions and three types of spectra", zh: "能级跃迁与三类光谱" }
     category: { en: "Introduction to Spectroscopy", zh: "光谱分析法概论" }
     lang: en
-    media: teaching/en/spectroscopy-intro/01-energy-levels.mp4
-    poster: teaching/en/spectroscopy-intro/01-energy-levels.jpg
+    media: teaching/en/spectroscopy-intro/01-energy-levels.webp
+    video: teaching/en/spectroscopy-intro/01-energy-levels.mp4
     download: teaching/en/spectroscopy-intro/01-energy-levels.mp4
 
   - title: { en: "The electromagnetic spectrum: wavelength, frequency and energy", zh: "电磁波谱与波长频率能量" }
     category: { en: "Introduction to Spectroscopy", zh: "光谱分析法概论" }
     lang: en
-    media: teaching/en/spectroscopy-intro/02-em-spectrum.mp4
-    poster: teaching/en/spectroscopy-intro/02-em-spectrum.jpg
+    media: teaching/en/spectroscopy-intro/02-em-spectrum.webp
+    video: teaching/en/spectroscopy-intro/02-em-spectrum.mp4
     download: teaching/en/spectroscopy-intro/02-em-spectrum.mp4
 
   - title: { en: "Wavelength dispersion by a diffraction grating", zh: "光栅衍射分光" }
     category: { en: "Introduction to Spectroscopy", zh: "光谱分析法概论" }
     lang: en
-    media: teaching/en/spectroscopy-intro/03-grating.mp4
-    poster: teaching/en/spectroscopy-intro/03-grating.jpg
+    media: teaching/en/spectroscopy-intro/03-grating.webp
+    video: teaching/en/spectroscopy-intro/03-grating.mp4
     download: teaching/en/spectroscopy-intro/03-grating.mp4
 
   - title: { en: "The Lambert–Beer law", zh: "朗伯比尔定律" }
     category: { en: "Introduction to Spectroscopy", zh: "光谱分析法概论" }
     lang: en
-    media: teaching/en/spectroscopy-intro/04-lambert-beer.mp4
-    poster: teaching/en/spectroscopy-intro/04-lambert-beer.jpg
+    media: teaching/en/spectroscopy-intro/04-lambert-beer.webp
+    video: teaching/en/spectroscopy-intro/04-lambert-beer.mp4
     download: teaching/en/spectroscopy-intro/04-lambert-beer.mp4
 
   - title: { en: "Electronic transition types and where they absorb", zh: "电子跃迁类型与吸收位置" }
     category: { en: "UV–Vis Spectrophotometry", zh: "紫外-可见分光光度法" }
     lang: en
-    media: teaching/en/uv-vis/01-electronic-transitions.mp4
-    poster: teaching/en/uv-vis/01-electronic-transitions.jpg
+    media: teaching/en/uv-vis/01-electronic-transitions.webp
+    video: teaching/en/uv-vis/01-electronic-transitions.mp4
     download: teaching/en/uv-vis/01-electronic-transitions.mp4
 
   - title: { en: "How an absorption spectrum forms", zh: "吸收光谱的形成" }
     category: { en: "UV–Vis Spectrophotometry", zh: "紫外-可见分光光度法" }
     lang: en
-    media: teaching/en/uv-vis/02-absorption-spectrum.mp4
-    poster: teaching/en/uv-vis/02-absorption-spectrum.jpg
+    media: teaching/en/uv-vis/02-absorption-spectrum.webp
+    video: teaching/en/uv-vis/02-absorption-spectrum.mp4
     download: teaching/en/uv-vis/02-absorption-spectrum.mp4
 
   - title: { en: "Solvent effects", zh: "溶剂效应" }
     category: { en: "UV–Vis Spectrophotometry", zh: "紫外-可见分光光度法" }
     lang: en
-    media: teaching/en/uv-vis/03-solvent-effect.mp4
-    poster: teaching/en/uv-vis/03-solvent-effect.jpg
+    media: teaching/en/uv-vis/03-solvent-effect.webp
+    video: teaching/en/uv-vis/03-solvent-effect.mp4
     download: teaching/en/uv-vis/03-solvent-effect.mp4
 
   - title: { en: "Conjugation and red shift", zh: "共轭体系与红移" }
     category: { en: "UV–Vis Spectrophotometry", zh: "紫外-可见分光光度法" }
     lang: en
-    media: teaching/en/uv-vis/04-conjugation-red-shift.mp4
-    poster: teaching/en/uv-vis/04-conjugation-red-shift.jpg
+    media: teaching/en/uv-vis/04-conjugation-red-shift.webp
+    video: teaching/en/uv-vis/04-conjugation-red-shift.mp4
     download: teaching/en/uv-vis/04-conjugation-red-shift.mp4
 
   - title: { en: "Effect of stray light", zh: "杂散光的影响" }
     category: { en: "UV–Vis Spectrophotometry", zh: "紫外-可见分光光度法" }
     lang: en
-    media: teaching/en/uv-vis/05-stray-light.mp4
-    poster: teaching/en/uv-vis/05-stray-light.jpg
+    media: teaching/en/uv-vis/05-stray-light.webp
+    video: teaching/en/uv-vis/05-stray-light.mp4
     download: teaching/en/uv-vis/05-stray-light.mp4
 
   - title: { en: "Single-beam vs double-beam instruments", zh: "单光束与双光束" }
     category: { en: "UV–Vis Spectrophotometry", zh: "紫外-可见分光光度法" }
     lang: en
-    media: teaching/en/uv-vis/06-single-double-beam.mp4
-    poster: teaching/en/uv-vis/06-single-double-beam.jpg
+    media: teaching/en/uv-vis/06-single-double-beam.webp
+    video: teaching/en/uv-vis/06-single-double-beam.mp4
     download: teaching/en/uv-vis/06-single-double-beam.mp4
 
   - title: { en: "Absorbance measurement error and the optimal range", zh: "吸光度测量误差与适宜范围" }
     category: { en: "UV–Vis Spectrophotometry", zh: "紫外-可见分光光度法" }
     lang: en
-    media: teaching/en/uv-vis/07-absorbance-error.mp4
-    poster: teaching/en/uv-vis/07-absorbance-error.jpg
+    media: teaching/en/uv-vis/07-absorbance-error.webp
+    video: teaching/en/uv-vis/07-absorbance-error.mp4
     download: teaching/en/uv-vis/07-absorbance-error.mp4
 
   - title: { en: "Six vibrational modes of a methylene group", zh: "亚甲基的六种振动形式" }
     category: { en: "Infrared Spectroscopy", zh: "红外吸收光谱法" }
     lang: en
-    media: teaching/en/infrared/01-ch2-vibrations.mp4
-    poster: teaching/en/infrared/01-ch2-vibrations.jpg
+    media: teaching/en/infrared/01-ch2-vibrations.webp
+    video: teaching/en/infrared/01-ch2-vibrations.mp4
     download: teaching/en/infrared/01-ch2-vibrations.mp4
 
   - title: { en: "Bond force constant and atomic mass", zh: "化学键力常数与原子质量" }
     category: { en: "Infrared Spectroscopy", zh: "红外吸收光谱法" }
     lang: en
-    media: teaching/en/infrared/02-force-constant.mp4
-    poster: teaching/en/infrared/02-force-constant.jpg
+    media: teaching/en/infrared/02-force-constant.webp
+    video: teaching/en/infrared/02-force-constant.mp4
     download: teaching/en/infrared/02-force-constant.mp4
 
   - title: { en: "IR activity and dipole-moment change", zh: "红外活性与偶极矩变化" }
     category: { en: "Infrared Spectroscopy", zh: "红外吸收光谱法" }
     lang: en
-    media: teaching/en/infrared/03-ir-activity.mp4
-    poster: teaching/en/infrared/03-ir-activity.jpg
+    media: teaching/en/infrared/03-ir-activity.webp
+    video: teaching/en/infrared/03-ir-activity.mp4
     download: teaching/en/infrared/03-ir-activity.mp4
 
   - title: { en: "Michelson interferometer and Fourier transform", zh: "迈克尔逊干涉仪与傅里叶变换" }
     category: { en: "Infrared Spectroscopy", zh: "红外吸收光谱法" }
     lang: en
-    media: teaching/en/infrared/04-ftir.mp4
-    poster: teaching/en/infrared/04-ftir.jpg
+    media: teaching/en/infrared/04-ftir.webp
+    video: teaching/en/infrared/04-ftir.mp4
     download: teaching/en/infrared/04-ftir.mp4
 
   - title: { en: "Hydrogen bonding, concentration and O–H absorption", zh: "氢键与浓度对羟基吸收的影响" }
     category: { en: "Infrared Spectroscopy", zh: "红外吸收光谱法" }
     lang: en
-    media: teaching/en/infrared/05-hydrogen-bonding.mp4
-    poster: teaching/en/infrared/05-hydrogen-bonding.jpg
+    media: teaching/en/infrared/05-hydrogen-bonding.webp
+    video: teaching/en/infrared/05-hydrogen-bonding.mp4
     download: teaching/en/infrared/05-hydrogen-bonding.mp4
 
   - title: { en: "IR spectral regions and characteristic absorptions", zh: "红外光谱的分区与特征吸收" }
     category: { en: "Infrared Spectroscopy", zh: "红外吸收光谱法" }
     lang: en
-    media: teaching/en/infrared/06-ir-regions.mp4
-    poster: teaching/en/infrared/06-ir-regions.jpg
+    media: teaching/en/infrared/06-ir-regions.webp
+    video: teaching/en/infrared/06-ir-regions.mp4
     download: teaching/en/infrared/06-ir-regions.mp4
 
   - title: { en: "The chromatographic separation process", zh: "色谱分离过程" }
     category: { en: "Chromatographic Theory", zh: "色谱分析法基本理论" }
     lang: en
-    media: teaching/en/chromatography-theory/01-separation-process.mp4
-    poster: teaching/en/chromatography-theory/01-separation-process.jpg
+    media: teaching/en/chromatography-theory/01-separation-process.webp
+    video: teaching/en/chromatography-theory/01-separation-process.mp4
     download: teaching/en/chromatography-theory/01-separation-process.mp4
 
   - title: { en: "Resolution", zh: "分离度" }
     category: { en: "Chromatographic Theory", zh: "色谱分析法基本理论" }
     lang: en
-    media: teaching/en/chromatography-theory/02-resolution.mp4
-    poster: teaching/en/chromatography-theory/02-resolution.jpg
+    media: teaching/en/chromatography-theory/02-resolution.webp
+    video: teaching/en/chromatography-theory/02-resolution.mp4
     download: teaching/en/chromatography-theory/02-resolution.mp4
 
   - title: { en: "Plate theory", zh: "塔板理论" }
     category: { en: "Chromatographic Theory", zh: "色谱分析法基本理论" }
     lang: en
-    media: teaching/en/chromatography-theory/03-plate-theory.mp4
-    poster: teaching/en/chromatography-theory/03-plate-theory.jpg
+    media: teaching/en/chromatography-theory/03-plate-theory.webp
+    video: teaching/en/chromatography-theory/03-plate-theory.mp4
     download: teaching/en/chromatography-theory/03-plate-theory.mp4
 
   - title: { en: "Three causes of peak broadening", zh: "峰展宽的三个原因" }
     category: { en: "Chromatographic Theory", zh: "色谱分析法基本理论" }
     lang: en
-    media: teaching/en/chromatography-theory/04-band-broadening.mp4
-    poster: teaching/en/chromatography-theory/04-band-broadening.jpg
+    media: teaching/en/chromatography-theory/04-band-broadening.webp
+    video: teaching/en/chromatography-theory/04-band-broadening.mp4
     download: teaching/en/chromatography-theory/04-band-broadening.mp4
 
   - title: { en: "The Van Deemter curve", zh: "Van Deemter曲线" }
     category: { en: "Chromatographic Theory", zh: "色谱分析法基本理论" }
     lang: en
-    media: teaching/en/chromatography-theory/05-van-deemter.mp4
-    poster: teaching/en/chromatography-theory/05-van-deemter.jpg
+    media: teaching/en/chromatography-theory/05-van-deemter.webp
+    video: teaching/en/chromatography-theory/05-van-deemter.mp4
     download: teaching/en/chromatography-theory/05-van-deemter.mp4
 
   - title: { en: "Competitive adsorption in adsorption chromatography", zh: "吸附色谱中的竞争吸附" }
     category: { en: "Classical Liquid Chromatography", zh: "经典液相色谱法" }
     lang: en
-    media: teaching/en/classical-lc/01-competitive-adsorption.mp4
-    poster: teaching/en/classical-lc/01-competitive-adsorption.jpg
+    media: teaching/en/classical-lc/01-competitive-adsorption.webp
+    video: teaching/en/classical-lc/01-competitive-adsorption.mp4
     download: teaching/en/classical-lc/01-competitive-adsorption.mp4
 
   - title: { en: "Elution order in normal- vs reversed-phase chromatography", zh: "正相与反相色谱的洗脱顺序" }
     category: { en: "Classical Liquid Chromatography", zh: "经典液相色谱法" }
     lang: en
-    media: teaching/en/classical-lc/02-elution-order.mp4
-    poster: teaching/en/classical-lc/02-elution-order.jpg
+    media: teaching/en/classical-lc/02-elution-order.webp
+    video: teaching/en/classical-lc/02-elution-order.mp4
     download: teaching/en/classical-lc/02-elution-order.mp4
 
   - title: { en: "Running a column chromatography separation", zh: "柱色谱的操作过程" }
     category: { en: "Classical Liquid Chromatography", zh: "经典液相色谱法" }
     lang: en
-    media: teaching/en/classical-lc/03-column-chromatography.mp4
-    poster: teaching/en/classical-lc/03-column-chromatography.jpg
+    media: teaching/en/classical-lc/03-column-chromatography.webp
+    video: teaching/en/classical-lc/03-column-chromatography.mp4
     download: teaching/en/classical-lc/03-column-chromatography.mp4
 
   - title: { en: "TLC development and the Rf value", zh: "薄层色谱的展开与Rf值" }
     category: { en: "Thin-Layer Chromatography", zh: "薄层色谱法" }
     lang: en
-    media: teaching/en/tlc/01-development-rf.mp4
-    poster: teaching/en/tlc/01-development-rf.jpg
+    media: teaching/en/tlc/01-development-rf.webp
+    video: teaching/en/tlc/01-development-rf.mp4
     download: teaching/en/tlc/01-development-rf.mp4
 
   - title: { en: "Effect of developing-solvent polarity on Rf", zh: "展开剂极性对Rf值的影响" }
     category: { en: "Thin-Layer Chromatography", zh: "薄层色谱法" }
     lang: en
-    media: teaching/en/tlc/02-solvent-polarity.mp4
-    poster: teaching/en/tlc/02-solvent-polarity.jpg
+    media: teaching/en/tlc/02-solvent-polarity.webp
+    video: teaching/en/tlc/02-solvent-polarity.mp4
     download: teaching/en/tlc/02-solvent-polarity.mp4
 
   - title: { en: "Quantitation by TLC densitometry", zh: "薄层扫描定量" }
     category: { en: "Thin-Layer Chromatography", zh: "薄层色谱法" }
     lang: en
-    media: teaching/en/tlc/03-densitometry.mp4
-    poster: teaching/en/tlc/03-densitometry.jpg
+    media: teaching/en/tlc/03-densitometry.webp
+    video: teaching/en/tlc/03-densitometry.mp4
     download: teaching/en/tlc/03-densitometry.mp4
 
   - title: { en: "How a gas chromatograph works", zh: "气相色谱仪的工作流程" }
     category: { en: "Gas Chromatography", zh: "气相色谱法" }
     lang: en
-    media: teaching/en/gc/01-gc-workflow.mp4
-    poster: teaching/en/gc/01-gc-workflow.jpg
+    media: teaching/en/gc/01-gc-workflow.webp
+    video: teaching/en/gc/01-gc-workflow.mp4
     download: teaching/en/gc/01-gc-workflow.mp4
 
   - title: { en: "Split and splitless injection", zh: "分流与不分流进样" }
     category: { en: "Gas Chromatography", zh: "气相色谱法" }
     lang: en
-    media: teaching/en/gc/02-split-splitless.mp4
-    poster: teaching/en/gc/02-split-splitless.jpg
+    media: teaching/en/gc/02-split-splitless.webp
+    video: teaching/en/gc/02-split-splitless.mp4
     download: teaching/en/gc/02-split-splitless.mp4
 
   - title: { en: "Isothermal vs temperature-programmed runs", zh: "等温与程序升温" }
     category: { en: "Gas Chromatography", zh: "气相色谱法" }
     lang: en
-    media: teaching/en/gc/03-temperature-programming.mp4
-    poster: teaching/en/gc/03-temperature-programming.jpg
+    media: teaching/en/gc/03-temperature-programming.webp
+    video: teaching/en/gc/03-temperature-programming.mp4
     download: teaching/en/gc/03-temperature-programming.mp4
 
   - title: { en: "The flame ionization detector (FID)", zh: "氢火焰离子化检测器" }
     category: { en: "Gas Chromatography", zh: "气相色谱法" }
     lang: en
-    media: teaching/en/gc/04-fid.mp4
-    poster: teaching/en/gc/04-fid.jpg
+    media: teaching/en/gc/04-fid.webp
+    video: teaching/en/gc/04-fid.mp4
     download: teaching/en/gc/04-fid.mp4
 
   - title: { en: "Reciprocating piston pump", zh: "柱塞往复泵" }
     category: { en: "HPLC", zh: "高效液相色谱法" }
     lang: en
-    media: teaching/en/hplc/01-piston-pump.mp4
-    poster: teaching/en/hplc/01-piston-pump.jpg
+    media: teaching/en/hplc/01-piston-pump.webp
+    video: teaching/en/hplc/01-piston-pump.mp4
     download: teaching/en/hplc/01-piston-pump.mp4
 
   - title: { en: "Isocratic vs gradient elution", zh: "等度洗脱与梯度洗脱" }
     category: { en: "HPLC", zh: "高效液相色谱法" }
     lang: en
-    media: teaching/en/hplc/02-isocratic-gradient.mp4
-    poster: teaching/en/hplc/02-isocratic-gradient.jpg
+    media: teaching/en/hplc/02-isocratic-gradient.webp
+    video: teaching/en/hplc/02-isocratic-gradient.mp4
     download: teaching/en/hplc/02-isocratic-gradient.mp4
 
   - title: { en: "Six-port injection valve", zh: "六通进样阀" }
     category: { en: "HPLC", zh: "高效液相色谱法" }
     lang: en
-    media: teaching/en/hplc/03-six-port-valve.mp4
-    poster: teaching/en/hplc/03-six-port-valve.jpg
+    media: teaching/en/hplc/03-six-port-valve.webp
+    video: teaching/en/hplc/03-six-port-valve.mp4
     download: teaching/en/hplc/03-six-port-valve.mp4
 
   - title: { en: "Retention mechanism in reversed-phase chromatography", zh: "反相色谱的保留机理" }
     category: { en: "HPLC", zh: "高效液相色谱法" }
     lang: en
-    media: teaching/en/hplc/04-rp-retention.mp4
-    poster: teaching/en/hplc/04-rp-retention.jpg
+    media: teaching/en/hplc/04-rp-retention.webp
+    video: teaching/en/hplc/04-rp-retention.mp4
     download: teaching/en/hplc/04-rp-retention.mp4
 
   - title: { en: "Ion-suppression reversed-phase chromatography", zh: "反相离子抑制色谱" }
     category: { en: "HPLC", zh: "高效液相色谱法" }
     lang: en
-    media: teaching/en/hplc/05-ion-suppression.mp4
-    poster: teaching/en/hplc/05-ion-suppression.jpg
+    media: teaching/en/hplc/05-ion-suppression.webp
+    video: teaching/en/hplc/05-ion-suppression.mp4
     download: teaching/en/hplc/05-ion-suppression.mp4
 
   - title: { en: "Size-exclusion chromatography", zh: "分子排阻色谱" }
     category: { en: "HPLC", zh: "高效液相色谱法" }
     lang: en
-    media: teaching/en/hplc/06-size-exclusion.mp4
-    poster: teaching/en/hplc/06-size-exclusion.jpg
+    media: teaching/en/hplc/06-size-exclusion.webp
+    video: teaching/en/hplc/06-size-exclusion.mp4
     download: teaching/en/hplc/06-size-exclusion.mp4
 
   - title: { en: "Steps of solid-phase extraction", zh: "固相萃取的操作步骤" }
     category: { en: "HPLC", zh: "高效液相色谱法" }
     lang: en
-    media: teaching/en/hplc/07-spe.mp4
-    poster: teaching/en/hplc/07-spe.jpg
+    media: teaching/en/hplc/07-spe.webp
+    video: teaching/en/hplc/07-spe.mp4
     download: teaching/en/hplc/07-spe.mp4
 
   - title: { en: "The quadrupole mass analyzer", zh: "四极杆质量分析器" }
     category: { en: "Hyphenated Techniques (LC/GC–MS)", zh: "色谱联用技术" }
     lang: en
-    media: teaching/en/hyphenated/01-quadrupole.mp4
-    poster: teaching/en/hyphenated/01-quadrupole.jpg
+    media: teaching/en/hyphenated/01-quadrupole.webp
+    video: teaching/en/hyphenated/01-quadrupole.mp4
     download: teaching/en/hyphenated/01-quadrupole.mp4
 
   - title: { en: "The electrospray ionization process", zh: "电喷雾电离过程" }
     category: { en: "Hyphenated Techniques (LC/GC–MS)", zh: "色谱联用技术" }
     lang: en
-    media: teaching/en/hyphenated/02-esi.mp4
-    poster: teaching/en/hyphenated/02-esi.jpg
+    media: teaching/en/hyphenated/02-esi.webp
+    video: teaching/en/hyphenated/02-esi.mp4
     download: teaching/en/hyphenated/02-esi.mp4
 
   - title: { en: "Total and extracted ion chromatograms", zh: "总离子流图与提取离子流图" }
     category: { en: "Hyphenated Techniques (LC/GC–MS)", zh: "色谱联用技术" }
     lang: en
-    media: teaching/en/hyphenated/03-tic-eic.mp4
-    poster: teaching/en/hyphenated/03-tic-eic.jpg
+    media: teaching/en/hyphenated/03-tic-eic.webp
+    video: teaching/en/hyphenated/03-tic-eic.mp4
     download: teaching/en/hyphenated/03-tic-eic.mp4
 
   - title: { en: "Multiple reaction monitoring (MRM)", zh: "多反应监测MRM" }
     category: { en: "Hyphenated Techniques (LC/GC–MS)", zh: "色谱联用技术" }
     lang: en
-    media: teaching/en/hyphenated/04-mrm.mp4
-    poster: teaching/en/hyphenated/04-mrm.jpg
+    media: teaching/en/hyphenated/04-mrm.webp
+    video: teaching/en/hyphenated/04-mrm.mp4
     download: teaching/en/hyphenated/04-mrm.mp4
