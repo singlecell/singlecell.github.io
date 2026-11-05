@@ -2,7 +2,7 @@
 ref: publications
 layout: page
 permalink: /publications/
-title: publications
+title: Publications
 description:
 nav: true
 nav_order: 3

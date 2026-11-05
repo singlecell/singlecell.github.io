@@ -1,7 +1,7 @@
 ---
 ref: about
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: Ph.D., Associate Professor<br>Institute of Chinese Materia Medica, <a href='https://www.shutcm.edu.cn/'>Shanghai University of Traditional Chinese Medicine</a>
 
