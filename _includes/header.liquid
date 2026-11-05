@@ -28,6 +28,11 @@
     border: 1px solid var(--global-divider-color, rgba(128,128,128,0.3));
   }
   #navbar .lang-switch:hover { color: var(--global-theme-color); border-color: var(--global-theme-color); }
+
+  /* Table-of-contents sidebar (CV pages): the theme's 0.8rem links are too small */
+  #toc-sidebar { top: 6rem; }
+  #toc-sidebar .toc-link { font-size: 1.05rem; line-height: 1.5; padding: 0.4rem 0.5rem 0.4rem 0.9rem; }
+  #toc-sidebar .toc-list .toc-list .toc-link { font-size: 0.95rem; }
 </style>
 
 {%- comment -%} Current language, its UI strings, and the matching page in the other language {%- endcomment -%}
