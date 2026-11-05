@@ -1,59 +1,80 @@
-<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract flat profile portrait of a young researcher">
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract three-quarter self-portrait of a young researcher">
   <!-- background -->
   <rect width="600" height="600" fill="#15776B"/>
   <circle cx="300" cy="300" r="250" fill="#1C8C7C"/>
-  <!-- abstract sun disc behind the head -->
-  <circle cx="300" cy="262" r="150" fill="#F2B441" opacity="0.9"/>
+  <circle cx="300" cy="258" r="152" fill="#F2B441" opacity="0.9"/>
 
-  <!-- molecule and spectrum in front of the face -->
+  <!-- molecule and spectrum -->
   <g stroke="#EAF7F3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.9">
-    <polygon points="486,150 516,167 516,201 486,218 456,201 456,167"/>
-    <line x1="486" y1="150" x2="486" y2="122"/>
-    <line x1="456" y1="201" x2="432" y2="215"/>
+    <polygon points="488,140 518,157 518,191 488,208 458,191 458,157"/>
+    <line x1="488" y1="140" x2="488" y2="112"/>
+    <line x1="458" y1="191" x2="434" y2="205"/>
   </g>
   <g fill="#EAF7F3">
-    <circle cx="486" cy="150" r="7"/><circle cx="516" cy="167" r="7"/><circle cx="516" cy="201" r="7"/>
-    <circle cx="486" cy="218" r="7"/><circle cx="456" cy="201" r="7"/><circle cx="456" cy="167" r="7"/>
+    <circle cx="488" cy="140" r="7"/><circle cx="518" cy="157" r="7"/><circle cx="518" cy="191" r="7"/>
+    <circle cx="488" cy="208" r="7"/><circle cx="458" cy="191" r="7"/><circle cx="458" cy="157" r="7"/>
   </g>
-  <circle cx="486" cy="122" r="8" fill="#F2B441"/>
-  <circle cx="432" cy="215" r="8" fill="#F2B441"/>
+  <circle cx="488" cy="112" r="8" fill="#F2B441"/>
+  <circle cx="434" cy="205" r="8" fill="#F2B441"/>
   <g stroke="#7FD1C1" stroke-width="6" stroke-linecap="round" opacity="0.8">
-    <line x1="470" y1="420" x2="470" y2="392"/>
-    <line x1="488" y1="420" x2="488" y2="352"/>
-    <line x1="506" y1="420" x2="506" y2="404"/>
-    <line x1="542" y1="420" x2="542" y2="380"/>
-    <line x1="460" y1="422" x2="556" y2="422" stroke-width="3"/>
+    <line x1="472" y1="420" x2="472" y2="392"/>
+    <line x1="490" y1="420" x2="490" y2="352"/>
+    <line x1="508" y1="420" x2="508" y2="404"/>
+    <line x1="544" y1="420" x2="544" y2="380"/>
+    <line x1="462" y1="422" x2="558" y2="422" stroke-width="3"/>
   </g>
-  <line x1="524" y1="420" x2="524" y2="318" stroke="#F2B441" stroke-width="6" stroke-linecap="round"/>
+  <line x1="526" y1="420" x2="526" y2="318" stroke="#F2B441" stroke-width="6" stroke-linecap="round"/>
 
-  <!-- shoulders: lab coat as flat blocks -->
-  <path d="M120 640 L 150 500 C 168 456, 220 436, 282 432 L 356 432 C 414 436, 456 462, 474 500 L 500 640 Z" fill="#F4F7F6"/>
-  <path d="M120 640 L 150 500 C 168 456, 220 436, 282 432 L 262 640 Z" fill="#DCE6E3"/>
-  <path d="M290 432 L 352 432 L 336 500 Z" fill="#CFE2EF"/>
-  <path d="M282 432 L 318 470 L 300 540 L 266 452 Z" fill="#E6EEEC"/>
-  <path d="M352 432 L 330 478 L 352 540 L 380 448 Z" fill="#FFFFFF"/>
+  <!-- body turned three-quarter: near (left) shoulder broad, far shoulder narrow -->
+  <path d="M90 640 L 112 520 C 132 468, 196 442, 262 436 L 344 430 C 396 432, 436 454, 456 494 L 482 640 Z" fill="#F4F7F6"/>
+  <path d="M90 640 L 112 520 C 132 468, 196 442, 262 436 L 286 640 Z" fill="#DCE6E3"/>
+  <path d="M300 432 L 352 430 L 334 498 Z" fill="#CFE2EF"/>
+  <path d="M292 432 L 326 470 L 312 548 L 276 456 Z" fill="#E6EEEC"/>
+  <path d="M352 430 L 336 474 L 352 540 L 376 446 Z" fill="#FFFFFF"/>
 
   <!-- neck -->
-  <path d="M266 360 L 340 404 L 344 448 C 322 462, 290 460, 268 446 Z" fill="#D99A75"/>
+  <path d="M270 352 L 334 352 L 346 446 C 324 460, 292 458, 270 444 Z" fill="#D99A75"/>
+  <path d="M270 352 L 300 360 L 296 452 C 286 450, 277 448, 270 444 Z" fill="#CC8B67"/>
 
-  <!-- head in profile, facing right: two flat skin planes -->
-  <path d="M266 360 C 236 336, 224 288, 232 240 C 244 172, 298 140, 350 148 C 394 156, 416 194, 414 236 L 420 262 C 422 270, 417 276, 419 282 C 430 300, 442 314, 446 326 C 448 333, 440 337, 431 337 C 433 344, 433 350, 429 354 C 435 358, 433 365, 427 367 C 429 376, 424 386, 416 391 C 404 400, 388 402, 372 402 C 358 402, 348 406, 340 418 Z" fill="#F0C29F"/>
-  <path d="M266 360 C 240 338, 228 300, 232 262 L 330 300 L 384 400 C 368 402, 352 406, 340 418 Z" fill="#E2A985"/>
-  <path d="M330 300 L 372 330 L 384 400 Z" fill="#D99A75" opacity="0.7"/>
+  <!-- ear (near side) -->
+  <path d="M236 256 A 24 30 0 1 0 236 316 Z" fill="#D99A75"/>
+  <path d="M232 270 A 11 16 0 1 0 232 302" stroke="#C9845F" stroke-width="4" fill="none" stroke-linecap="round"/>
 
-  <!-- ear: abstract half disc -->
-  <path d="M300 262 A 26 30 0 1 0 300 322 Z" fill="#D99A75"/>
-  <path d="M294 276 A 12 16 0 1 0 294 308" stroke="#C9845F" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- head, three-quarter view facing right -->
+  <path d="M232 230 C 228 274, 232 316, 250 346 C 266 370, 292 386, 318 386 C 340 384, 356 368, 360 344 C 362 330, 364 320, 362 312 C 366 306, 366 300, 362 296 L 368 286 C 366 276, 360 266, 356 258 C 362 246, 364 230, 360 214 C 350 172, 316 152, 290 152 C 256 152, 234 184, 232 230 Z" fill="#F0C29F"/>
+  <!-- shadow plane: far side and under the cheekbone -->
+  <path d="M328 236 L 356 258 C 360 266, 366 276, 368 286 L 362 296 C 366 300, 366 306, 362 312 C 364 320, 362 330, 360 344 C 356 368, 340 384, 318 386 L 330 340 L 334 300 Z" fill="#E2A985"/>
+  <path d="M250 346 C 266 370, 292 386, 318 386 L 300 360 L 262 330 Z" fill="#E7B391"/>
+  <!-- nose: bridge and tip break the far contour -->
+  <path d="M326 262 C 338 280, 356 302, 370 318 C 374 324, 368 330, 358 330 L 330 328 Z" fill="#F0C29F"/>
+  <path d="M326 262 C 334 286, 340 308, 344 328 L 330 328 Z" fill="#E2A985"/>
+  <path d="M326 262 C 338 280, 356 302, 370 318" stroke="#C9845F" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M336 330 C 344 334, 354 334, 362 330" stroke="#C9845F" stroke-width="3" stroke-linecap="round" fill="none"/>
 
-  <!-- hair: one bold geometric shape with a forward sweep -->
-  <path d="M226 290 C 214 214, 252 146, 326 138 C 382 132, 420 162, 424 214 C 408 198, 384 194, 362 202 C 340 210, 322 220, 310 236 C 300 246, 286 250, 272 254 C 264 280, 260 308, 254 334 C 240 328, 229 312, 226 290 Z" fill="#23212A"/>
-  <path d="M300 150 C 340 140, 390 152, 414 186 C 384 174, 344 172, 312 184 Z" fill="#3B3744"/>
+  <!-- hair -->
+  <path d="M226 262 C 214 196, 244 140, 300 134 C 352 128, 380 164, 372 222 C 364 204, 352 192, 336 186 C 312 196, 278 196, 256 184 C 246 204, 240 230, 238 258 C 234 262, 230 264, 226 262 Z" fill="#23212A"/>
+  <path d="M256 184 C 280 196, 314 198, 336 186 C 322 168, 298 156, 264 152 C 284 162, 296 172, 304 184 C 286 186, 268 186, 256 184 Z" fill="#2E2B36"/>
+  <path d="M262 146 C 292 134, 338 138, 362 166" stroke="#4A4656" stroke-width="5" stroke-linecap="round" fill="none"/>
 
-  <!-- brow, eye, glasses -->
-  <path d="M378 244 L 410 240" stroke="#23212A" stroke-width="7" stroke-linecap="round"/>
-  <path d="M392 266 L 408 264" stroke="#23212A" stroke-width="4.5" stroke-linecap="round"/>
-  <circle cx="398" cy="266" r="22" fill="#FFFFFF" fill-opacity="0.12" stroke="#23212A" stroke-width="4"/>
-  <path d="M376 264 L 306 270" stroke="#23212A" stroke-width="4" stroke-linecap="round"/>
-  <!-- mouth: a single calm line -->
-  <path d="M412 362 L 426 361" stroke="#A8574F" stroke-width="4" stroke-linecap="round"/>
+  <!-- brows -->
+  <path d="M256 238 C 268 230, 288 230, 302 236" stroke="#23212A" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M322 236 C 332 230, 344 230, 352 236" stroke="#23212A" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <!-- eyes: gaze turned back toward the viewer -->
+  <path d="M264 266 C 270 258, 290 258, 296 266 C 290 271, 270 271, 264 266 Z" fill="#FFFFFF"/>
+  <path d="M326 265 C 330 259, 344 259, 348 265 C 344 269, 330 269, 326 265 Z" fill="#FFFFFF"/>
+  <circle cx="273" cy="265" r="6" fill="#2A2228"/>
+  <circle cx="331" cy="264.5" r="5" fill="#2A2228"/>
+  <path d="M263 266 C 270 257, 290 257, 297 265" stroke="#3A2E30" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M325 265 C 330 258, 344 258, 349 265" stroke="#3A2E30" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- glasses: near lens round, far lens foreshortened -->
+  <g stroke="#23212A" stroke-width="4" fill="#FFFFFF" fill-opacity="0.12">
+    <circle cx="280" cy="266" r="23"/>
+    <ellipse cx="338" cy="265" rx="15" ry="22"/>
+  </g>
+  <path d="M303 263 C 312 258, 318 258, 323 262" stroke="#23212A" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M257 262 L 238 260" stroke="#23212A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M266 254 L 274 248" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- mouth -->
+  <path d="M302 352 C 312 356, 324 356, 334 350" stroke="#A8574F" stroke-width="4" stroke-linecap="round" fill="none"/>
 </svg>
