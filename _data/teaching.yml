@@ -7,7 +7,15 @@
 # ---------------------------------------------------------------------------
 # Courses (optional). Copy the commented example and fill it in.
 # ---------------------------------------------------------------------------
-courses: []
+courses:
+  - name: { en: Analytical Chemistry, zh: 分析化学 }
+    audience: { en: Undergraduate, zh: 本科生 }
+    description:
+      en: >
+        An undergraduate course in analytical chemistry. The spectroscopy and
+        chromatography animations below are its companion learning materials.
+      zh: >
+        面向本科生的分析化学课程。下方的光谱分析与色谱分析动图为本课程的配套学习资料。
 #  - name: { en: Analytical Chemistry, zh: 分析化学 }
 #    audience: { en: Undergraduate, zh: 本科生 }
 #    term: { en: Fall, zh: 秋季学期 }
