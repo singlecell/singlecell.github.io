@@ -60,11 +60,11 @@ cv:
         end_date: 2020-07
 
     Research Interests:
-      - label: AI-driven analysis
+      - label: Intelligent mass spectrometry of TCM
         details: "Machine learning fused with in situ and miniature mass-spectrometry data for intelligent interpretation and discrimination; deep learning for image-based quantitation"
-      - label: In situ mass spectrometry
+      - label: In situ mass spectrometry of TCM
         details: "TLC–ambient MS, chromatography–bioautography–MS screening, mass spectrometry imaging, and miniature MS for on-site testing without sample preparation"
-      - label: TCM analysis
+      - label: Quality and safety evaluation of TCM
         details: "Characterization, quality evaluation and safety screening of medicinal materials and preparations; ISO 19842:2025 international standard"
 
     Academic Service:

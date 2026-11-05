@@ -37,26 +37,26 @@ latest_posts:
 
 <div id="research-interests" class="full-section">
 <h2>Research Interests</h2>
-<p class="ri-intro">I integrate in situ mass spectrometry, miniature mass spectrometry and artificial intelligence to analyse complex traditional Chinese medicine systems — along three directions.</p>
+<p class="ri-intro">I integrate in situ mass spectrometry, miniature mass spectrometry and artificial intelligence to analyse complex traditional Chinese medicine (TCM) systems — along three directions.</p>
 
 <div class="ri-cards">
   <div class="ri-card">
     <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></div>
-    <h3>AI-Driven Analysis</h3>
+    <h3>Intelligent Mass Spectrometry of TCM</h3>
     <p class="ri-sub">Machine Learning · Deep Learning</p>
     <p class="ri-desc">Machine learning on in situ and miniature MS data for intelligent interpretation and discrimination; deep learning for image-based quantitation.</p>
     <a class="ri-more" href="{{ '/research/' | relative_url }}#ai">Learn more →</a>
   </div>
   <div class="ri-card">
     <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 5 4-14 2 9h6"/></svg></div>
-    <h3>In Situ Mass Spectrometry</h3>
+    <h3>In Situ Mass Spectrometry of TCM</h3>
     <p class="ri-sub">TLC–MS · MS Imaging · Miniature MS</p>
     <p class="ri-desc">TLC–ambient MS, bioautography–MS screening and MS imaging identify constituents without sample preparation; miniature MS takes the analysis on site.</p>
     <a class="ri-more" href="{{ '/research/' | relative_url }}#insitu">Learn more →</a>
   </div>
   <div class="ri-card">
     <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
-    <h3>TCM Analysis</h3>
+    <h3>Quality and Safety Evaluation of TCM</h3>
     <p class="ri-sub">Quality · Safety · Standards</p>
     <p class="ri-desc">Quality evaluation and safety screening of ginseng, notoginseng, agarwood, citrus peel, Senecio and their preparations; ISO 19842:2025.</p>
     <a class="ri-more" href="{{ '/research/' | relative_url }}#tcm">Learn more →</a>

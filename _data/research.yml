@@ -7,14 +7,14 @@ intro:
     traditional Chinese medicine (TCM) systems. By integrating in situ mass spectrometry,
     miniature mass spectrometry and artificial intelligence, my group has built a systematic
     in situ MS platform for TCM. The work runs along three mutually reinforcing directions:
-    <strong>AI-driven analysis</strong> turns spectra and images into decisions,
-    <strong>in situ mass spectrometry</strong> changes how and where we measure, and
-    <strong>TCM analysis</strong> applies both to the quality and safety of medicinal materials
+    <strong>intelligent mass spectrometry of TCM</strong> turns spectra and images into decisions,
+    <strong>in situ mass spectrometry of TCM</strong> changes how and where we measure, and
+    <strong>quality and safety evaluation of TCM</strong> applies both to medicinal materials
     and preparations.
   zh: >
     长期从事中药复杂体系质谱分析新技术及装备应用研究，围绕“原位质谱—微型质谱—人工智能”融合，
-    系统构建了中药原位质谱分析技术体系。研究分为三个相互支撑的方向：以<strong>AI 驱动</strong>实现数据的智能解析与判别，
-    以<strong>原位质谱</strong>革新测量的方式与场景，以<strong>中药分析</strong>落实到药材与制剂的品质评价与安全性筛查。
+    系统构建了中药原位质谱分析技术体系。研究分为三个相互支撑的方向：<strong>中药质谱智能分析</strong>实现数据的智能解析与判别，
+    <strong>中药原位质谱分析</strong>革新测量的方式与场景，<strong>中药质量与安全评价</strong>落实到药材与制剂的品质评价与安全性筛查。
 
 papers_label: { en: Representative papers, zh: 代表性论文 }
 more_label: { en: See all publications, zh: 查看全部论文 }
@@ -23,8 +23,8 @@ areas:
   - id: ai
     image: research/ai-driven.svg
     icon: '<rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/>'
-    title: { en: AI-Driven Analysis, zh: AI 驱动 }
-    subtitle: { en: Turning spectra and images into decisions, zh: AI-Driven Analysis }
+    title: { en: Intelligent Mass Spectrometry of TCM, zh: 中药质谱智能分析 }
+    subtitle: { en: Turning spectra and images into decisions, zh: Intelligent Mass Spectrometry of TCM }
     lead:
       en: >
         Fusing machine learning with in situ and miniature mass-spectrometry data to build
@@ -45,8 +45,8 @@ areas:
           zh: 微型质谱结合机器学习，现场鉴别沉香（正品、奇楠、伪品）及陈皮等柑橘类药材。
       - title: { en: Image-based quantitation, zh: 图像智能定量 }
         text:
-          en: TLC-RAPID locates TLC spots with YOLOv5 instance segmentation and back-calculates amounts from same-plate standards.
-          zh: TLC-RAPID 以 YOLOv5 实例分割自动识别薄层色谱斑点，并依据同板标准品反算含量。
+          en: The same approach extends to TLC images — TLC-RAPID locates spots with YOLOv5 instance segmentation and back-calculates amounts from same-plate standards.
+          zh: 智能分析思路拓展至薄层色谱图像：TLC-RAPID 以 YOLOv5 实例分割自动识别斑点，并依据同板标准品反算含量。
       - title: { en: Open-source tools, zh: 开源工具 }
         text:
           en: AgarwoodMiniMS and TLC-RAPID ship as Windows applications with source code and demo data.
@@ -66,8 +66,8 @@ areas:
   - id: insitu
     image: research/in-situ-ms.svg
     icon: '<path d="M3 12h4l2 5 4-14 2 9h6"/>'
-    title: { en: In Situ Mass Spectrometry, zh: 原位质谱 }
-    subtitle: { en: Bringing the measurement to the sample, zh: In Situ Mass Spectrometry }
+    title: { en: In Situ Mass Spectrometry of TCM, zh: 中药原位质谱分析 }
+    subtitle: { en: Bringing the measurement to the sample, zh: In Situ Mass Spectrometry of TCM }
     lead:
       en: >
         Developing a family of in situ techniques — TLC coupled with ambient MS, integrated
@@ -114,8 +114,8 @@ areas:
   - id: tcm
     image: research/tcm-analysis.svg
     icon: '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>'
-    title: { en: TCM Analysis, zh: 中药分析 }
-    subtitle: { en: Quality and safety of medicinal materials and preparations, zh: Analysis of Traditional Chinese Medicines }
+    title: { en: Quality and Safety Evaluation of TCM, zh: 中药质量与安全评价 }
+    subtitle: { en: From medicinal materials and preparations to standards, zh: Quality and Safety Evaluation of TCM }
     lead:
       en: >
         Combining in situ and miniature MS with high-resolution and ion-mobility LC–MS to characterise
