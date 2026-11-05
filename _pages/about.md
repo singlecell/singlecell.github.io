@@ -42,14 +42,14 @@ latest_posts:
 <div class="ri-cards">
   <div class="ri-card">
     <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></div>
-    <h3>Intelligent Mass Spectrometry of TCM</h3>
+    <h3>AI-Driven Intelligent Analysis</h3>
     <p class="ri-sub">Machine Learning · Deep Learning</p>
     <p class="ri-desc">Machine learning on in situ and miniature MS data for intelligent interpretation and discrimination; deep learning for image-based quantitation.</p>
     <a class="ri-more" href="{{ '/research/' | relative_url }}#ai">Learn more →</a>
   </div>
   <div class="ri-card">
     <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 5 4-14 2 9h6"/></svg></div>
-    <h3>In Situ Mass Spectrometry of TCM</h3>
+    <h3>In Situ Mass Spectrometry</h3>
     <p class="ri-sub">TLC–MS · MS Imaging · Miniature MS</p>
     <p class="ri-desc">TLC–ambient MS, bioautography–MS screening and MS imaging identify constituents without sample preparation; miniature MS takes the analysis on site.</p>
     <a class="ri-more" href="{{ '/research/' | relative_url }}#insitu">Learn more →</a>

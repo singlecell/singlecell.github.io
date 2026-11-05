@@ -7,14 +7,14 @@ intro:
     traditional Chinese medicine (TCM) systems. By integrating in situ mass spectrometry,
     miniature mass spectrometry and artificial intelligence, my group has built a systematic
     in situ MS platform for TCM. The work runs along three mutually reinforcing directions:
-    <strong>intelligent mass spectrometry of TCM</strong> turns spectra and images into decisions,
-    <strong>in situ mass spectrometry of TCM</strong> changes how and where we measure, and
+    <strong>AI-driven intelligent analysis</strong> turns spectra and images into decisions,
+    <strong>in situ mass spectrometry</strong> changes how and where we measure, and
     <strong>quality and safety evaluation of TCM</strong> applies both to medicinal materials
     and preparations.
   zh: >
     长期从事中药复杂体系质谱分析新技术及装备应用研究，围绕“原位质谱—微型质谱—人工智能”融合，
-    系统构建了中药原位质谱分析技术体系。研究分为三个相互支撑的方向：<strong>中药质谱智能分析</strong>实现数据的智能解析与判别，
-    <strong>中药原位质谱分析</strong>革新测量的方式与场景，<strong>中药质量与安全评价</strong>落实到药材与制剂的品质评价与安全性筛查。
+    系统构建了中药原位质谱分析技术体系。研究分为三个相互支撑的方向：<strong>AI驱动智能分析</strong>实现数据的智能解析与判别，
+    <strong>原位质谱研究</strong>革新测量的方式与场景，<strong>中药质量与安全评价</strong>落实到药材与制剂的品质评价与安全性筛查。
 
 papers_label: { en: Representative papers, zh: 代表性论文 }
 more_label: { en: See all publications, zh: 查看全部论文 }
@@ -23,8 +23,8 @@ areas:
   - id: ai
     image: research/ai-driven.svg
     icon: '<rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/>'
-    title: { en: Intelligent Mass Spectrometry of TCM, zh: 中药质谱智能分析 }
-    subtitle: { en: Turning spectra and images into decisions, zh: Intelligent Mass Spectrometry of TCM }
+    title: { en: AI-Driven Intelligent Analysis, zh: AI驱动智能分析 }
+    subtitle: { en: Turning spectra and images into decisions, zh: AI-Driven Intelligent Analysis }
     lead:
       en: >
         Fusing machine learning with in situ and miniature mass-spectrometry data to build
@@ -66,8 +66,8 @@ areas:
   - id: insitu
     image: research/in-situ-ms.svg
     icon: '<path d="M3 12h4l2 5 4-14 2 9h6"/>'
-    title: { en: In Situ Mass Spectrometry of TCM, zh: 中药原位质谱分析 }
-    subtitle: { en: Bringing the measurement to the sample, zh: In Situ Mass Spectrometry of TCM }
+    title: { en: In Situ Mass Spectrometry, zh: 原位质谱研究 }
+    subtitle: { en: Bringing the measurement to the sample, zh: In Situ Mass Spectrometry }
     lead:
       en: >
         Developing a family of in situ techniques — TLC coupled with ambient MS, integrated

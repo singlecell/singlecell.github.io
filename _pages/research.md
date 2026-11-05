@@ -3,7 +3,7 @@ ref: research
 layout: page
 permalink: /research/
 title: Research
-description: Three directions — intelligent mass spectrometry, in situ mass spectrometry, and quality and safety evaluation of traditional Chinese medicine (TCM).
+description: Three directions — AI-driven intelligent analysis, in situ mass spectrometry, and quality and safety evaluation of traditional Chinese medicine (TCM).
 nav: true
 nav_order: 1
 ---

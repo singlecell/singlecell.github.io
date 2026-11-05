@@ -45,14 +45,14 @@ latest_posts:
 <div class="ri-cards">
   <div class="ri-card">
     <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></div>
-    <h3>中药质谱智能分析</h3>
+    <h3>AI驱动智能分析</h3>
     <p class="ri-sub">机器学习 · 深度学习</p>
     <p class="ri-desc">将机器学习与原位/微型质谱数据融合，实现中药质谱数据的智能解析与判别；以深度学习实现图像智能定量。</p>
     <a class="ri-more" href="{{ '/zh/research/' | relative_url }}#ai">了解更多 →</a>
   </div>
   <div class="ri-card">
     <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 5 4-14 2 9h6"/></svg></div>
-    <h3>中药原位质谱分析</h3>
+    <h3>原位质谱研究</h3>
     <p class="ri-sub">薄层色谱-质谱 · 质谱成像 · 微型质谱</p>
     <p class="ri-desc">薄层色谱-原位质谱、生物自显影一体化筛选与质谱成像，实现成分免前处理、原位直接识别；微型质谱把分析带到现场。</p>
     <a class="ri-more" href="{{ '/zh/research/' | relative_url }}#insitu">了解更多 →</a>
