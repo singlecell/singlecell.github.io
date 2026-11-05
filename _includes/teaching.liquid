@@ -12,7 +12,7 @@
   {%- assign s_courses_empty = '课程信息即将更新。' -%}
   {%- assign s_materials_empty = '分析化学动图等学习资料正在整理中，敬请期待。' -%}
   {%- assign s_enlarge = '点击放大' -%}
-  {%- assign s_download = '下载 GIF' -%}
+  {%- assign s_download = '下载视频' -%}
   {%- assign s_close = '关闭' -%}
   {%- assign s_note = '' -%}
   {%- assign s_count = '个动图' -%}
@@ -21,9 +21,9 @@
   {%- assign s_materials = 'Learning materials' -%}
   {%- assign s_all = 'All' -%}
   {%- assign s_courses_empty = 'Course information is coming soon.' -%}
-  {%- capture s_materials_empty -%}English versions of the analytical-chemistry animations are being prepared. The Chinese versions are on the <a href="{{ '/zh/teaching/' | relative_url }}" hreflang="zh-CN">Chinese page</a>.{%- endcapture -%}
+  {%- assign s_materials_empty = 'Animations and other analytical-chemistry materials are being prepared. Check back soon.' -%}
   {%- assign s_enlarge = 'Click to enlarge' -%}
-  {%- assign s_download = 'Download GIF' -%}
+  {%- assign s_download = 'Download video' -%}
   {%- assign s_close = 'Close' -%}
   {%- assign s_note = '' -%}
   {%- assign s_count = 'animations' -%}
@@ -99,7 +99,7 @@
   display: block; width: 100%; padding: 0; border: 0; cursor: zoom-in; background: #fff;
   border-bottom: 1px solid var(--global-divider-color, rgba(128,128,128,0.18));
 }
-.teach-media img, .teach-media video { display: block; width: 100%; height: auto; aspect-ratio: 946 / 504; object-fit: contain; background: #fff; }
+.teach-media img, .teach-media video { display: block; width: 100%; height: auto; aspect-ratio: 1892 / 1010; object-fit: contain; background: #fff; }
 .teach-material-body { padding: 0.8rem 1rem 1rem; display: flex; flex-direction: column; gap: 0.45rem; flex: 1; }
 .teach-material-body h4 { font-size: 0.95rem; font-weight: 600; margin: 0; line-height: 1.45; }
 .teach-material-body .teach-desc { font-size: 0.88rem; margin: 0; }
@@ -108,7 +108,7 @@
 
 /* enlarged view */
 .teach-lightbox {
-  width: min(96vw, 946px); max-width: none; max-height: 96vh; padding: 0; border: 0;
+  width: min(96vw, 1400px); max-width: none; max-height: 96vh; padding: 0; border: 0;
   border-radius: 12px; background: #fff; overflow: hidden;
 }
 .teach-lightbox::backdrop { background: rgba(0, 0, 0, 0.75); }
